@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JT ESSENTIALS LIMITED</title>
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f6f9;
+    scroll-behavior:smooth;
+}
+header{
+    background:#1f2d3d;
+    color:white;
+    padding:15px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+header img{height:50px;}
+header h1{font-size:20px;margin:0;}
+nav{
+    background:#ff6600;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    padding:10px;
+    position:sticky;
+    top:65px;
+    z-index:99;
+}
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:14px;
+    padding:5px 8px;
+    border-radius:4px;
+    transition:0.3s;
+}
+nav a.active, nav a:hover{
+    background:white;
+    color:#ff6600;
+}
+#floating-cart{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#007bff;
+    color:white;
+    padding:12px 16px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:bold;
+    z-index:999;
+    transition:0.3s;
+}
+#floating-cart:hover{
+    transform:scale(1.05);
+}
+/* Sections */
+section{
+    padding:20px 15px;
+}
+h2{text-align:center;margin-bottom:15px;}
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:15px;
+}
+.card{
+    background:white;
+    padding:10px;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    text-align:center;
+    transition:0.3s;
+}
+.card:hover{transform:translateY(-5px);}
+.card img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+    border-radius:6px;
+}
+button{
+    padding:6px 10px;
+    margin-top:6px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:12px;
+}
+.order{background:#25D366;color:white;}
+.cart-btn{background:#007bff;color:white;}
+#cart-modal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+.cart-content{
+    background:white;
+    width:90%;
+    max-width:400px;
+    padding:20px;
+    border-radius:10px;
+    max-height:80%;
+    overflow-y:auto;
+}
+.about p, .about ul{margin-bottom:10px;line-height:1.5;}
+#consultancy h2{color:red;}
+</style>
+</head>
+<body>
+
+<header>
+<img src="images/logo.jpg" alt="JT ESSENTIALS LIMITED">
+<h1>JT ESSENTIALS LIMITED</h1>
+</header>
+
+<nav id="navbar">
+<a href="#raw-materials">Raw Materials</a>
+<a href="#about">About Us</a>
+<a href="consultancy.html">Consultancy</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div id="floating-cart" onclick="openCart()">
+🛒 Cart (<span id="cart-count">0</span>)
+</div>
+
+<!-- RAW MATERIALS -->
+<section id="raw-materials">
+<h2>Raw Materials</h2>
+<div class="container" id="raw-materials-container"></div>
+</section>
+
+<!-- ABOUT US -->
+<section id="about" class="about">
+<h2>About Us</h2>
+<p><strong>REG. NO. 6899712</strong></p>
+<p><strong>JT ESSENTIALS LIMITED Consistency in quality delivery</strong></p>
+<p><strong>Our Vision:</strong> To be the leading provider of high-quality grains and livestock feed raw materials supplies and services, while educating Live stock producers about nutritional requirements.</p>
+<p><strong>WHY CHOOSE JT ESSENTIALS:</strong></p>
+<ul>
+<li>Quality & Safety of your livestock</li>
+<li>Introduction of Innovative feed additives that enhance nutrients and improve animal health</li>
+<li>Nutritional value for better growth rate</li>
+<li>Immunity boost, reducing disease vulnerability in animals</li>
+<li>Digestive support for improved digestion and nutrient utilization</li>
+<li>Cost efficiency by preventing illness through diets</li>
+</ul>
+<p><strong>Establishment:</strong> JT Essentials Limited is a well-established company with proven track records of undertaking agro-Business Services and operation, before and after incorporation. Primary operations in Abuja FCT, South West, South East Regions, with a nationwide customer base.</p>
+<p><strong>Our Mission:</strong></p>
+<ul>
+<li>Delivering reliable and cost-effective solution for livestock farmers</li>
+<li>Provide high-quality grains, livestock feed raw materials, additives and secure storage solutions alongside innovative investment opportunities.</li>
+<li>Through exceptional customer service and a commitment to sustainable practices, we strive to be your trusted partner on the path to agricultural success.</li>
+</ul>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact Us</h2>
+<p style="text-align:center;">
+El-Gumi Plaza by Labour House, Kuje-Gwagwalada Road, Abuja KM 128, Idiroko Road, Beside Chicken Republic, Otta, Ogun State<br>
+📧 jtessentialslimited@gmail.com<br>
+📞 +2347065498338<br>
+<a href="https://wa.me/2347065498338?text=Hello%20JT%20Essentials%20Limited" style="color:#25D366;font-weight:bold;">Chat on WhatsApp</a>
+</p>
+</section>
+
+<!-- CART MODAL -->
+<div id="cart-modal">
+<div class="cart-content">
+<h3>Your Cart</h3>
+<div id="cart-items"></div>
+<button onclick="sendCartOrder()" style="background:#25D366;color:white;width:100%;padding:10px;margin-top:15px;border:none;border-radius:5px;">Order via WhatsApp</button>
+<button onclick="closeCart()" style="background:red;color:white;width:100%;padding:8px;margin-top:10px;border:none;border-radius:5px;">Close</button>
+</div>
+</div>
+
+<script>
+// Highlight nav on scroll
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+window.addEventListener("scroll",()=>{
+    let current="";
+    sections.forEach(sec=>{
+        const top=sec.offsetTop-80;
+        if(scrollY>=top) current=sec.getAttribute("id");
+    });
+    navLinks.forEach(link=>{
+        link.classList.remove("active");
+        if(link.getAttribute("href")==="#"+current) link.classList.add("active");
+    });
+});
+
+// Raw Materials
+const products = [
+"SOYA_BEANS","SOYA_CAKE","SOYA_MEAL","MAIZE","MAIZE_OFFAL","GROUDNUT_CAKE",
+"RICE_BRAN","WHEAT_OFFAL","BONE_BEAL","LIMESTONE","PALM_KERNEL_CAKE",
+"BREWER_DRY_GRAIN","METHICINE","LYSINE","PREMIX","ENZYMES","SALT",
+"TOXIN_BLINDER","FISH_MEAL","65%_FISH_MEAL","72%_FISH_MEAL","LOCAL_FISH_MEAL"
+];
+
+const container = document.getElementById("raw-materials-container");
+products.forEach(item=>{
+    container.innerHTML += `<div class="card">
+    <img src="images/${item}.jpg" alt="${item}">
+    <h4>${item.replace(/_/g,' ')}</h4>
+    <button class="order" onclick="orderNow('${item.replace(/_/g,' ')}')">Order Now</button>
+    <button class="cart-btn" onclick="addToCart('${item.replace(/_/g,' ')}')">Add to Cart</button>
+    </div>`;
+});
+
+// CART
+let cart=[];
+function updateCartCounter(){document.getElementById("cart-count").innerText=cart.length;}
+function addToCart(item){cart.push(item);updateCartCounter();animateCart();openCart();}
+function removeFromCart(index){cart.splice(index,1);updateCartCounter();openCart();}
+function animateCart(){const btn=document.getElementById("floating-cart");btn.style.transform="scale(1.2)";setTimeout(()=>{btn.style.transform="scale(1)";},200);}
+function orderNow(item){let msg="I want to order this item: "+item;window.open("https://wa.me/2347065498338?text="+encodeURIComponent(msg));}
+function openCart(){const div=document.getElementById("cart-items");div.innerHTML="";if(cart.length===0){div.innerHTML="<p>Your cart is empty.</p>";}else{cart.forEach((item,index)=>{div.innerHTML+=`<div>${index+1}. ${item} <button style="background:red;color:white;padding:3px 6px;border:none;border-radius:3px;font-size:10px;cursor:pointer;" onclick="removeFromCart(${index})">Remove</button></div>`;});}document.getElementById("cart-modal").style.display="flex";}
+function closeCart(){document.getElementById("cart-modal").style.display="none";}
+function sendCartOrder(){if(cart.length===0){alert("Cart is empty");return;}let msg="I want to order these items: "+cart.join(", ");window.open("https://wa.me/2347065498338?text="+encodeURIComponent(msg));}
+</script>
+
+</body>
+</html>
