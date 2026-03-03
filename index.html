@@ -25,6 +25,7 @@ header{
 }
 header img{height:50px;}
 header h1{font-size:20px;margin:0;}
+
 nav{
     background:#ff6600;
     display:flex;
@@ -42,16 +43,19 @@ nav a{
     font-size:14px;
     padding:5px 8px;
     border-radius:4px;
+    transition:0.3s;
 }
 nav a.active, nav a:hover{
     background:white;
     color:#ff6600;
 }
+
 .price{
-    color:#ff0000;
+    color:red;
     font-weight:bold;
     margin-top:5px;
 }
+
 #floating-cart{
     position:fixed;
     bottom:20px;
@@ -64,26 +68,35 @@ nav a.active, nav a:hover{
     font-weight:bold;
     z-index:999;
 }
-section{padding:20px 15px;}
+
+section{
+    padding:20px 15px;
+}
 h2{text-align:center;margin-bottom:15px;}
+
 .container{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
     gap:15px;
 }
+
 .card{
     background:white;
     padding:10px;
     border-radius:8px;
     box-shadow:0 2px 8px rgba(0,0,0,0.1);
     text-align:center;
+    transition:0.3s;
 }
+.card:hover{transform:translateY(-5px);}
+
 .card img{
     width:100%;
     height:140px;
     object-fit:cover;
     border-radius:6px;
 }
+
 button{
     padding:6px 10px;
     margin-top:6px;
@@ -95,6 +108,7 @@ button{
 }
 .order{background:#25D366;color:white;}
 .cart-btn{background:#007bff;color:white;}
+
 #cart-modal{
     position:fixed;
     top:0;
@@ -105,7 +119,9 @@ button{
     display:none;
     justify-content:center;
     align-items:center;
+    z-index:1000;
 }
+
 .cart-content{
     background:white;
     width:90%;
@@ -115,6 +131,8 @@ button{
     max-height:80%;
     overflow-y:auto;
 }
+
+.about p, .about ul{margin-bottom:10px;line-height:1.5;}
 #consultancy h2{color:red;}
 </style>
 </head>
@@ -122,11 +140,11 @@ button{
 <body>
 
 <header>
-<img src="images/LOGO.jpg">
+<img src="images/LOGO.jpg" alt="JT ESSENTIALS LIMITED">
 <h1>JT ESSENTIALS LIMITED</h1>
 </header>
 
-<nav>
+<nav id="navbar">
 <a href="#raw-materials">Raw Materials</a>
 <a href="#about">About Us</a>
 <a href="consultancy.html">Consultancy</a>
@@ -137,80 +155,120 @@ button{
 🛒 Cart (<span id="cart-count">0</span>)
 </div>
 
+<!-- RAW MATERIALS -->
 <section id="raw-materials">
 <h2>Raw Materials</h2>
 <div class="container" id="raw-materials-container"></div>
 </section>
 
-<section id="about">
+<!-- ABOUT US -->
+<section id="about" class="about">
 <h2>About Us</h2>
 <p><strong>REG. NO. 6899712</strong></p>
-<p><strong>JT ESSENTIALS LIMITED – Consistency in quality delivery</strong></p>
+<p><strong>JT ESSENTIALS LIMITED Consistency in quality delivery</strong></p>
+<p><strong>Our Vision:</strong> To be the leading provider of high-quality grains and livestock feed raw materials supplies and services, while educating Live stock producers about nutritional requirements.</p>
+<p><strong>WHY CHOOSE JT ESSENTIALS:</strong></p>
+<ul>
+<li>Quality & Safety of your livestock</li>
+<li>Introduction of Innovative feed additives that enhance nutrients and improve animal health</li>
+<li>Nutritional value for better growth rate</li>
+<li>Immunity boost, reducing disease vulnerability in animals</li>
+<li>Digestive support for improved digestion and nutrient utilization</li>
+<li>Cost efficiency by preventing illness through diets</li>
+</ul>
+<p><strong>Establishment:</strong> JT Essentials Limited is a well-established company with proven track records of undertaking agro-Business Services and operation, before and after incorporation. Primary operations in Abuja FCT, South West, South East Regions, with a nationwide customer base.</p>
+<p><strong>Our Mission:</strong></p>
+<ul>
+<li>Delivering reliable and cost-effective solution for livestock farmers</li>
+<li>Provide high-quality grains, livestock feed raw materials, additives and secure storage solutions alongside innovative investment opportunities.</li>
+<li>Through exceptional customer service and a commitment to sustainable practices, we strive to be your trusted partner on the path to agricultural success.</li>
+</ul>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
 <h2>Contact Us</h2>
 <p style="text-align:center;">
+El-Gumi Plaza by Labour House, Kuje-Gwagwalada Road, Abuja KM 128, Idiroko Road, Beside Chicken Republic, Otta, Ogun State<br>
+📧 jtessentialslimited@gmail.com<br>
 📞 +2347065498338<br>
-<a href="https://wa.me/2347065498338">Chat on WhatsApp</a>
+<a href="https://wa.me/2347065498338?text=Hello%20JT%20Essentials%20Limited" style="color:#25D366;font-weight:bold;">Chat on WhatsApp</a>
 </p>
 </section>
 
+<!-- CART MODAL -->
 <div id="cart-modal">
 <div class="cart-content">
 <h3>Your Cart</h3>
 <div id="cart-items"></div>
-<button onclick="sendCartOrder()" style="background:#25D366;color:white;width:100%;padding:10px;margin-top:15px;">Order via WhatsApp</button>
-<button onclick="closeCart()" style="background:red;color:white;width:100%;padding:8px;margin-top:10px;">Close</button>
+<button onclick="sendCartOrder()" style="background:#25D366;color:white;width:100%;padding:10px;margin-top:15px;border:none;border-radius:5px;">Order via WhatsApp</button>
+<button onclick="closeCart()" style="background:red;color:white;width:100%;padding:8px;margin-top:10px;border:none;border-radius:5px;">Close</button>
 </div>
 </div>
 
 <script>
 
+// Highlight nav on scroll
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+window.addEventListener("scroll",()=>{
+    let current="";
+    sections.forEach(sec=>{
+        const top=sec.offsetTop-80;
+        if(scrollY>=top) current=sec.getAttribute("id");
+    });
+    navLinks.forEach(link=>{
+        link.classList.remove("active");
+        if(link.getAttribute("href")==="#"+current) link.classList.add("active");
+    });
+});
+
+// ORIGINAL PRODUCT NAMES KEPT
 const products = [
-{code:"SOYA_BEANS",name:"Soya Beans",price:"Price Available on Request"},
-{code:"SOYA_CAKE",name:"Soya Cake",price:"₦600/kg"},
-{code:"SOYA_MEAL",name:"Soya Meal",price:"₦750/kg"},
-{code:"MAIZE",name:"Maize",price:"₦320/kg"},
-{code:"MAIZE_OFFAL",name:"Maize Offal",price:"₦190/kg"},
-{code:"GROUNDNUT_CAKE",name:"Groundnut Cake (GNC)",price:"₦580/kg"},
-{code:"RICE_BRAN",name:"Rice Bran",price:"₦100/kg"},
-{code:"WHEAT_OFFAL",name:"Wheat Offal",price:"₦350/kg"},
-{code:"BONE_MEAL",name:"Bone Meal",price:"₦250/kg"},
-{code:"LIMESTONE",name:"Limestone",price:"₦60/kg"},
-{code:"PALM_KERNEL_CAKE",name:"Palm Kernel Cake (PKC Dry)",price:"₦280/kg"},
-{code:"BDG",name:"Brewer’s Dried Grain (BDG)",price:"₦280/kg"},
-{code:"METHIONINE",name:"Methionine",price:"₦125,000/bag"},
-{code:"LYSINE",name:"Lysine",price:"₦80,000/bag"},
-{code:"PREMIX",name:"Premix (2.5kg)",price:"₦3,500"},
-{code:"ENZYMES",name:"Enzymes",price:"₦110,000/bag"},
-{code:"SALT",name:"Industrial Salt",price:"₦20,000/bag"},
-{code:"TOXIN_BINDER",name:"Toxin Binder",price:"₦55,000/bag"},
-{code:"FISH_MEAL",name:"Fish Meal (Imported)",price:"₦150,000/bag"},
-{code:"FISH_MEAL_65",name:"65% Fish Meal",price:"₦120,000/bag"},
-{code:"LOCAL_FISH_MEAL_1",name:"Local Fish Meal (1st Grade)",price:"₦1,800/kg"},
-{code:"LOCAL_FISH_MEAL_2",name:"Local Fish Meal (2nd Grade)",price:"₦2,500/kg"}
+{name:"SOYA_BEANS", price:""},
+{name:"SOYA_CAKE", price:""},
+{name:"SOYA_MEAL", price:""},
+{name:"MAIZE", price:""},
+{name:"MAIZE_OFFAL", price:""},
+{name:"GROUDNUT_CAKE", price:""},
+{name:"RICE_BRAN", price:""},
+{name:"WHEAT_OFFAL", price:""},
+{name:"BONE_BEAL", price:""},
+{name:"LIMESTONE", price:""},
+{name:"PALM_KERNEL_CAKE", price:""},
+{name:"BREWER_DRY_GRAIN", price:"₦280/kg"},
+{name:"METHIONINE", price:""},
+{name:"LYSINE", price:""},
+{name:"PREMIX", price:""},
+{name:"ENZYMES", price:""},
+{name:"SALT", price:""},
+{name:"TOXIN_BLINDER", price:""},
+{name:"FISH_MEAL", price:""},
+{name:"FISH_MEAL_65", price:"₦120,000 per bag"},
+{name:"FISH_MEAL_72", price:""},
+{name:"LOCAL_FISH_MEAL", price:"1st Grade – ₦1,800/kg | 2nd Grade – ₦2,500/kg"}
 ];
 
-const container=document.getElementById("raw-materials-container");
+const container = document.getElementById("raw-materials-container");
 
 products.forEach(item=>{
-container.innerHTML+=`
+container.innerHTML += `
 <div class="card">
-<img src="images/${item.code}.jpg">
-<h4>${item.name}</h4>
-<div class="price">${item.price}</div>
-<button class="order" onclick="orderNow('${item.name}')">Order Now</button>
-<button class="cart-btn" onclick="addToCart('${item.name}')">Add to Cart</button>
+<img src="images/${item.name}.jpg" alt="${item.name}">
+<h4>${item.name.replace(/_/g,' ')}</h4>
+${item.price ? `<div class="price">${item.price}</div>` : ""}
+<button class="order" onclick="orderNow('${item.name.replace(/_/g,' ')}')">Order Now</button>
+<button class="cart-btn" onclick="addToCart('${item.name.replace(/_/g,' ')}')">Add to Cart</button>
 </div>`;
 });
 
+// CART SYSTEM
 let cart=[];
 function updateCartCounter(){document.getElementById("cart-count").innerText=cart.length;}
 function addToCart(item){cart.push(item);updateCartCounter();openCart();}
 function removeFromCart(index){cart.splice(index,1);updateCartCounter();openCart();}
 function orderNow(item){
-let msg="I want to order: "+item;
+let msg="I want to order this item: "+item;
 window.open("https://wa.me/2347065498338?text="+encodeURIComponent(msg));
 }
 function openCart(){
@@ -219,7 +277,9 @@ div.innerHTML="";
 if(cart.length===0){div.innerHTML="<p>Your cart is empty.</p>";}
 else{
 cart.forEach((item,index)=>{
-div.innerHTML+=`${index+1}. ${item} <button onclick="removeFromCart(${index})" style="background:red;color:white;font-size:10px;">Remove</button><br>`;
+div.innerHTML+=`<div>${index+1}. ${item}
+<button style="background:red;color:white;padding:3px 6px;border:none;border-radius:3px;font-size:10px;cursor:pointer;" onclick="removeFromCart(${index})">Remove</button>
+</div>`;
 });
 }
 document.getElementById("cart-modal").style.display="flex";
