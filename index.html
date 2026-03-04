@@ -6,20 +6,20 @@
 <title>JT ESSENTIALS LIMITED</title>
 
 <style>
-/* General */
+/* GENERAL STYLES */
 body{margin:0;font-family:Arial, sans-serif;background:#f4f6f9;scroll-behavior:smooth;}
 header{background:#1f2d3d;color:white;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
 header img{height:55px;}
 header h1{font-size:20px;margin:0;}
-nav{background:#ff6600;display:flex;justify-content:center;gap:15px;padding:10px;position:sticky;top:75px;z-index:99;}
+nav{background:#ff6600;display:flex;justify-content:center;gap:15px;padding:10px;position:sticky;top:75px;z-index:99;flex-wrap:wrap;}
 nav a{color:white;text-decoration:none;font-weight:bold;font-size:14px;padding:6px 12px;border-radius:20px;transition:0.3s;}
 nav a:hover{background:white;color:#ff6600;}
 .updated{text-align:center;background:#28a745;color:white;padding:8px;font-size:14px;font-weight:bold;}
 section{padding:25px 15px;}
 h2{text-align:center;margin-bottom:20px;}
 .container{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;}
-.card{background:white;padding:15px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.08);text-align:center;transition:0.4s transform,0.4s box-shadow;}
-.card:hover{transform:translateY(-8px) scale(1.03);box-shadow:0 10px 25px rgba(0,0,0,0.2);}
+.card{background:white;padding:15px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.08);text-align:center;transition:0.3s;}
+.card:hover{transform:translateY(-8px);box-shadow:0 8px 20px rgba(0,0,0,0.15);}
 .card img{width:100%;height:150px;object-fit:cover;border-radius:8px;}
 .price{color:#e60000;font-weight:bold;margin:8px 0;font-size:15px;}
 button{padding:8px 12px;margin-top:6px;border:none;border-radius:20px;cursor:pointer;font-weight:bold;font-size:12px;width:100%;}
@@ -30,29 +30,35 @@ button{padding:8px 12px;margin-top:6px;border:none;border-radius:20px;cursor:poi
 .cart-content{background:white;width:90%;max-width:400px;padding:20px;border-radius:10px;max-height:80%;overflow-y:auto;}
 .about p,.about ul{margin-bottom:10px;line-height:1.6;}
 
-/* Search Bar */
-#search-bar{width:90%;max-width:420px;margin:15px auto;display:block;padding:10px 15px;border-radius:25px;border:1px solid #ccc;font-size:16px;}
-#search-bar::placeholder{font-size:16px;}
+/* HERO STYLES */
+.hero{position:relative;height:480px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
+.hero-slideshow{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;overflow:hidden;}
+.hero-slideshow img{width:100%;height:100%;object-fit:cover;position:absolute;opacity:0;animation:fadeSlide 12s infinite;}
+.hero-slideshow img:nth-child(1){animation-delay:0s;}
+.hero-slideshow img:nth-child(2){animation-delay:4s;}
+.hero-slideshow img:nth-child(3){animation-delay:8s;}
+.hero-content{position:relative;z-index:2;color:white;padding:0 15px;}
+.hero-content h1{font-size:28px;margin-bottom:12px;}
+.hero-content p{font-size:16px;margin-bottom:20px;}
+.hero-content .cta button{margin:5px;cursor:pointer;font-weight:bold;padding:10px 20px;border-radius:25px;font-size:14px;}
+.view-products{background:#28a745;color:white;border:none;}
+.contact-us{background:#007bff;color:white;border:none;}
+.consultancy{background:#ff6600;color:white;border:none;}
 
-/* Hero Section */
-.hero{position:relative;background:url('images/hero-bg.jpg') center/cover no-repeat;height:480px;color:white;display:flex;align-items:center;justify-content:center;text-align:center;margin-bottom:20px;}
-.hero::after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);}
-.hero-content{position:relative;z-index:2;animation:fadeInUp 1s ease forwards;padding:0 15px;}
-.hero h1{font-size:38px;margin:0;}
-.hero p{font-size:18px;margin:10px 0;}
-.hero .cta{margin-top:15px;display:flex;gap:15px;justify-content:center;flex-wrap:wrap;}
-.hero .cta button{padding:12px 25px;font-size:16px;border-radius:25px;border:none;font-weight:bold;cursor:pointer;transition:0.3s;}
-.hero .cta .view-products{background:#25D366;color:white;}
-.hero .cta .contact-us{background:#007bff;color:white;}
-.hero .cta .consultancy{background:#ff6600;color:white;}
-.hero .cta button:hover{opacity:0.9;}
-@keyframes fadeInUp{0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
+@keyframes fadeSlide{
+  0%{opacity:0;transform:translateX(100%);}
+  8%{opacity:1;transform:translateX(0);}
+  33%{opacity:1;transform:translateX(0);}
+  41%{opacity:0;transform:translateX(-100%);}
+  100%{opacity:0;transform:translateX(-100%);}
+}
 
-/* Responsive */
+/* MOBILE FRIENDLY */
 @media(max-width:768px){
-  .hero h1{font-size:28px;}
-  .hero p{font-size:16px;}
-  .hero .cta button{font-size:14px;padding:10px 20px;}
+header h1{font-size:16px;}
+.hero-content h1{font-size:22px;}
+.hero-content p{font-size:14px;}
+nav{flex-direction:column;gap:5px;}
 }
 </style>
 </head>
@@ -73,28 +79,41 @@ button{padding:8px 12px;margin-top:6px;border:none;border-radius:20px;cursor:poi
 
 <div class="updated">Prices Updated Today ✔</div>
 
-<!-- Hero Section -->
+<div id="floating-cart" onclick="openCart()">
+🛒 Cart (<span id="cart-count">0</span>)
+</div>
+
+<!-- HERO SECTION -->
 <section class="hero">
-<div class="hero-content">
-<h1>Premium Livestock Feed & Raw Materials</h1>
-<p>Quality Guaranteed, Nationwide Delivery & Consultancy Services</p>
-<div class="cta">
-<button class="view-products" onclick="document.getElementById('raw-materials').scrollIntoView({behavior:'smooth'});">View Products</button>
-<button class="contact-us" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Contact Us</button>
-<button class="consultancy" onclick="window.location.href='consultancy.html';">Consultancy</button>
-</div>
-</div>
+  <div class="hero-slideshow">
+    <img src="images/MAIZE.jpg" alt="MAIZE">
+    <img src="images/SOYA_MEAL.jpg" alt="SOYA MEAL">
+    <img src="images/SOYA_CAKE.jpg" alt="SOYA CAKE">
+    <img src="images/GROUDNUT_CAKE.jpg" alt="GROUNDNUT CAKE">
+    <img src="images/RICE_BRAN.jpg" alt="RICE BRAN">
+    <img src="images/PALM_KERNEL_CAKE.jpg" alt="PALM KERNEL CAKE">
+    <img src="images/MAIZE_OFFAL.jpg" alt="MAIZE OFFAL">
+    <img src="images/WHEAT_OFFAL.jpg" alt="WHEAT OFFAL">
+    <!-- add more images as needed -->
+  </div>
+  <div class="hero-content">
+    <h1>Premium Livestock Feed & Raw Materials</h1>
+    <p>Quality Guaranteed, Nationwide Delivery & Consultancy Services</p>
+    <div class="cta">
+      <button class="view-products" onclick="document.getElementById('raw-materials').scrollIntoView({behavior:'smooth'});">View Products</button>
+      <button class="contact-us" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Contact Us</button>
+      <button class="consultancy" onclick="window.location.href='consultancy.html';">Consultancy</button>
+    </div>
+  </div>
 </section>
 
-<input type="text" id="search-bar" placeholder="🔍 Search raw materials..." onkeyup="searchProducts()">
-
-<div id="floating-cart" onclick="openCart()">🛒 Cart (<span id="cart-count">0</span>)</div>
-
+<!-- RAW MATERIALS -->
 <section id="raw-materials">
 <h2>Raw Materials</h2>
 <div class="container" id="raw-materials-container"></div>
 </section>
 
+<!-- ABOUT US -->
 <section id="about" class="about">
 <h2>About Us</h2>
 <p><strong>REG. NO. 6899712</strong></p>
@@ -118,6 +137,7 @@ button{padding:8px 12px;margin-top:6px;border:none;border-radius:20px;cursor:poi
 </ul>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
 <h2>Contact Us</h2>
 <p style="text-align:center;">
@@ -127,18 +147,20 @@ button{padding:8px 12px;margin-top:6px;border:none;border-radius:20px;cursor:poi
 </p>
 </section>
 
-<!-- Cart Modal -->
+<!-- CART MODAL -->
 <div id="cart-modal">
 <div class="cart-content">
 <h3>Your Cart</h3>
 <div id="cart-items"></div>
-<button onclick="sendCartOrder()" style="background:#25D366;color:white;width:100%;padding:10px;border:none;border-radius:5px;">Proceed to Order on WhatsApp</button>
+<button onclick="sendCartOrder()" style="background:#25D366;color:white;width:100%;padding:10px;border:none;border-radius:5px;">
+Proceed to Order on WhatsApp
+</button>
 <button onclick="closeCart()" style="background:red;color:white;width:100%;padding:8px;margin-top:10px;border:none;border-radius:5px;">Close</button>
 </div>
 </div>
 
 <script>
-// Products
+// RAW MATERIALS
 const products=[
 {name:"MAIZE", price:"₦320/kg"},
 {name:"SOYA_MEAL", price:"₦750/kg"},
@@ -150,7 +172,7 @@ const products=[
 {name:"WHEAT_OFFAL", price:"₦350/kg"},
 {name:"LIMESTONE", price:"₦60/kg"},
 {name:"BONE_MEAL", price:"₦250/kg"},
-{name:"BLOOD_MEAL", price:"₦700/kg"},
+{name:"BLOOD_MEAL", price:"₦700/bag"},
 {name:"METHIONINE", price:"₦125,000/bag"},
 {name:"LYSINE", price:"₦80,000/bag"},
 {name:"FISH_MEAL", price:"₦150,000/bag"},
@@ -168,10 +190,7 @@ const products=[
 ];
 
 const container=document.getElementById("raw-materials-container");
-
-function displayProducts(list){
-container.innerHTML="";
-list.forEach(item=>{
+products.forEach(item=>{
 container.innerHTML+=`
 <div class="card">
 <img src="images/${item.name}.jpg" alt="${item.name}">
@@ -181,22 +200,15 @@ container.innerHTML+=`
 <button class="cart-btn" onclick="addToCart('${item.name.replace(/_/g,' ')}')">Add to Cart</button>
 </div>`;
 });
-}
-displayProducts(products);
 
-function searchProducts(){
-let query=document.getElementById("search-bar").value.toLowerCase();
-let filtered=products.filter(p=>p.name.replace(/_/g,' ').toLowerCase().includes(query));
-displayProducts(filtered);
-}
-
-// Cart
+// CART
 let cart=[];
 function updateCartCounter(){document.getElementById("cart-count").innerText=cart.length;}
 function addToCart(item){cart.push(item);updateCartCounter();}
 function removeFromCart(index){cart.splice(index,1);updateCartCounter();openCart();}
 function openCart(){
-const div=document.getElementById("cart-items"); div.innerHTML="";
+const div=document.getElementById("cart-items");
+div.innerHTML="";
 if(cart.length===0){div.innerHTML="<p>Your cart is empty.</p>";}
 else{
 cart.forEach((item,index)=>{
@@ -208,7 +220,7 @@ document.getElementById("cart-modal").style.display="flex";
 }
 function closeCart(){document.getElementById("cart-modal").style.display="none";}
 function sendCartOrder(){
-if(cart.length===0){alert("Cart is empty"); return;}
+if(cart.length===0){alert("Cart is empty");return;}
 let msg="Hello JT Essentials Limited, I want to order these items: "+cart.join(", ");
 window.open("https://wa.me/2347065498338?text="+encodeURIComponent(msg));
 }
