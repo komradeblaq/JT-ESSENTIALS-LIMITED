@@ -177,22 +177,16 @@ line-height:1.6;
 🛒 Cart (<span id="cart-count">0</span>)
 </div>
 
-<!-- RAW MATERIALS -->
 <section id="raw-materials">
 <h2>Raw Materials</h2>
 <div class="container" id="raw-materials-container"></div>
 </section>
 
-<!-- ABOUT US -->
 <section id="about" class="about">
 <h2>About Us</h2>
-
 <p><strong>REG. NO. 6899712</strong></p>
-
 <p><strong>JT ESSENTIALS LIMITED – Consistency in Quality Delivery</strong></p>
-
 <p><strong>Our Vision:</strong> To be the leading provider of high-quality grains and livestock feed raw materials supplies and services, while educating livestock producers about nutritional requirements.</p>
-
 <p><strong>WHY CHOOSE JT ESSENTIALS:</strong></p>
 <ul>
 <li>Quality & Safety of your livestock</li>
@@ -202,18 +196,15 @@ line-height:1.6;
 <li>Digestive support for improved nutrient utilization</li>
 <li>Cost efficiency by preventing illness through proper diets</li>
 </ul>
-
-<p><strong>Establishment:</strong> JT Essentials Limited is a well-established company with proven track records of undertaking Agro-Business services and operations across Abuja FCT, South West, South East Regions, with nationwide customer base.</p>
-
+<p><strong>Establishment:</strong> JT Essentials Limited operates across Abuja FCT, South West, South East Regions, with nationwide customer base.</p>
 <p><strong>Our Mission:</strong></p>
 <ul>
 <li>Deliver reliable and cost-effective solutions for livestock farmers</li>
-<li>Provide high-quality grains, feed raw materials, additives and secure storage solutions</li>
+<li>Provide high-quality grains, feed raw materials, additives and storage solutions</li>
 <li>Maintain exceptional customer service and sustainable practices</li>
 </ul>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
 <h2>Contact Us</h2>
 <p style="text-align:center;">
@@ -225,7 +216,6 @@ Chat on WhatsApp
 </p>
 </section>
 
-<!-- CART MODAL -->
 <div id="cart-modal">
 <div class="cart-content">
 <h3>Your Cart</h3>
@@ -244,7 +234,6 @@ Close
 
 <script>
 
-// FULL PRODUCTS LIST
 const products=[
 {name:"MAIZE", price:"₦320/kg"},
 {name:"SOYA_MEAL", price:"₦750/kg"},
@@ -268,7 +257,8 @@ const products=[
 {name:"SALT", price:"₦20,000/bag"},
 {name:"PREMIX", price:"₦3,500 / 2.5kg"},
 {name:"BREAD", price:"₦280/kg"},
-{name:"VITAMIN_C", price:"₦5,500"}
+{name:"VITAMIN_C", price:"₦5,500"},
+{name:"CASSAVA", price:"₦800/kg"}
 ];
 
 const container=document.getElementById("raw-materials-container");
@@ -284,7 +274,6 @@ container.innerHTML+=`
 </div>`;
 });
 
-// CART SYSTEM
 let cart=[];
 
 function updateCartCounter(){
@@ -305,20 +294,14 @@ openCart();
 function openCart(){
 const div=document.getElementById("cart-items");
 div.innerHTML="";
-
 if(cart.length===0){
 div.innerHTML="<p>Your cart is empty.</p>";
 }else{
 cart.forEach((item,index)=>{
-div.innerHTML+=`
-${index+1}. ${item}
-<button style="background:red;color:white;padding:3px 6px;border:none;border-radius:3px;font-size:10px;cursor:pointer;"
-onclick="removeFromCart(${index})">
-Remove
-</button><br><br>`;
+div.innerHTML+=`${index+1}. ${item}
+<button style="background:red;color:white;padding:3px 6px;border:none;border-radius:3px;font-size:10px;cursor:pointer;" onclick="removeFromCart(${index})">Remove</button><br><br>`;
 });
 }
-
 document.getElementById("cart-modal").style.display="flex";
 }
 
@@ -327,11 +310,7 @@ document.getElementById("cart-modal").style.display="none";
 }
 
 function sendCartOrder(){
-if(cart.length===0){
-alert("Cart is empty");
-return;
-}
-
+if(cart.length===0){alert("Cart is empty");return;}
 let msg="Hello JT Essentials Limited, I want to order these items: "+cart.join(", ");
 window.open("https://wa.me/2347065498338?text="+encodeURIComponent(msg));
 }
