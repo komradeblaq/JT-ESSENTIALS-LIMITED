@@ -24,13 +24,13 @@ header h1{font-size:20px;margin:0;font-family:'Poppins',sans-serif;font-weight:7
 /* NAV */
 nav{background:#ff6600;display:flex;justify-content:center;gap:15px;padding:8px;position:sticky;top:70px;z-index:99;flex-wrap:wrap;}
 nav a{color:white;text-decoration:none;font-weight:bold;font-size:14px;padding:6px 12px;border-radius:20px;transition:0.3s;border:1px solid #ff6600;}
-nav a:hover{background:white;color:#ff6600;}
+nav a:hover, nav a.active{background:white;color:#ff6600;}
 
 /* UPDATE BAR */
 .updated{text-align:center;background:#28a745;color:white;padding:8px;font-size:14px;font-weight:bold;}
 
 /* HERO SECTION */
-.hero{position:relative;height:280px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;margin-bottom:15px;font-family:'Poppins',sans-serif;}
+.hero{position:relative;height:300px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;margin-bottom:20px;font-family:'Poppins',sans-serif;}
 .hero-slideshow{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;overflow:hidden;}
 .hero-slideshow img{width:100%;height:100%;object-fit:cover;position:absolute;opacity:0;animation:fadeSlide 16s infinite;}
 .hero-slideshow img:nth-child(1){animation-delay:0s;}
@@ -42,8 +42,9 @@ nav a:hover{background:white;color:#ff6600;}
 .grass{width:200%;height:100%;background:url('images/grass_cattle.png') repeat-x bottom;animation:moveGrass 25s linear infinite;}
 .hero-content{position:relative;z-index:3;color:white;padding:0 15px;}
 .hero-content h1{font-size:26px;margin-bottom:10px;text-shadow:2px 2px 5px rgba(0,0,0,0.7);}
-.hero-content p{font-size:14px;margin-bottom:15px;text-shadow:1px 1px 3px rgba(0,0,0,0.6);}
-.hero-content .cta button{margin:5px;cursor:pointer;font-weight:bold;padding:8px 20px;border-radius:25px;font-size:13px;transition:0.3s;}
+.hero-content p{font-size:14px;margin-bottom:20px;text-shadow:1px 1px 3px rgba(0,0,0,0.6);}
+.hero-content .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.hero-content .cta button{cursor:pointer;font-weight:bold;padding:10px 20px;border-radius:25px;font-size:14px;transition:0.3s;flex:1;min-width:120px;text-align:center;}
 .view-products{background:#28D366;color:white;border:1px solid #25D366;}
 .view-products:hover{transform:scale(1.05);box-shadow:0 0 10px #28D366;}
 .contact-us{background:#007bff;color:white;border:1px solid #007bff;}
@@ -86,6 +87,7 @@ nav{flex-direction:row;justify-content:space-around;gap:5px;padding:6px;}
 .hero{height:220px;}
 .hero-content h1{font-size:20px;}
 .hero-content p{font-size:13px;}
+.hero-content .cta{flex-direction:column;gap:10px;}
 .search-container input[type=text]{width:100%;margin-top:5px;}
 }
 </style>
@@ -214,7 +216,7 @@ const products=[
 {name:"TOXIN_BLINDER", price:"₦55,000/bag"},
 {name:"DCP", price:"₦55,000/bag"},
 {name:"SALT", price:"₦20,000/bag"},
-{name:"PREMIX", price:"₦3,500 / 2.5kg"},
+{name:"PREMIX", price:"₃,500 / 2.5kg"},
 {name:"BREAD", price:"₦280/kg"},
 {name:"VITAMIN_C", price:"₦5,500"},
 {name:"CASSAVA", price:"₦800/kg"}
