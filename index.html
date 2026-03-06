@@ -4,40 +4,49 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JT ESSENTIALS LIMITED</title>
+
 <style>
 /* GENERAL STYLES */
-body{margin:0;font-family:Arial,sans-serif;background:#f4f6f9;scroll-behavior:smooth;}
-header{background:#1f2d3d;color:white;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;flex-wrap:wrap;}
+body{margin:0;font-family:Arial, sans-serif;background:#f4f6f9;scroll-behavior:smooth;}
+header{background:#1f2d3d;color:white;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
 header img{height:50px;}
 header h1{font-size:20px;margin:0;}
-.search-container{margin-top:5px;width:100%;}
-.search-container input[type=text]{padding:6px 12px;border-radius:25px;border:none;width:100%;max-width:250px;}
-
-/* NAV */
-nav{background:#ff6600;display:flex;justify-content:center;gap:10px;padding:8px;position:sticky;top:90px;z-index:99;flex-wrap:wrap;}
+.search-container{position:relative;}
+.search-container input[type=text]{padding:5px 10px;border-radius:20px;border:none;width:150px;}
+nav{background:#ff6600;display:flex;justify-content:center;gap:15px;padding:8px;position:sticky;top:70px;z-index:99;flex-wrap:wrap;}
 nav a{color:white;text-decoration:none;font-weight:bold;font-size:14px;padding:6px 12px;border-radius:20px;transition:0.3s;border:1px solid #ff6600;}
-nav a:hover, nav a.active{background:white;color:#ff6600;}
-
-/* UPDATE BANNER */
+nav a:hover{background:white;color:#ff6600;}
 .updated{text-align:center;background:#28a745;color:white;padding:8px;font-size:14px;font-weight:bold;}
 
 /* HERO SECTION */
 .hero{position:relative;height:300px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;margin-bottom:15px;}
-.hero video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;}
-.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,50,0,0.5);z-index:2;}
+.hero-slideshow{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;overflow:hidden;}
+.hero-slideshow img{width:100%;height:100%;object-fit:cover;position:absolute;opacity:0;animation:fadeSlide 12s infinite;}
+.hero-slideshow img:nth-child(1){animation-delay:0s;}
+.hero-slideshow img:nth-child(2){animation-delay:4s;}
+.hero-slideshow img:nth-child(3){animation-delay:8s;}
+.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,50,0,0.4);z-index:2;} /* darker overlay for readability */
 .hero-content{position:relative;z-index:3;color:white;padding:0 15px;}
 .hero-content h1{font-size:24px;margin-bottom:10px;text-shadow:2px 2px 5px rgba(0,0,0,0.6);}
-.hero-content p{font-size:15px;margin-bottom:15px;text-shadow:1px 1px 3px rgba(0,0,0,0.5);}
-.hero-content .cta{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
-.hero-content .cta button{cursor:pointer;font-weight:bold;padding:8px 20px;border-radius:25px;font-size:13px;transition:0.3s;min-width:120px;}
+.hero-content p{font-size:14px;margin-bottom:15px;text-shadow:1px 1px 3px rgba(0,0,0,0.5);}
+.hero-content .cta button{margin:5px;cursor:pointer;font-weight:bold;padding:8px 18px;border-radius:25px;font-size:13px;}
 .view-products{background:#28D366;color:white;border:1px solid #25D366;}
 .contact-us{background:#007bff;color:white;border:1px solid #007bff;}
 .consultancy{background:#ff6600;color:white;border:1px solid #ff6600;}
 
-/* GRASS ANIMATION */
+/* LIVE GRASS ANIMATION */
 .grass-container{position:absolute;bottom:0;width:100%;height:50px;overflow:hidden;z-index:1;}
 .grass{width:200%;height:100%;background:url('images/grass_cattle.png') repeat-x bottom;animation:moveGrass 20s linear infinite;}
 @keyframes moveGrass{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* HERO SLIDE ANIMATION */
+@keyframes fadeSlide{
+  0%{opacity:0;transform:translateX(100%);}
+  8%{opacity:1;transform:translateX(0);}
+  33%{opacity:1;transform:translateX(0);}
+  41%{opacity:0;transform:translateX(-100%);}
+  100%{opacity:0;transform:translateX(-100%);}
+}
 
 /* RAW MATERIALS & CARDS */
 section{padding:20px 15px;}
@@ -53,63 +62,68 @@ button{padding:6px 10px;margin-top:5px;border:none;border-radius:20px;cursor:poi
 #floating-cart{position:fixed;bottom:20px;right:20px;background:#007bff;color:white;padding:12px 18px;border-radius:30px;cursor:pointer;font-weight:bold;z-index:999;}
 #cart-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);display:none;justify-content:center;align-items:center;z-index:1000;}
 .cart-content{background:white;width:90%;max-width:400px;padding:20px;border-radius:10px;max-height:80%;overflow-y:auto;}
-
-/* ABOUT US */
 .about p,.about ul{margin-bottom:10px;line-height:1.6;}
 
-/* FOOTER */
-footer{background:#1f2d3d;color:white;text-align:center;padding:15px;margin-top:30px;font-size:13px;}
-
-/* MOBILE */
+/* MOBILE FRIENDLY */
 @media(max-width:768px){
 header{flex-direction:column;align-items:flex-start;}
 header h1{font-size:16px;margin-bottom:5px;}
+nav{flex-direction:row;justify-content:space-around;gap:5px;padding:6px;}
 .hero{height:250px;}
 .hero-content h1{font-size:20px;}
 .hero-content p{font-size:13px;}
-.hero-content .cta{flex-direction:column;}
 .search-container input[type=text]{width:100%;margin-top:5px;}
-nav{flex-direction:row;justify-content:space-around;gap:5px;padding:6px;}
 }
 </style>
 </head>
 <body>
 
 <header>
+<div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
 <img src="images/LOGO.jpg" alt="JT ESSENTIALS LIMITED">
 <h1>JT ESSENTIALS LIMITED</h1>
 <div class="search-container">
 <input type="text" placeholder="Search Products..." id="search-input" onkeyup="searchProducts()">
+</div>
 </div>
 </header>
 
 <nav>
 <a href="#raw-materials">Raw Materials</a>
 <a href="#about">About Us</a>
-<a href="consultancy.html" class="active">Consultancy</a>
+<a href="consultancy.html">Consultancy</a>
 <a href="#contact">Contact</a>
 </nav>
 
 <div class="updated">Prices Updated Today ✔</div>
 
-<div id="floating-cart" onclick="openCart()">🛒 Cart (<span id="cart-count">0</span>)</div>
+<div id="floating-cart" onclick="openCart()">
+🛒 Cart (<span id="cart-count">0</span>)
+</div>
 
-<!-- HERO -->
+<!-- HERO SECTION -->
 <section class="hero">
-<video autoplay muted loop playsinline>
-<source src="videos/farm.mp4" type="video/mp4">
-</video>
-<div class="hero-overlay"></div>
-<div class="grass-container"><div class="grass"></div></div>
-<div class="hero-content">
-<h1>Premium Livestock Feed & Raw Materials</h1>
-<p>Quality Guaranteed, Nationwide Delivery & Consultancy Services</p>
-<div class="cta">
-<button class="view-products" onclick="document.getElementById('raw-materials').scrollIntoView({behavior:'smooth'});">View Products</button>
-<button class="contact-us" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Contact Us</button>
-<button class="consultancy" onclick="window.location.href='consultancy.html';">Consultancy</button>
-</div>
-</div>
+  <div class="hero-slideshow">
+    <img src="images/MAIZE.jpg" alt="MAIZE">
+    <img src="images/SOYA_MEAL.jpg" alt="SOYA MEAL">
+    <img src="images/SOYA_CAKE.jpg" alt="SOYA CAKE">
+    <img src="images/GROUDNUT_CAKE.jpg" alt="GROUNDNUT CAKE">
+    <img src="images/RICE_BRAN.jpg" alt="RICE BRAN">
+    <img src="images/PALM_KERNEL_CAKE.jpg" alt="PALM KERNEL CAKE">
+    <img src="images/MAIZE_OFFAL.jpg" alt="MAIZE OFFAL">
+    <img src="images/WHEAT_OFFAL.jpg" alt="WHEAT OFFAL">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="grass-container"><div class="grass"></div></div>
+  <div class="hero-content">
+    <h1>Premium Livestock Feed & Raw Materials</h1>
+    <p>Quality Guaranteed, Nationwide Delivery & Consultancy Services</p>
+    <div class="cta">
+      <button class="view-products" onclick="document.getElementById('raw-materials').scrollIntoView({behavior:'smooth'});">View Products</button>
+      <button class="contact-us" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Contact Us</button>
+      <button class="consultancy" onclick="window.location.href='consultancy.html';">Consultancy</button>
+    </div>
+  </div>
 </section>
 
 <!-- RAW MATERIALS -->
@@ -157,7 +171,9 @@ nav{flex-direction:row;justify-content:space-around;gap:5px;padding:6px;}
 <div class="cart-content">
 <h3>Your Cart</h3>
 <div id="cart-items"></div>
-<button onclick="sendCartOrder()" style="background:#25D366;color:white;width:100%;padding:10px;border:none;border-radius:5px;">Proceed to Order on WhatsApp</button>
+<button onclick="sendCartOrder()" style="background:#25D366;color:white;width:100%;padding:10px;border:none;border-radius:5px;">
+Proceed to Order on WhatsApp
+</button>
 <button onclick="closeCart()" style="background:red;color:white;width:100%;padding:8px;margin-top:10px;border:none;border-radius:5px;">Close</button>
 </div>
 </div>
@@ -243,8 +259,6 @@ else{card.style.display='none';}
 });
 }
 </script>
-<footer>
-JT ESSENTIALS LIMITED • Professional Livestock Consultancy
-</footer>
+
 </body>
 </html>
