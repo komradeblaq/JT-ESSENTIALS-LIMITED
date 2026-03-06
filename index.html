@@ -4,12 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JT ESSENTIALS LIMITED</title>
-
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
-
 <style>
-/* GENERAL STYLES */
 body{margin:0;font-family:'Roboto',sans-serif;background:#f4f6f9;scroll-behavior:smooth;}
 *{box-sizing:border-box;}
 
@@ -17,7 +13,7 @@ body{margin:0;font-family:'Roboto',sans-serif;background:#f4f6f9;scroll-behavior
 header{background:#1f2d3d;color:white;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;flex-wrap:wrap;}
 header img{height:50px;}
 header h1{font-size:20px;margin:0;font-family:'Poppins',sans-serif;font-weight:700;}
-.search-container{position:relative;margin-top:5px;}
+.search-container{margin-top:5px;}
 .search-container input[type=text]{padding:6px 12px;border-radius:25px;border:none;width:180px;transition:0.3s;}
 .search-container input[type=text]:focus{outline:none;box-shadow:0 0 5px rgba(0,0,0,0.3);}
 
@@ -31,18 +27,11 @@ nav a:hover, nav a.active{background:white;color:#ff6600;}
 
 /* HERO SECTION */
 .hero{position:relative;height:300px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;margin-bottom:20px;font-family:'Poppins',sans-serif;}
-.hero-slideshow{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;overflow:hidden;}
-.hero-slideshow img{width:100%;height:100%;object-fit:cover;position:absolute;opacity:0;animation:fadeSlide 16s infinite;}
-.hero-slideshow img:nth-child(1){animation-delay:0s;}
-.hero-slideshow img:nth-child(2){animation-delay:4s;}
-.hero-slideshow img:nth-child(3){animation-delay:8s;}
-.hero-slideshow img:nth-child(4){animation-delay:12s;}
-.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,50,0,0.45);z-index:2;}
-.grass-container{position:absolute;bottom:0;width:100%;height:60px;overflow:hidden;z-index:1;}
-.grass{width:200%;height:100%;background:url('images/grass_cattle.png') repeat-x bottom;animation:moveGrass 25s linear infinite;}
+.hero video{width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;z-index:1;}
+.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.45);z-index:2;}
 .hero-content{position:relative;z-index:3;color:white;padding:0 15px;}
 .hero-content h1{font-size:26px;margin-bottom:10px;text-shadow:2px 2px 5px rgba(0,0,0,0.7);}
-.hero-content p{font-size:14px;margin-bottom:20px;text-shadow:1px 1px 3px rgba(0,0,0,0.6);}
+.hero-content p{font-size:15px;margin-bottom:20px;text-shadow:1px 1px 3px rgba(0,0,0,0.6);}
 .hero-content .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
 .hero-content .cta button{cursor:pointer;font-weight:bold;padding:10px 20px;border-radius:25px;font-size:14px;transition:0.3s;flex:1;min-width:120px;text-align:center;}
 .view-products{background:#28D366;color:white;border:1px solid #25D366;}
@@ -51,6 +40,11 @@ nav a:hover, nav a.active{background:white;color:#ff6600;}
 .contact-us:hover{transform:scale(1.05);box-shadow:0 0 10px #007bff;}
 .consultancy{background:#ff6600;color:white;border:1px solid #ff6600;}
 .consultancy:hover{transform:scale(1.05);box-shadow:0 0 10px #ff6600;}
+
+/* GRASS ANIMATION */
+.grass-container{position:absolute;bottom:0;width:100%;height:60px;overflow:hidden;z-index:1;}
+.grass{width:200%;height:100%;background:url('images/grass_cattle.png') repeat-x bottom;animation:moveGrass 25s linear infinite;}
+@keyframes moveGrass{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
 /* RAW MATERIALS & CARDS */
 section{padding:20px 15px;}
@@ -68,18 +62,7 @@ button{padding:6px 10px;margin-top:5px;border:none;border-radius:20px;cursor:poi
 .cart-content{background:white;width:90%;max-width:400px;padding:20px;border-radius:10px;max-height:80%;overflow-y:auto;}
 .about p,.about ul{margin-bottom:10px;line-height:1.6;}
 
-/* GRASS ANIMATION */
-@keyframes moveGrass{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-/* HERO SLIDESHOW */
-@keyframes fadeSlide{
-  0%{opacity:0;transform:translateX(100%);}
-  8%{opacity:1;transform:translateX(0);}
-  33%{opacity:1;transform:translateX(0);}
-  41%{opacity:0;transform:translateX(-100%);}
-  100%{opacity:0;transform:translateX(-100%);}
-}
-
-/* MOBILE FRIENDLY */
+/* MOBILE */
 @media(max-width:768px){
 header{flex-direction:column;align-items:flex-start;}
 header h1{font-size:18px;margin-bottom:5px;}
@@ -119,16 +102,9 @@ nav{flex-direction:row;justify-content:space-around;gap:5px;padding:6px;}
 
 <!-- HERO SECTION -->
 <section class="hero">
-  <div class="hero-slideshow">
-    <img src="images/MAIZE.jpg" alt="MAIZE">
-    <img src="images/SOYA_MEAL.jpg" alt="SOYA MEAL">
-    <img src="images/SOYA_CAKE.jpg" alt="SOYA CAKE">
-    <img src="images/GROUDNUT_CAKE.jpg" alt="GROUNDNUT CAKE">
-    <img src="images/RICE_BRAN.jpg" alt="RICE BRAN">
-    <img src="images/PALM_KERNEL_CAKE.jpg" alt="PALM KERNEL CAKE">
-    <img src="images/MAIZE_OFFAL.jpg" alt="MAIZE OFFAL">
-    <img src="images/WHEAT_OFFAL.jpg" alt="WHEAT OFFAL">
-  </div>
+  <video autoplay muted loop playsinline>
+    <source src="videos/farm.mp4" type="video/mp4">
+  </video>
   <div class="hero-overlay"></div>
   <div class="grass-container"><div class="grass"></div></div>
   <div class="hero-content">
@@ -240,37 +216,22 @@ function updateCartCounter(){document.getElementById("cart-count").innerText=car
 function addToCart(item){cart.push(item);updateCartCounter();}
 function removeFromCart(index){cart.splice(index,1);updateCartCounter();openCart();}
 function openCart(){
-const div=document.getElementById("cart-items");
-div.innerHTML="";
+const div=document.getElementById("cart-items");div.innerHTML="";
 if(cart.length===0){div.innerHTML="<p>Your cart is empty.</p>";}
-else{
-cart.forEach((item,index)=>{
-div.innerHTML+=`${index+1}. ${item}
-<button style="background:red;color:white;padding:3px 6px;border:none;border-radius:3px;font-size:10px;cursor:pointer;" onclick="removeFromCart(${index})">Remove</button><br><br>`;
-});
-}
-document.getElementById("cart-modal").style.display="flex";
-}
+else{cart.forEach((item,index)=>{div.innerHTML+=`${index+1}. ${item}
+<button style="background:red;color:white;padding:3px 6px;border:none;border-radius:3px;font-size:10px;cursor:pointer;" onclick="removeFromCart(${index})">Remove</button><br><br>`;});}
+document.getElementById("cart-modal").style.display="flex";}
 function closeCart(){document.getElementById("cart-modal").style.display="none";}
-function sendCartOrder(){
-if(cart.length===0){alert("Cart is empty");return;}
+function sendCartOrder(){if(cart.length===0){alert("Cart is empty");return;}
 let msg="Hello JT Essentials Limited, I want to order these items: "+cart.join(", ");
-window.open("https://wa.me/2347065498338?text="+encodeURIComponent(msg));
-}
-function orderNow(item){
-let msg="Hello JT Essentials Limited, I want to order this item: "+item;
-window.open("https://wa.me/2347065498338?text="+encodeURIComponent(msg));
-}
+window.open("https://wa.me/2347065498338?text="+encodeURIComponent(msg));}
+function orderNow(item){let msg="Hello JT Essentials Limited, I want to order this item: "+item;
+window.open("https://wa.me/2347065498338?text="+encodeURIComponent(msg));}
 
 // SEARCH FUNCTION
-function searchProducts(){
-let input=document.getElementById('search-input').value.toLowerCase();
+function searchProducts(){let input=document.getElementById('search-input').value.toLowerCase();
 let cards=document.querySelectorAll('#raw-materials-container .card');
-cards.forEach(card=>{
-let name=card.querySelector('h4').innerText.toLowerCase();
-card.style.display=name.includes(input)?'block':'none';
-});
-}
+cards.forEach(card=>{let name=card.querySelector('h4').innerText.toLowerCase();card.style.display=name.includes(input)?'block':'none';});}
 </script>
 
 </body>
