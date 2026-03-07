@@ -7,29 +7,133 @@
 
 <style>
 body{margin:0;font-family:Arial, sans-serif;background:#f4f6f9;scroll-behavior:smooth;}
-header{background:#1f2d3d;color:white;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+
+header{
+background:#1f2d3d;
+color:white;
+padding:12px 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+position:sticky;
+top:0;
+z-index:100;
+}
+
 header img{height:50px;}
 header h1{font-size:20px;margin:0;}
-.search-container input[type=text]{padding:5px 10px;border-radius:20px;border:none;width:150px;}
 
-nav{background:#ff6600;display:flex;justify-content:center;gap:15px;padding:8px;position:sticky;top:70px;z-index:99;flex-wrap:wrap;}
-nav a{color:white;text-decoration:none;font-weight:bold;font-size:14px;padding:6px 12px;border-radius:20px;transition:0.3s;border:1px solid #ff6600;}
-nav a:hover{background:white;color:#ff6600;}
+.search-container input{
+padding:6px 12px;
+border-radius:20px;
+border:none;
+width:180px;
+}
 
-.updated{text-align:center;background:#28a745;color:white;padding:8px;font-size:14px;font-weight:bold;}
+/* NAV */
 
-.hero{position:relative;height:300px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;margin-bottom:15px;}
-.hero-slideshow{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;overflow:hidden;}
-.hero-slideshow img{width:100%;height:100%;object-fit:cover;position:absolute;opacity:0;animation:fadeSlide 12s infinite;}
+nav{
+background:#ff6600;
+display:flex;
+justify-content:center;
+gap:15px;
+padding:8px;
+position:sticky;
+top:70px;
+z-index:99;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+font-size:14px;
+padding:6px 12px;
+border-radius:20px;
+border:1px solid #ff6600;
+}
+
+nav a:hover{
+background:white;
+color:#ff6600;
+}
+
+/* UPDATED BAR */
+
+.updated{
+text-align:center;
+background:#28a745;
+color:white;
+padding:8px;
+font-size:14px;
+font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+position:relative;
+height:300px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+overflow:hidden;
+margin-bottom:15px;
+}
+
+.hero-slideshow{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:1;
+}
+
+.hero-slideshow img{
+width:100%;
+height:100%;
+object-fit:cover;
+position:absolute;
+opacity:0;
+animation:fadeSlide 12s infinite;
+}
+
 .hero-slideshow img:nth-child(1){animation-delay:0s;}
 .hero-slideshow img:nth-child(2){animation-delay:4s;}
 .hero-slideshow img:nth-child(3){animation-delay:8s;}
 
-.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,50,0,0.4);z-index:2;}
+.hero-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,50,0,0.4);
+z-index:2;
+}
 
-.hero-content{position:relative;z-index:3;color:white;padding:0 15px;}
-.hero-content h1{font-size:24px;margin-bottom:10px;text-shadow:2px 2px 5px rgba(0,0,0,0.6);}
-.hero-content p{font-size:14px;margin-bottom:15px;text-shadow:1px 1px 3px rgba(0,0,0,0.5);}
+.hero-content{
+position:relative;
+z-index:3;
+color:white;
+padding:0 15px;
+}
+
+.hero-content h1{
+font-size:24px;
+margin-bottom:10px;
+text-shadow:2px 2px 5px rgba(0,0,0,0.6);
+}
+
+.hero-content p{
+font-size:14px;
+margin-bottom:15px;
+text-shadow:1px 1px 3px rgba(0,0,0,0.5);
+}
 
 .hero-content .cta button{
 margin:5px;
@@ -44,8 +148,23 @@ font-size:13px;
 .contact-us{background:#007bff;color:white;border:1px solid #007bff;}
 .consultancy{background:#ff6600;color:white;border:1px solid #ff6600;}
 
-.grass-container{position:absolute;bottom:0;width:100%;height:50px;overflow:hidden;z-index:1;}
-.grass{width:200%;height:100%;background:url('images/grass_cattle.png') repeat-x bottom;animation:moveGrass 20s linear infinite;}
+/* GRASS */
+
+.grass-container{
+position:absolute;
+bottom:0;
+width:100%;
+height:50px;
+overflow:hidden;
+z-index:1;
+}
+
+.grass{
+width:200%;
+height:100%;
+background:url('images/grass_cattle.png') repeat-x bottom;
+animation:moveGrass 20s linear infinite;
+}
 
 @keyframes moveGrass{
 0%{transform:translateX(0);}
@@ -55,10 +174,12 @@ font-size:13px;
 @keyframes fadeSlide{
 0%{opacity:0;transform:translateX(100%);}
 8%{opacity:1;transform:translateX(0);}
-33%{opacity:1;transform:translateX(0);}
+33%{opacity:1;}
 41%{opacity:0;transform:translateX(-100%);}
-100%{opacity:0;transform:translateX(-100%);}
+100%{opacity:0;}
 }
+
+/* PRODUCTS */
 
 section{padding:20px 15px;}
 
@@ -93,7 +214,6 @@ border-radius:6px;
 color:#e60000;
 font-weight:bold;
 margin:6px 0;
-font-size:14px;
 }
 
 button{
@@ -106,6 +226,8 @@ font-weight:bold;
 font-size:12px;
 width:100%;
 }
+
+/* CART */
 
 #floating-cart{
 position:fixed;
@@ -144,12 +266,18 @@ overflow-y:auto;
 }
 
 @media(max-width:768px){
+
 header{flex-direction:column;align-items:flex-start;}
 header h1{font-size:16px;margin-bottom:5px;}
-nav{flex-direction:row;justify-content:space-around;gap:5px;padding:6px;}
+
+nav{flex-direction:row;justify-content:space-around;}
+
 .hero{height:250px;}
+
 .hero-content h1{font-size:20px;}
-.hero-content p{font-size:13px;}
+
+.search-container input{width:100%;margin-top:5px;}
+
 }
 </style>
 </head>
@@ -157,12 +285,15 @@ nav{flex-direction:row;justify-content:space-around;gap:5px;padding:6px;}
 <body>
 
 <header>
+
 <img src="images/LOGO.jpg">
+
 <h1>JT ESSENTIALS LIMITED</h1>
 
 <div class="search-container">
 <input type="text" placeholder="Search Products..." id="search-input" onkeyup="searchProducts()">
 </div>
+
 </header>
 
 <nav>
@@ -178,9 +309,50 @@ nav{flex-direction:row;justify-content:space-around;gap:5px;padding:6px;}
 🛒 Cart (<span id="cart-count">0</span>)
 </div>
 
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-slideshow">
+
+<img src="images/MAIZE.jpg">
+<img src="images/SOYA_MEAL.jpg">
+<img src="images/SOYA_CAKE.jpg">
+
+</div>
+
+<div class="hero-overlay"></div>
+
+<div class="grass-container">
+<div class="grass"></div>
+</div>
+
+<div class="hero-content">
+
+<h1>Premium Livestock Feed & Raw Materials</h1>
+
+<p>Quality Guaranteed, Nationwide Delivery & Consultancy Services</p>
+
+<div class="cta">
+
+<button class="view-products" onclick="document.getElementById('raw-materials').scrollIntoView({behavior:'smooth'});">View Products</button>
+
+<button class="contact-us" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Contact Us</button>
+
+<button class="consultancy" onclick="window.location.href='consultancy.html';">Consultancy</button>
+
+</div>
+
+</div>
+
+</section>
+
 <section id="raw-materials">
+
 <h2>Raw Materials</h2>
+
 <div class="container" id="raw-materials-container"></div>
+
 </section>
 
 <script>
@@ -220,11 +392,12 @@ const products=[
 const container=document.getElementById("raw-materials-container");
 
 products.forEach(item=>{
+
 container.innerHTML+=`
 
 <div class="card">
 
-<img src="images/${item.image ? item.image : item.name + '.jpg'}" alt="${item.name}">
+<img src="images/${item.image ? item.image : item.name + '.jpg'}">
 
 <h4>${item.name.replace(/_/g,' ')}</h4>
 
@@ -237,6 +410,7 @@ container.innerHTML+=`
 </div>
 
 `;
+
 });
 
 </script>
