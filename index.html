@@ -6,65 +6,143 @@
 <title>JT ESSENTIALS LIMITED</title>
 
 <style>
-/* GENERAL STYLES */
 body{margin:0;font-family:Arial, sans-serif;background:#f4f6f9;scroll-behavior:smooth;}
 header{background:#1f2d3d;color:white;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
 header img{height:50px;}
 header h1{font-size:20px;margin:0;}
-.search-container{position:relative;}
 .search-container input[type=text]{padding:5px 10px;border-radius:20px;border:none;width:150px;}
+
 nav{background:#ff6600;display:flex;justify-content:center;gap:15px;padding:8px;position:sticky;top:70px;z-index:99;flex-wrap:wrap;}
 nav a{color:white;text-decoration:none;font-weight:bold;font-size:14px;padding:6px 12px;border-radius:20px;transition:0.3s;border:1px solid #ff6600;}
 nav a:hover{background:white;color:#ff6600;}
+
 .updated{text-align:center;background:#28a745;color:white;padding:8px;font-size:14px;font-weight:bold;}
 
-/* HERO SECTION */
 .hero{position:relative;height:300px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;margin-bottom:15px;}
 .hero-slideshow{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;overflow:hidden;}
 .hero-slideshow img{width:100%;height:100%;object-fit:cover;position:absolute;opacity:0;animation:fadeSlide 12s infinite;}
 .hero-slideshow img:nth-child(1){animation-delay:0s;}
 .hero-slideshow img:nth-child(2){animation-delay:4s;}
 .hero-slideshow img:nth-child(3){animation-delay:8s;}
-.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,50,0,0.4);z-index:2;} /* darker overlay for readability */
+
+.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,50,0,0.4);z-index:2;}
+
 .hero-content{position:relative;z-index:3;color:white;padding:0 15px;}
 .hero-content h1{font-size:24px;margin-bottom:10px;text-shadow:2px 2px 5px rgba(0,0,0,0.6);}
 .hero-content p{font-size:14px;margin-bottom:15px;text-shadow:1px 1px 3px rgba(0,0,0,0.5);}
-.hero-content .cta button{margin:5px;cursor:pointer;font-weight:bold;padding:8px 18px;border-radius:25px;font-size:13px;}
+
+.hero-content .cta button{
+margin:5px;
+cursor:pointer;
+font-weight:bold;
+padding:8px 18px;
+border-radius:25px;
+font-size:13px;
+}
+
 .view-products{background:#28D366;color:white;border:1px solid #25D366;}
 .contact-us{background:#007bff;color:white;border:1px solid #007bff;}
 .consultancy{background:#ff6600;color:white;border:1px solid #ff6600;}
 
-/* LIVE GRASS ANIMATION */
 .grass-container{position:absolute;bottom:0;width:100%;height:50px;overflow:hidden;z-index:1;}
 .grass{width:200%;height:100%;background:url('images/grass_cattle.png') repeat-x bottom;animation:moveGrass 20s linear infinite;}
-@keyframes moveGrass{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
-/* HERO SLIDE ANIMATION */
-@keyframes fadeSlide{
-  0%{opacity:0;transform:translateX(100%);}
-  8%{opacity:1;transform:translateX(0);}
-  33%{opacity:1;transform:translateX(0);}
-  41%{opacity:0;transform:translateX(-100%);}
-  100%{opacity:0;transform:translateX(-100%);}
+@keyframes moveGrass{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
 }
 
-/* RAW MATERIALS & CARDS */
+@keyframes fadeSlide{
+0%{opacity:0;transform:translateX(100%);}
+8%{opacity:1;transform:translateX(0);}
+33%{opacity:1;transform:translateX(0);}
+41%{opacity:0;transform:translateX(-100%);}
+100%{opacity:0;transform:translateX(-100%);}
+}
+
 section{padding:20px 15px;}
-h2{text-align:center;margin-bottom:15px;}
-.container{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;}
-.card{background:white;padding:12px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:center;transition:0.3s;}
-.card:hover{transform:translateY(-6px);box-shadow:0 6px 18px rgba(0,0,0,0.15);}
-.card img{width:100%;height:130px;object-fit:cover;border-radius:6px;}
-.price{color:#e60000;font-weight:bold;margin:6px 0;font-size:14px;}
-button{padding:6px 10px;margin-top:5px;border:none;border-radius:20px;cursor:pointer;font-weight:bold;font-size:12px;width:100%;}
 
-/* CART */
-#floating-cart{position:fixed;bottom:20px;right:20px;background:#007bff;color:white;padding:12px 18px;border-radius:30px;cursor:pointer;font-weight:bold;z-index:999;}
-#cart-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);display:none;justify-content:center;align-items:center;z-index:1000;}
-.cart-content{background:white;width:90%;max-width:400px;padding:20px;border-radius:10px;max-height:80%;overflow-y:auto;}
-.about p,.about ul{margin-bottom:10px;line-height:1.6;}
+.container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:15px;
+}
 
-/* MOBILE FRIENDLY */
+.card{
+background:white;
+padding:12px;
+border-radius:10px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 6px 18px rgba(0,0,0,0.15);
+}
+
+.card img{
+width:100%;
+height:130px;
+object-fit:cover;
+border-radius:6px;
+}
+
+.price{
+color:#e60000;
+font-weight:bold;
+margin:6px 0;
+font-size:14px;
+}
+
+button{
+padding:6px 10px;
+margin-top:5px;
+border:none;
+border-radius:20px;
+cursor:pointer;
+font-weight:bold;
+font-size:12px;
+width:100%;
+}
+
+#floating-cart{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#007bff;
+color:white;
+padding:12px 18px;
+border-radius:30px;
+cursor:pointer;
+font-weight:bold;
+z-index:999;
+}
+
+#cart-modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:1000;
+}
+
+.cart-content{
+background:white;
+width:90%;
+max-width:400px;
+padding:20px;
+border-radius:10px;
+max-height:80%;
+overflow-y:auto;
+}
+
 @media(max-width:768px){
 header{flex-direction:column;align-items:flex-start;}
 header h1{font-size:16px;margin-bottom:5px;}
@@ -72,19 +150,18 @@ nav{flex-direction:row;justify-content:space-around;gap:5px;padding:6px;}
 .hero{height:250px;}
 .hero-content h1{font-size:20px;}
 .hero-content p{font-size:13px;}
-.search-container input[type=text]{width:100%;margin-top:5px;}
 }
 </style>
 </head>
+
 <body>
 
 <header>
-<div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
-<img src="images/LOGO.jpg" alt="JT ESSENTIALS LIMITED">
+<img src="images/LOGO.jpg">
 <h1>JT ESSENTIALS LIMITED</h1>
+
 <div class="search-container">
 <input type="text" placeholder="Search Products..." id="search-input" onkeyup="searchProducts()">
-</div>
 </div>
 </header>
 
@@ -101,86 +178,15 @@ nav{flex-direction:row;justify-content:space-around;gap:5px;padding:6px;}
 🛒 Cart (<span id="cart-count">0</span>)
 </div>
 
-<!-- HERO SECTION -->
-<section class="hero">
-  <div class="hero-slideshow">
-    <img src="images/MAIZE.jpg" alt="MAIZE">
-    <img src="images/SOYA_MEAL.jpg" alt="SOYA MEAL">
-    <img src="images/SOYA_CAKE.jpg" alt="SOYA CAKE">
-    <img src="images/GROUDNUT_CAKE.jpg" alt="GROUNDNUT CAKE">
-    <img src="images/RICE_BRAN.jpg" alt="RICE BRAN">
-    <img src="images/PALM_KERNEL_CAKE.jpg" alt="PALM KERNEL CAKE">
-    <img src="images/MAIZE_OFFAL.jpg" alt="MAIZE OFFAL">
-    <img src="images/WHEAT_OFFAL.jpg" alt="WHEAT OFFAL">
-  </div>
-  <div class="hero-overlay"></div>
-  <div class="grass-container"><div class="grass"></div></div>
-  <div class="hero-content">
-    <h1>Premium Livestock Feed & Raw Materials</h1>
-    <p>Quality Guaranteed, Nationwide Delivery & Consultancy Services</p>
-    <div class="cta">
-      <button class="view-products" onclick="document.getElementById('raw-materials').scrollIntoView({behavior:'smooth'});">View Products</button>
-      <button class="contact-us" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Contact Us</button>
-      <button class="consultancy" onclick="window.location.href='consultancy.html';">Consultancy</button>
-    </div>
-  </div>
-</section>
-
-<!-- RAW MATERIALS -->
 <section id="raw-materials">
 <h2>Raw Materials</h2>
 <div class="container" id="raw-materials-container"></div>
 </section>
 
-<!-- ABOUT US -->
-<section id="about" class="about">
-<h2>About Us</h2>
-<p><strong>REG. NO. 6899712</strong></p>
-<p><strong>JT ESSENTIALS LIMITED – Consistency in Quality Delivery</strong></p>
-<p><strong>Our Vision:</strong> To be the leading provider of high-quality grains and livestock feed raw materials supplies and services, while educating livestock producers about nutritional requirements.</p>
-<p><strong>WHY CHOOSE JT ESSENTIALS:</strong></p>
-<ul>
-<li>Quality & Safety of your livestock</li>
-<li>Innovative feed additives that enhance nutrients and improve animal health</li>
-<li>Better growth rate through balanced nutrition</li>
-<li>Immunity boost reducing disease vulnerability</li>
-<li>Digestive support for improved nutrient utilization</li>
-<li>Cost efficiency by preventing illness through proper diets</li>
-</ul>
-<p><strong>Establishment:</strong> JT Essentials Limited operates across Abuja FCT, South West, South East Regions, with nationwide customer base.</p>
-<p><strong>Our Mission:</strong></p>
-<ul>
-<li>Deliver reliable and cost-effective solutions for livestock farmers</li>
-<li>Provide high-quality grains, feed raw materials, additives and storage solutions</li>
-<li>Maintain exceptional customer service and sustainable practices</li>
-</ul>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-<h2>Contact Us</h2>
-<p style="text-align:center;">
-📧 jtessentialslimited@gmail.com<br>
-📞 +2347065498338<br><br>
-<a href="https://wa.me/2347065498338?text=Hello%20JT%20Essentials%20Limited" style="color:#25D366;font-weight:bold;">Chat on WhatsApp</a>
-</p>
-</section>
-
-<!-- CART MODAL -->
-<div id="cart-modal">
-<div class="cart-content">
-<h3>Your Cart</h3>
-<div id="cart-items"></div>
-<button onclick="sendCartOrder()" style="background:#25D366;color:white;width:100%;padding:10px;border:none;border-radius:5px;">
-Proceed to Order on WhatsApp
-</button>
-<button onclick="closeCart()" style="background:red;color:white;width:100%;padding:8px;margin-top:10px;border:none;border-radius:5px;">Close</button>
-</div>
-</div>
-
 <script>
-// RAW MATERIALS
+
 const products=[
+
 {name:"MAIZE", price:"₦320/kg"},
 {name:"SOYA_MEAL", price:"₦750/kg"},
 {name:"SOYA_CAKE", price:"₦700/kg"},
@@ -195,8 +201,10 @@ const products=[
 {name:"METHIONINE", price:"₦125,000/bag"},
 {name:"LYSINE", price:"₦80,000/bag"},
 {name:"FISH_MEAL", price:"Available on request"},
-{name:"FISH_MEAL_65%", price:"₦120,000/bag"},
-{name:"72%_FISH_MEAL", price:"₦150,000/bag"},
+
+{name:"65% Fish Meal", image:"FISH_MEAL_65.jpg", price:"₦120,000/bag"},
+{name:"72% Fish Meal", image:"72_FISH_MEAL.jpg", price:"₦150,000/bag"},
+
 {name:"LOCAL_FISH_MEAL", price:"1st Grade – ₦1,800/kg | 2nd Grade – ₦2,500/kg"},
 {name:"ENZYMES", price:"₦110,000/bag"},
 {name:"TOXIN_BLINDER", price:"₦55,000/bag"},
@@ -206,58 +214,31 @@ const products=[
 {name:"BREAD", price:"₦280/kg"},
 {name:"VITAMIN_C", price:"₦5,500"},
 {name:"CASSAVA", price:"₦800/kg"}
+
 ];
 
 const container=document.getElementById("raw-materials-container");
+
 products.forEach(item=>{
 container.innerHTML+=`
+
 <div class="card">
-<img src="images/${item.name}.jpg" alt="${item.name}">
+
+<img src="images/${item.image ? item.image : item.name + '.jpg'}" alt="${item.name}">
+
 <h4>${item.name.replace(/_/g,' ')}</h4>
+
 <div class="price">${item.price}</div>
-<button class="view-products" onclick="orderNow('${item.name.replace(/_/g,' ')}')">Order Now</button>
-<button class="contact-us" onclick="addToCart('${item.name.replace(/_/g,' ')}')">Add to Cart</button>
-</div>`;
+
+<button class="view-products" onclick="orderNow('${item.name}')">Order Now</button>
+
+<button class="contact-us" onclick="addToCart('${item.name}')">Add to Cart</button>
+
+</div>
+
+`;
 });
 
-// CART
-let cart=[];
-function updateCartCounter(){document.getElementById("cart-count").innerText=cart.length;}
-function addToCart(item){cart.push(item);updateCartCounter();}
-function removeFromCart(index){cart.splice(index,1);updateCartCounter();openCart();}
-function openCart(){
-const div=document.getElementById("cart-items");
-div.innerHTML="";
-if(cart.length===0){div.innerHTML="<p>Your cart is empty.</p>";}
-else{
-cart.forEach((item,index)=>{
-div.innerHTML+=`${index+1}. ${item}
-<button style="background:red;color:white;padding:3px 6px;border:none;border-radius:3px;font-size:10px;cursor:pointer;" onclick="removeFromCart(${index})">Remove</button><br><br>`;
-});
-}
-document.getElementById("cart-modal").style.display="flex";
-}
-function closeCart(){document.getElementById("cart-modal").style.display="none";}
-function sendCartOrder(){
-if(cart.length===0){alert("Cart is empty");return;}
-let msg="Hello JT Essentials Limited, I want to order these items: "+cart.join(", ");
-window.open("https://wa.me/2347065498338?text="+encodeURIComponent(msg));
-}
-function orderNow(item){
-let msg="Hello JT Essentials Limited, I want to order this item: "+item;
-window.open("https://wa.me/2347065498338?text="+encodeURIComponent(msg));
-}
-
-// SEARCH FUNCTION
-function searchProducts(){
-let input=document.getElementById('search-input').value.toLowerCase();
-let cards=document.querySelectorAll('#raw-materials-container .card');
-cards.forEach(card=>{
-let name=card.querySelector('h4').innerText.toLowerCase();
-if(name.includes(input)){card.style.display='block';}
-else{card.style.display='none';}
-});
-}
 </script>
 
 </body>
