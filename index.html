@@ -45,11 +45,13 @@ section{padding:20px 15px;}
 .price{color:#e60000;font-weight:bold;margin:6px 0;}
 button{padding:6px 10px;margin-top:5px;border:none;border-radius:20px;cursor:pointer;font-weight:bold;font-size:12px;width:100%;}
 
-/* CART & DRAG */
-#floating-cart,#whatsapp-float{
-position:fixed;bottom:20px;right:20px;z-index:999;cursor:grab;user-select:none;touch-action:none;min-width:50px;text-align:center;}
-#floating-cart{background:#007bff;color:white;padding:12px 18px;border-radius:30px;font-weight:bold;}
-#whatsapp-float{background:#25D366;color:white;font-size:28px;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:0.3s;}
+/* CART & WHATSAPP */
+#floating-cart, #whatsapp-float{
+position:fixed; z-index:999; cursor:grab; user-select:none; touch-action:none;
+width:auto; height:auto; display:flex; align-items:center; justify-content:center;
+}
+#floating-cart{background:#007bff; color:white; padding:12px 18px; border-radius:30px; font-weight:bold; min-width:120px;}
+#whatsapp-float{background:#25D366; color:white; font-size:28px; width:60px; height:60px; border-radius:50%; box-shadow:0 4px 12px rgba(0,0,0,0.3); transition:0.3s; text-decoration:none;}
 #whatsapp-float:hover{transform:scale(1.1);}
 #cart-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);display:none;justify-content:center;align-items:center;z-index:1000;}
 .cart-content{background:white;width:90%;max-width:400px;padding:20px;border-radius:10px;max-height:80%;overflow-y:auto;}
@@ -81,8 +83,8 @@ position:fixed;bottom:20px;right:20px;z-index:999;cursor:grab;user-select:none;t
 
 <div class="updated">Prices Updated Today ✔</div>
 
-<div id="floating-cart">🛒 Cart (<span id="cart-count">0</span>)</div>
-<a id="whatsapp-float" href="https://wa.me/2347065498338?text=Hello%20JT%20Essentials%20Limited" target="_blank">💬</a>
+<div id="floating-cart" style="bottom:20px;right:20px;">🛒 Cart (<span id="cart-count">0</span>)</div>
+<a id="whatsapp-float" href="https://wa.me/2347065498338?text=Hello%20JT%20Essentials%20Limited" target="_blank" style="bottom:100px;right:20px;">💬</a>
 <div id="cart-toast">Added</div>
 
 <section class="hero">
@@ -249,25 +251,25 @@ document.getElementById("image-preview").style.display="flex";
 }});
 document.getElementById("image-preview").onclick=function(){this.style.display="none"}
 
-// DRAG CART & WHATSAPP
-function dragElement(el){
-let pos1=0,pos2=0,pos3=0,pos4=0;
+// DRAG FUNCTION
+function makeDraggable(el){
+let offsetX=0, offsetY=0, startX=0, startY=0;
 el.onpointerdown=function(e){
-e.preventDefault(); el.setPointerCapture(e.pointerId);
-pos3=e.clientX; pos4=e.clientY;
-el.onpointermove=elementDrag; el.onpointerup=closeDragElement;
-}
-function elementDrag(e){
 e.preventDefault();
-pos1=pos3-e.clientX; pos2=pos4-e.clientY;
-pos3=e.clientX; pos4=e.clientY;
-el.style.top=(el.offsetTop - pos2)+'px';
-el.style.left=(el.offsetLeft - pos1)+'px';
+el.setPointerCapture(e.pointerId);
+startX=e.clientX; startY=e.clientY;
+el.onpointermove=dragMove; el.onpointerup=dragEnd;
 }
-function closeDragElement(){el.onpointerup=null; el.onpointermove=null;}
+function dragMove(e){
+offsetX=e.clientX-startX; offsetY=e.clientY-startY;
+el.style.left=(el.offsetLeft + offsetX)+'px';
+el.style.top=(el.offsetTop + offsetY)+'px';
+startX=e.clientX; startY=e.clientY;
 }
-dragElement(document.getElementById("floating-cart"));
-dragElement(document.getElementById("whatsapp-float"));
+function dragEnd(){el.onpointermove=null; el.onpointerup=null;}
+}
+makeDraggable(document.getElementById("floating-cart"));
+makeDraggable(document.getElementById("whatsapp-float"));
 </script>
 
 </body>
