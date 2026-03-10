@@ -251,22 +251,23 @@ document.getElementById("image-preview").style.display="flex";
 }});
 document.getElementById("image-preview").onclick=function(){this.style.display="none"}
 
-// DRAG FUNCTION
+// DRAGGING FUNCTION (instant & fixed size)
 function makeDraggable(el){
 let offsetX=0, offsetY=0, startX=0, startY=0;
+el.style.position="fixed";
 el.onpointerdown=function(e){
 e.preventDefault();
 el.setPointerCapture(e.pointerId);
 startX=e.clientX; startY=e.clientY;
-el.onpointermove=dragMove; el.onpointerup=dragEnd;
+offsetX=el.offsetLeft; offsetY=el.offsetTop;
+el.onpointermove=function(e){
+let left=offsetX + (e.clientX-startX);
+let top=offsetY + (e.clientY-startY);
+el.style.left=left+"px";
+el.style.top=top+"px";
+};
+el.onpointerup=function(){el.onpointermove=null;el.onpointerup=null;}
 }
-function dragMove(e){
-offsetX=e.clientX-startX; offsetY=e.clientY-startY;
-el.style.left=(el.offsetLeft + offsetX)+'px';
-el.style.top=(el.offsetTop + offsetY)+'px';
-startX=e.clientX; startY=e.clientY;
-}
-function dragEnd(){el.onpointermove=null; el.onpointerup=null;}
 }
 makeDraggable(document.getElementById("floating-cart"));
 makeDraggable(document.getElementById("whatsapp-float"));
