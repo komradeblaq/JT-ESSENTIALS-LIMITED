@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JT ESSENTIALS LIMITED</title>
+<title>JT ESSENTIALS LIMITED</title><style>
 
-<style>
-
-body{margin:0;font-family:Arial,sans-serif;background:#f4f6f9;scroll-behavior:smooth;}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f6f9;scroll-behavior:smooth}
 
 header{
 background:#1f2d3d;
@@ -18,18 +15,17 @@ align-items:center;
 justify-content:space-between;
 position:sticky;
 top:0;
-z-index:100;
+z-index:100
 }
 
-header img{height:50px;}
-header h1{font-size:20px;margin-left:15px;}
+header img{height:50px}
+header h1{font-size:20px;margin-left:10px}
 
-.search-container{display:flex;align-items:center;}
 .search-container input{
 padding:6px 12px;
 border-radius:20px;
 border:none;
-width:180px;
+width:180px
 }
 
 nav{
@@ -41,7 +37,7 @@ padding:8px;
 position:sticky;
 top:70px;
 z-index:99;
-flex-wrap:wrap;
+flex-wrap:wrap
 }
 
 nav a{
@@ -50,14 +46,10 @@ text-decoration:none;
 font-weight:bold;
 font-size:14px;
 padding:6px 12px;
-border-radius:20px;
-border:1px solid #ff6600;
+border-radius:20px
 }
 
-nav a:hover{
-background:white;
-color:#ff6600;
-}
+nav a:hover{background:white;color:#ff6600}
 
 .updated{
 text-align:center;
@@ -65,7 +57,7 @@ background:#28a745;
 color:white;
 padding:8px;
 font-size:14px;
-font-weight:bold;
+font-weight:bold
 }
 
 /* HERO */
@@ -78,7 +70,7 @@ align-items:center;
 justify-content:center;
 text-align:center;
 overflow:hidden;
-margin-bottom:15px;
+margin-bottom:15px
 }
 
 .hero-slideshow{
@@ -86,9 +78,7 @@ position:absolute;
 top:0;
 left:0;
 width:100%;
-height:100%;
-overflow:hidden;
-z-index:1;
+height:100%
 }
 
 .hero-slideshow img{
@@ -97,18 +87,18 @@ height:100%;
 object-fit:cover;
 position:absolute;
 opacity:0;
-animation:fadeSlide 36s infinite;
+animation:fadeSlide 36s infinite
 }
 
-.hero-slideshow img:nth-child(1){animation-delay:0s;}
-.hero-slideshow img:nth-child(2){animation-delay:4s;}
-.hero-slideshow img:nth-child(3){animation-delay:8s;}
-.hero-slideshow img:nth-child(4){animation-delay:12s;}
-.hero-slideshow img:nth-child(5){animation-delay:16s;}
-.hero-slideshow img:nth-child(6){animation-delay:20s;}
-.hero-slideshow img:nth-child(7){animation-delay:24s;}
-.hero-slideshow img:nth-child(8){animation-delay:28s;}
-.hero-slideshow img:nth-child(9){animation-delay:32s;}
+.hero-slideshow img:nth-child(1){animation-delay:0s}
+.hero-slideshow img:nth-child(2){animation-delay:4s}
+.hero-slideshow img:nth-child(3){animation-delay:8s}
+.hero-slideshow img:nth-child(4){animation-delay:12s}
+.hero-slideshow img:nth-child(5){animation-delay:16s}
+.hero-slideshow img:nth-child(6){animation-delay:20s}
+.hero-slideshow img:nth-child(7){animation-delay:24s}
+.hero-slideshow img:nth-child(8){animation-delay:28s}
+.hero-slideshow img:nth-child(9){animation-delay:32s}
 
 .hero-overlay{
 position:absolute;
@@ -116,57 +106,32 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,50,0,0.4);
-z-index:2;
+background:rgba(0,50,0,0.4)
 }
 
 .hero-content{
 position:relative;
-z-index:3;
 color:white;
-padding:0 15px;
+z-index:2;
+padding:0 15px
 }
 
-.hero-content h1{
-font-size:24px;
-margin-bottom:10px;
-text-shadow:2px 2px 5px rgba(0,0,0,0.6);
-}
+.hero-content h1{font-size:24px;margin-bottom:10px}
+.hero-content p{font-size:14px;margin-bottom:15px}
 
-.hero-content p{
-font-size:14px;
-margin-bottom:15px;
-text-shadow:1px 1px 3px rgba(0,0,0,0.5);
-}
-
-.hero-content .cta button{
+.hero-content button{
 margin:5px;
 cursor:pointer;
 font-weight:bold;
 padding:8px 18px;
 border-radius:25px;
 font-size:13px;
+border:none
 }
 
-.view-products{
-background:#25D366;
-color:white;
-border:1px solid #25D366;
-}
-
-.contact-us{
-background:#007bff;
-color:white;
-border:1px solid #007bff;
-}
-
-.consultancy{
-background:#ff6600;
-color:white;
-border:1px solid #ff6600;
-}
-
-/* ANIMATIONS */
+.view-products{background:#25D366;color:white}
+.contact-us{background:#007bff;color:white}
+.consultancy{background:#ff6600;color:white}
 
 @keyframes fadeSlide{
 0%{opacity:0;transform:translateX(100%)}
@@ -176,12 +141,14 @@ border:1px solid #ff6600;
 100%{opacity:0}
 }
 
-section{padding:20px 15px;}
+/* PRODUCTS */
+
+section{padding:20px 15px}
 
 .container{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:15px;
+gap:15px
 }
 
 .card{
@@ -190,12 +157,12 @@ padding:12px;
 border-radius:10px;
 box-shadow:0 4px 12px rgba(0,0,0,0.08);
 text-align:center;
-transition:0.3s;
+transition:0.3s
 }
 
 .card:hover{
 transform:translateY(-6px);
-box-shadow:0 6px 18px rgba(0,0,0,0.15);
+box-shadow:0 6px 18px rgba(0,0,0,0.15)
 }
 
 .card img{
@@ -203,13 +170,10 @@ width:100%;
 height:130px;
 object-fit:cover;
 border-radius:6px;
+cursor:pointer
 }
 
-.price{
-color:#e60000;
-font-weight:bold;
-margin:6px 0;
-}
+.price{color:#e60000;font-weight:bold;margin:6px 0}
 
 button{
 padding:6px 10px;
@@ -219,10 +183,10 @@ border-radius:20px;
 cursor:pointer;
 font-weight:bold;
 font-size:12px;
-width:100%;
+width:100%
 }
 
-/* FLOATING CART */
+/* CART */
 
 #floating-cart{
 position:fixed;
@@ -235,9 +199,11 @@ border-radius:30px;
 cursor:grab;
 font-weight:bold;
 z-index:999;
+user-select:none;
+touch-action:none;
+min-width:120px;
+text-align:center
 }
-
-/* CART MODAL */
 
 #cart-modal{
 position:fixed;
@@ -249,7 +215,7 @@ background:rgba(0,0,0,0.6);
 display:none;
 justify-content:center;
 align-items:center;
-z-index:1000;
+z-index:1000
 }
 
 .cart-content{
@@ -259,62 +225,84 @@ max-width:400px;
 padding:20px;
 border-radius:10px;
 max-height:80%;
-overflow-y:auto;
+overflow-y:auto
 }
 
-.about p,.about ul{
-margin-bottom:10px;
-line-height:1.6;
+/* WHATSAPP FLOAT BUTTON */
+
+.whatsapp-float{
+position:fixed;
+bottom:90px;
+right:20px;
+background:#25D366;
+color:white;
+font-size:28px;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+box-shadow:0 4px 12px rgba(0,0,0,0.3);
+z-index:999;
+transition:0.3s
 }
 
-@media(max-width:768px){
-
-header{flex-direction:column;align-items:flex-start;}
-
-header h1{font-size:16px;margin-bottom:5px;}
-
-.hero{height:250px;}
-
-.hero-content h1{font-size:20px;}
-
-.search-container input{width:100%;margin-top:5px;}
-
+.whatsapp-float:hover{
+transform:scale(1.1)
 }
 
-</style>
-</head>
+/* TOAST */
 
-<body>
+#cart-toast{
+position:fixed;
+bottom:160px;
+right:20px;
+background:#28a745;
+color:white;
+padding:10px 18px;
+border-radius:8px;
+display:none;
+z-index:2000
+}
 
-<header>
+/* IMAGE PREVIEW */
 
-<div style="display:flex;align-items:center;">
+#image-preview{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:3000
+}
+
+#image-preview img{
+max-width:90%;
+max-height:90%;
+border-radius:10px
+}
+
+.about p,.about ul{margin-bottom:10px;line-height:1.6}
+
+</style></head><body><header><div style="display:flex;align-items:center">
 <img src="images/LOGO.jpg">
 <h1>JT ESSENTIALS LIMITED</h1>
-</div>
-
-<div class="search-container">
+</div><div class="search-container">
 <input type="text" placeholder="Search Products..." id="search-input" onkeyup="searchProducts()">
-</div>
-
-</header>
-
-<nav>
+</div></header><nav>
 <a href="#raw-materials">Raw Materials</a>
 <a href="#about">About Us</a>
 <a href="consultancy.html">Consultancy</a>
 <a href="#contact">Contact</a>
-</nav>
-
-<div class="updated">Prices Updated Today ✔</div>
-
-<div id="floating-cart" onclick="openCart()">
-🛒 Cart (<span id="cart-count">0</span>)
-</div>
-
-<section class="hero">
-
-<div class="hero-slideshow">
+</nav><div class="updated">Prices Updated Today ✔</div><div id="floating-cart">🛒 Cart (<span id="cart-count">0</span>)</div><a class="whatsapp-float" href="https://wa.me/2347065498338?text=Hello%20JT%20Essentials%20Limited" target="_blank">
+💬
+</a><div id="cart-toast">Added</div><section class="hero"><div class="hero-slideshow">
 <img src="images/MAIZE.jpg">
 <img src="images/SOYA_MEAL.jpg">
 <img src="images/SOYA_CAKE.jpg">
@@ -324,95 +312,44 @@ header h1{font-size:16px;margin-bottom:5px;}
 <img src="images/MAIZE_OFFAL.jpg">
 <img src="images/WHEAT_OFFAL.jpg">
 <img src="images/LIMESTONE.jpg">
-</div>
-
-<div class="hero-overlay"></div>
-
-<div class="hero-content">
-
+</div><div class="hero-overlay"></div><div class="hero-content">
 <h1>Premium Livestock Feed & Raw Materials</h1>
+<p>Quality Guaranteed, Nationwide Delivery & Consultancy Services</p><button class="view-products" onclick="document.getElementById('raw-materials').scrollIntoView({behavior:'smooth'})">View Products</button>
 
-<p>Quality Guaranteed, Nationwide Delivery & Consultancy Services</p>
+<button class="contact-us" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Us</button>
 
-<div class="cta">
+<button class="consultancy" onclick="window.location.href='consultancy.html'">Consultancy</button>
 
-<button class="view-products" onclick="document.getElementById('raw-materials').scrollIntoView({behavior:'smooth'})">
-View Products
-</button>
-
-<button class="contact-us" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-Contact Us
-</button>
-
-<button class="consultancy" onclick="window.location.href='consultancy.html'">
-Consultancy
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="raw-materials">
-
+</div></section><section id="raw-materials">
 <h2>Raw Materials</h2>
-
 <div class="container" id="raw-materials-container"></div>
-
-</section>
-
-<section id="about" class="about">
-
-<h2>About Us</h2>
-
-<p><strong>REG. NO. 6899712</strong></p>
-
-<p><strong>JT ESSENTIALS LIMITED – Consistency in Quality Delivery</strong></p>
-
-<p><strong>Our Vision:</strong> To be the leading provider of high-quality grains and livestock feed raw materials supplies and services.</p>
-
-</section>
-
-<section id="contact">
-
-<h2>Contact Us</h2>
-
-<p style="text-align:center;">
+</section><section id="about" class="about"><h2>About Us</h2><p><strong>REG. NO. 6899712</strong></p><p><strong>JT ESSENTIALS LIMITED – Consistency in Quality Delivery</strong></p><p><strong>Our Vision:</strong> To be the leading provider of high-quality grains and livestock feed raw materials supplies and services while educating livestock producers about nutritional requirements.</p><p><strong>WHY CHOOSE JT ESSENTIALS:</strong></p><ul>
+<li>Quality & Safety of your livestock</li>
+<li>Innovative feed additives that enhance nutrients and improve animal health</li>
+<li>Better growth rate through balanced nutrition</li>
+<li>Immunity boost reducing disease vulnerability</li>
+<li>Digestive support for improved nutrient utilization</li>
+<li>Cost efficiency by preventing illness through proper diets</li>
+</ul><p><strong>Establishment:</strong> JT Essentials Limited operates across Abuja FCT, South West, South East Regions with nationwide customer base.</p><p><strong>Our Mission:</strong></p><ul>
+<li>Deliver reliable and cost-effective solutions for livestock farmers</li>
+<li>Provide high-quality grains, feed raw materials, additives and storage solutions</li>
+<li>Maintain exceptional customer service and sustainable practices</li>
+</ul></section><section id="contact"><h2>Contact Us</h2><p style="text-align:center">
 📧 jtessentialslimited@gmail.com<br>
-📞 +2347065498338<br><br>
+📞 +2347065498338<br><br><a href="https://wa.me/2347065498338?text=Hello JT Essentials Limited" style="color:#25D366;font-weight:bold">Chat on WhatsApp</a>
 
-<a href="https://wa.me/2347065498338?text=Hello%20JT%20Essentials%20Limited" style="color:#25D366;font-weight:bold;">
-Chat on WhatsApp
-</a>
+</p></section><div id="cart-modal">
+<div class="cart-content"><h3>Your Cart</h3><div id="cart-items"></div><button onclick="sendCartOrder()" style="background:#25D366;color:white;padding:10px">Proceed to Order on WhatsApp</button>
 
-</p>
-
-</section>
-
-<div id="cart-modal">
-
-<div class="cart-content">
-
-<h3>Your Cart</h3>
-
-<div id="cart-items"></div>
-
-<button onclick="sendCartOrder()" style="background:#25D366;color:white;width:100%;padding:10px;border:none;border-radius:5px;">
-Proceed to Order on WhatsApp
-</button>
-
-<button onclick="closeCart()" style="background:red;color:white;width:100%;padding:8px;margin-top:10px;border:none;border-radius:5px;">
-Close
-</button>
+<button onclick="closeCart()" style="background:red;color:white;margin-top:10px">Close</button>
 
 </div>
-
-</div>
-
-<script>
+</div><div id="image-preview">
+<img id="preview-img">
+</div><script>
 
 const products=[
+
 {name:"MAIZE",price:"₦320/kg"},
 {name:"SOYA_MEAL",price:"₦750/kg"},
 {name:"SOYA_CAKE",price:"₦700/kg"},
@@ -421,171 +358,128 @@ const products=[
 {name:"PALM_KERNEL_CAKE",price:"Dry – ₦280/kg | Oil – ₦350/kg"},
 {name:"MAIZE_OFFAL",price:"₦190/kg"},
 {name:"WHEAT_OFFAL",price:"₦350/kg"},
-{name:"LIMESTONE",price:"₦60/kg"}
+{name:"LIMESTONE",price:"₦60/kg"},
+{name:"BONE_MEAL",price:"₦250/kg"},
+{name:"BLOOD_MEAL",price:"₦700/bag"},
+{name:"METHIONINE",price:"₦125,000/bag"},
+{name:"LYSINE",price:"₦80,000/bag"},
+{name:"FISH_MEAL",price:"Available on request"},
+{name:"65% Fish Meal",image:"FISH_MEAL_65.jpg",price:"₦120,000/bag"},
+{name:"72% Fish Meal",image:"72_FISH_MEAL.jpg",price:"₦150,000/bag"},
+{name:"LOCAL_FISH_MEAL",price:"1st Grade – ₦1,800/kg | 2nd Grade – ₦2,500/kg"},
+{name:"ENZYMES",price:"₦110,000/bag"},
+{name:"TOXIN_BLINDER",price:"₦55,000/bag"},
+{name:"DCP",price:"₦55,000/bag"},
+{name:"SALT",price:"₦20,000/bag"},
+{name:"PREMIX",price:"₦3,500 / 2.5kg"},
+{name:"BREAD",price:"₦280/kg"},
+{name:"VITAMIN_C",price:"₦5,500"},
+{name:"CASSAVA",price:"₦800/kg"}
+
 ];
 
 const container=document.getElementById("raw-materials-container");
 
 products.forEach(item=>{
-
 container.innerHTML+=`
-
 <div class="card">
-
-<img src="images/${item.name}.jpg">
-
+<img src="images/${item.image?item.image:item.name+'.jpg'}">
 <h4>${item.name.replace(/_/g,' ')}</h4>
-
 <div class="price">${item.price}</div>
-
 <button class="view-products" onclick="orderNow('${item.name}')">Order Now</button>
-
 <button class="contact-us" onclick="addToCart('${item.name}')">Add to Cart</button>
-
-</div>
-
-`;
-
+</div>`;
 });
 
-function searchProducts(){
-
-let input=document.getElementById('search-input').value.toLowerCase();
-
-let cards=document.querySelectorAll('.card');
-
-cards.forEach(card=>{
-
-let name=card.querySelector('h4').innerText.toLowerCase();
-
-card.style.display=name.includes(input)?'block':'none';
-
-});
-
-}
-
-let cart=[];
+let cart=JSON.parse(localStorage.getItem("jt_cart"))||[];
 
 function updateCartCounter(){
-
-document.getElementById("cart-count").innerText=cart.length;
-
+let total=0;
+cart.forEach(i=>total+=i.qty);
+document.getElementById("cart-count").innerText=total;
+localStorage.setItem("jt_cart",JSON.stringify(cart));
 }
-
-function addToCart(item){
-
-if(cart.includes(item)){
-
-alert("Item already in cart");
-
-return;
-
-}
-
-cart.push(item);
 
 updateCartCounter();
 
+function addToCart(name){
+
+let existing=cart.find(p=>p.name===name);
+
+if(existing){
+existing.qty++;
+}else{
+cart.push({name:name,qty:1});
+}
+
+updateCartCounter();
+showToast(name+" added");
+
+}
+
+function showToast(msg){
+const t=document.getElementById("cart-toast");
+t.innerText=msg;
+t.style.display="block";
+setTimeout(()=>t.style.display="none",2000);
 }
 
 function openCart(){
 
 const div=document.getElementById("cart-items");
-
 div.innerHTML="";
+let message="Hello JT Essentials Limited, I want to order:\n";
 
-cart.forEach((item,index)=>{
-
-div.innerHTML+=`${index+1}. ${item}
-<button onclick="removeFromCart(${index})">Remove</button><br><br>`;
-
+cart.forEach((item,i)=>{
+div.innerHTML+=`
+${item.name}<br>
+Qty: ${item.qty}
+<button onclick="increaseQty(${i})">+</button>
+<button onclick="decreaseQty(${i})">-</button>
+<button style="background:red;color:white" onclick="removeFromCart(${i})">Remove</button>
+<br><br>
+`;
+message+=`${item.name} x${item.qty}\n`;
 });
 
+window.cartMessage=message;
+
 document.getElementById("cart-modal").style.display="flex";
-
 }
 
-function removeFromCart(index){
-
-cart.splice(index,1);
-
-updateCartCounter();
-
-openCart();
-
-}
-
-function closeCart(){
-
-document.getElementById("cart-modal").style.display="none";
-
-}
+function increaseQty(i){cart[i].qty++;updateCartCounter();openCart();}
+function decreaseQty(i){cart[i].qty>1?cart[i].qty--:cart.splice(i,1);updateCartCounter();openCart();}
+function removeFromCart(i){cart.splice(i,1);updateCartCounter();openCart();}
+function closeCart(){document.getElementById("cart-modal").style.display="none";}
 
 function sendCartOrder(){
-
-let msg="Hello JT Essentials Limited, I want to order: "+cart.join(", ");
-
-window.open("https://wa.me/2347065498338?text="+encodeURIComponent(msg));
-
+window.open("https://wa.me/2347065498338?text="+encodeURIComponent(cartMessage));
 }
 
 function orderNow(item){
-
-let msg="Hello JT Essentials Limited, I want to order: "+item;
-
-window.open("https://wa.me/2347065498338?text="+encodeURIComponent(msg));
-
+window.open("https://wa.me/2347065498338?text="+encodeURIComponent("Hello JT Essentials Limited, I want to order "+item));
 }
 
-/* DRAGGABLE CART */
+function searchProducts(){
+let input=document.getElementById('search-input').value.toLowerCase();
+document.querySelectorAll('.card').forEach(card=>{
+let name=card.querySelector('h4').innerText.toLowerCase();
+card.style.display=name.includes(input)?'block':'none';
+});
+}
+
+document.addEventListener("click",e=>{
+if(e.target.tagName==="IMG"&&e.target.closest(".card")){
+document.getElementById("preview-img").src=e.target.src;
+document.getElementById("image-preview").style.display="flex";
+}
+});
+
+document.getElementById("image-preview").onclick=function(){this.style.display="none"}
 
 const cartIcon=document.getElementById("floating-cart");
 
-let isDragging=false,offsetX,offsetY;
+cartIcon.onclick=openCart;
 
-cartIcon.addEventListener("mousedown",startDrag);
-cartIcon.addEventListener("touchstart",startDrag);
-
-function startDrag(e){
-
-isDragging=true;
-
-let event=e.type==="touchstart"?e.touches[0]:e;
-
-offsetX=event.clientX-cartIcon.offsetLeft;
-offsetY=event.clientY-cartIcon.offsetTop;
-
-document.addEventListener("mousemove",drag);
-document.addEventListener("touchmove",drag);
-
-document.addEventListener("mouseup",stopDrag);
-document.addEventListener("touchend",stopDrag);
-
-}
-
-function drag(e){
-
-if(!isDragging) return;
-
-let event=e.type==="touchmove"?e.touches[0]:e;
-
-cartIcon.style.left=(event.clientX-offsetX)+"px";
-cartIcon.style.top=(event.clientY-offsetY)+"px";
-cartIcon.style.right="auto";
-cartIcon.style.bottom="auto";
-
-}
-
-function stopDrag(){
-
-isDragging=false;
-
-document.removeEventListener("mousemove",drag);
-document.removeEventListener("touchmove",drag);
-
-}
-
-</script>
-
-</body>
+</script></body>
 </html>
