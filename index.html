@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JT ESSENTIALS LIMITED</title>
 <style>
+/* BASIC STYLES */
 body{margin:0;font-family:Arial,sans-serif;background:#f4f6f9;scroll-behavior:smooth;overflow-x:hidden;}
 header{background:#1f2d3d;color:white;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
 header img{height:50px;}
@@ -48,14 +49,14 @@ button{padding:6px 10px;margin-top:5px;border:none;border-radius:20px;cursor:poi
 /* CART & WHATSAPP */
 #floating-cart, #whatsapp-float{
 position:fixed; z-index:999; cursor:grab; user-select:none; touch-action:none;
-width:auto; height:auto; display:flex; align-items:center; justify-content:center;
+display:flex; align-items:center; justify-content:center; transition:none;
 }
-#floating-cart{background:#007bff; color:white; padding:12px 18px; border-radius:30px; font-weight:bold; min-width:120px;}
-#whatsapp-float{background:#25D366; color:white; font-size:28px; width:60px; height:60px; border-radius:50%; box-shadow:0 4px 12px rgba(0,0,0,0.3); transition:0.3s; text-decoration:none;}
+#floating-cart{background:#007bff; color:white; padding:12px 18px; border-radius:30px; font-weight:bold; min-width:120px; height:auto;}
+#whatsapp-float{background:#25D366; color:white; font-size:28px; width:60px; height:60px; border-radius:50%; box-shadow:0 4px 12px rgba(0,0,0,0.3); transition:0.1s; text-decoration:none;}
 #whatsapp-float:hover{transform:scale(1.1);}
 #cart-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);display:none;justify-content:center;align-items:center;z-index:1000;}
 .cart-content{background:white;width:90%;max-width:400px;padding:20px;border-radius:10px;max-height:80%;overflow-y:auto;}
-#cart-toast{position:fixed;bottom:100px;right:20px;background:#28a745;color:white;padding:10px 18px;border-radius:8px;display:none;z-index:2000;}
+#cart-toast{position:fixed;bottom:160px;right:20px;background:#28a745;color:white;padding:10px 18px;border-radius:8px;display:none;z-index:2000;}
 #image-preview{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);display:none;justify-content:center;align-items:center;z-index:3000;}
 #image-preview img{max-width:90%;max-height:90%;border-radius:10px;}
 .about p,.about ul{margin-bottom:10px;line-height:1.6;}
@@ -201,22 +202,26 @@ container.innerHTML+=`
 });
 
 // CART SYSTEM
-let cart=[];
+let cart=JSON.parse(localStorage.getItem("jt_cart"))||[];
 function updateCartCounter(){
 let total=0; cart.forEach(i=>total+=i.qty); 
 document.getElementById("cart-count").innerText=total;
+localStorage.setItem("jt_cart",JSON.stringify(cart));
 }
 updateCartCounter();
+
 function addToCart(name){
 let existing=cart.find(p=>p.name===name);
 if(existing){ existing.qty++; }else{ cart.push({name:name,qty:1}); }
 updateCartCounter();
 showToast(name+" added");
 }
+
 function showToast(msg){
 const t=document.getElementById("cart-toast"); t.innerText=msg; t.style.display="block";
 setTimeout(()=>t.style.display="none",2000);
 }
+
 function openCart(){
 const div=document.getElementById("cart-items"); div.innerHTML="";
 let message="Hello JT Essentials Limited, I want to order:\n";
@@ -227,6 +232,7 @@ message+=`${item.name} x${item.qty}\n`;
 window.cartMessage=message;
 document.getElementById("cart-modal").style.display="flex";
 }
+
 function increaseQty(i){cart[i].qty++; updateCartCounter(); openCart();}
 function decreaseQty(i){cart[i].qty>1?cart[i].qty--:cart.splice(i,1); updateCartCounter(); openCart();}
 function removeFromCart(i){cart.splice(i,1); updateCartCounter(); openCart();}
@@ -251,26 +257,25 @@ document.getElementById("image-preview").style.display="flex";
 }});
 document.getElementById("image-preview").onclick=function(){this.style.display="none"}
 
-// DRAGGING FUNCTION (instant & fixed size)
+// DRAGGING FUNCTION (fixed size, instant)
 function makeDraggable(el){
 let offsetX=0, offsetY=0, startX=0, startY=0;
-el.style.position="fixed";
 el.onpointerdown=function(e){
-e.preventDefault();
-el.setPointerCapture(e.pointerId);
+e.preventDefault(); el.setPointerCapture(e.pointerId);
 startX=e.clientX; startY=e.clientY;
 offsetX=el.offsetLeft; offsetY=el.offsetTop;
 el.onpointermove=function(e){
-let left=offsetX + (e.clientX-startX);
-let top=offsetY + (e.clientY-startY);
-el.style.left=left+"px";
-el.style.top=top+"px";
+el.style.left=(offsetX + e.clientX-startX)+'px';
+el.style.top=(offsetY + e.clientY-startY)+'px';
 };
-el.onpointerup=function(){el.onpointermove=null;el.onpointerup=null;}
+el.onpointerup=function(){el.onpointermove=null; el.onpointerup=null;}
 }
 }
 makeDraggable(document.getElementById("floating-cart"));
 makeDraggable(document.getElementById("whatsapp-float"));
+
+// CART ICON CLICK
+document.getElementById("floating-cart").onclick=openCart;
 </script>
 
 </body>
