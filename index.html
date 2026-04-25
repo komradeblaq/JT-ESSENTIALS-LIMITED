@@ -44,7 +44,7 @@ gap:15px;
 }
 
 @media(max-width:768px){
-.container{grid-template-columns:repeat(2,1fr);gap:10px;}
+.container{grid-template-columns:repeat(2,1fr);}
 .card img{height:100px;}
 button{font-size:11px;}
 }
@@ -70,13 +70,6 @@ cursor:pointer;font-weight:bold;width:100%
 
 .view-products{background:#25D366;color:white}
 .contact-us{background:#007bff;color:white}
-
-/* FILTER */
-.filter-btn{
-margin:5px;padding:6px 12px;border:none;
-border-radius:20px;background:#ddd;cursor:pointer
-}
-.filter-btn:hover{background:#ff6600;color:white}
 
 /* CART */
 #floating-cart{
@@ -107,12 +100,20 @@ background:white;width:90%;max-width:400px;
 padding:20px;border-radius:10px
 }
 
-/* TOAST */
 #cart-toast{
 position:fixed;bottom:150px;right:20px;
 background:#28a745;color:white;
 padding:10px;border-radius:6px;display:none
 }
+
+/* ABOUT */
+#about{
+padding:20px;
+background:white;
+margin:10px;
+border-radius:10px;
+}
+
 </style>
 </head>
 
@@ -131,25 +132,48 @@ padding:10px;border-radius:6px;display:none
 
 <nav>
 <a href="#">Raw Materials</a>
-<a href="#">About</a>
+<a href="#about">About Us</a>
+<a href="consultancy.html">Consultancy</a>
 <a href="#">Contact</a>
 </nav>
-
-<!-- FILTER -->
-<div style="text-align:center;padding:10px">
-<button class="filter-btn" onclick="filterCategory('all')">All</button>
-<button class="filter-btn" onclick="filterCategory('grain')">Grains</button>
-<button class="filter-btn" onclick="filterCategory('protein')">Protein</button>
-<button class="filter-btn" onclick="filterCategory('additives')">Additives</button>
-</div>
 
 <div id="floating-cart">🛒 (<span id="cart-count">0</span>)</div>
 <a id="whatsapp-float" href="https://wa.me/2347065498338" target="_blank">💬</a>
 <div id="cart-toast">Added</div>
 
+<!-- PRODUCTS -->
 <section>
 <h2 style="padding-left:10px">Raw Materials</h2>
 <div class="container" id="raw-materials-container"></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Us</h2>
+
+<p><strong>REG. NO. 6899712</strong></p>
+<p><strong>JT ESSENTIALS LIMITED – Consistency in Quality Delivery</strong></p>
+
+<p><strong>Our Vision:</strong> To be the leading provider of high-quality grains and livestock feed raw materials supplies and services while educating livestock producers about nutritional requirements.</p>
+
+<p><strong>WHY CHOOSE JT ESSENTIALS:</strong></p>
+<ul>
+<li>Quality & Safety of your livestock</li>
+<li>Innovative feed additives</li>
+<li>Better growth rate</li>
+<li>Immunity boost</li>
+<li>Digestive support</li>
+<li>Cost efficiency</li>
+</ul>
+
+<p><strong>Establishment:</strong> Nationwide operations across Nigeria.</p>
+
+<p><strong>Mission:</strong></p>
+<ul>
+<li>Reliable livestock solutions</li>
+<li>High-quality feed materials</li>
+<li>Excellent customer service</li>
+</ul>
 </section>
 
 <!-- CART -->
@@ -166,58 +190,80 @@ padding:10px;border-radius:6px;display:none
 
 // PRODUCTS
 const products=[
-{name:"MAIZE",price:"₦320/kg",category:"grain"},
-{name:"SOYA_MEAL",price:"₦750/kg",category:"protein"},
-{name:"SOYA_CAKE",price:"₦700/kg",category:"protein"},
-{name:"GROUDNUT_CAKE",price:"₦580/kg",category:"protein"},
-{name:"RICE_BRAN",price:"₦100/kg",category:"grain"},
-{name:"PALM_KERNEL_CAKE",price:"₦280/kg",category:"protein"},
-{name:"MAIZE_OFFAL",price:"₦190/kg",category:"grain"},
-{name:"WHEAT_OFFAL",price:"₦350/kg",category:"grain"},
-{name:"LIMESTONE",price:"₦60/kg",category:"additives"},
-{name:"BONE_MEAL",price:"₦250/kg",category:"additives"},
-{name:"BLOOD_MEAL",price:"₦700/bag",category:"protein"},
-{name:"METHIONINE",price:"₦125,000/bag",category:"additives"},
-{name:"LYSINE",price:"₦80,000/bag",category:"additives"},
-{name:"FISH_MEAL",price:"Available",category:"protein"},
-{name:"ENZYMES",price:"₦110,000/bag",category:"additives"},
-{name:"TOXIN_BLINDER",price:"₦55,000/bag",category:"additives"},
-{name:"DCP",price:"₦55,000/bag",category:"additives"},
-{name:"SALT",price:"₦20,000/bag",category:"additives"},
-{name:"PREMIX",price:"₦3,500",category:"additives"},
-{name:"BREAD",price:"₦280/kg",category:"grain"},
-{name:"VITAMIN_C",price:"₦5,500",category:"additives"},
-{name:"CASSAVA",price:"₦800/kg",category:"grain"}
+{name:"MAIZE",price:"₦320/kg"},
+{name:"SOYA_MEAL",price:"₦750/kg"},
+{name:"SOYA_CAKE",price:"₦700/kg"},
+{name:"GROUDNUT_CAKE",price:"₦580/kg"},
+{name:"RICE_BRAN",price:"₦100/kg"},
+{name:"LIMESTONE",price:"₦60/kg"}
 ];
 
 const container=document.getElementById("raw-materials-container");
 
 products.forEach(item=>{
 container.innerHTML+=`
-<div class="card" data-category="${item.category}">
-<img src="images/${item.name}.jpg">
+<div class="card">
 <h4>${item.name}</h4>
 <div class="price">${item.price}</div>
-<button class="view-products" onclick="orderNow('${item.name}')">Order Now</button>
-<button class="contact-us" onclick="addToCart('${item.name}')">Add</button>
+<button class="view-products" onclick="addToCart('${item.name}')">Add to Cart</button>
 </div>`;
 });
 
-// CART
+// CART SYSTEM
 let cart=[];
 
 function updateCart(){
-document.getElementById("cart-count").innerText=cart.length;
+let total=0;
+cart.forEach(i=>total+=i.qty);
+document.getElementById("cart-count").innerText=total;
 }
 
 function addToCart(name){
-if(cart.includes(name)){
-showToast("Already added");
-return;
-}
-cart.push(name);
+let item=cart.find(i=>i.name===name);
+if(item){item.qty++;}else{cart.push({name:name,qty:1});}
 updateCart();
 showToast("Added");
+}
+
+function openCart(){
+let div=document.getElementById("cart-items");
+div.innerHTML="";
+
+cart.forEach((item,i)=>{
+div.innerHTML+=`
+<b>${item.name}</b><br>
+Qty: ${item.qty}
+<button onclick="increase(${i})">+</button>
+<button onclick="decrease(${i})">-</button>
+<button onclick="removeItem(${i})" style="background:red;color:white">Remove</button>
+<br><br>
+`;
+});
+
+document.getElementById("cart-modal").style.display="flex";
+}
+
+function increase(i){cart[i].qty++;updateCart();openCart();}
+function decrease(i){
+if(cart[i].qty>1){cart[i].qty--;}
+else{cart.splice(i,1);}
+updateCart();openCart();
+}
+function removeItem(i){cart.splice(i,1);updateCart();openCart();}
+
+function closeCart(){
+document.getElementById("cart-modal").style.display="none";
+}
+
+function sendCartOrder(){
+if(cart.length===0){showToast("Cart empty");return;}
+
+let msg="Order:\n";
+cart.forEach(i=>{
+msg+=`${i.name} x${i.qty}\n`;
+});
+
+window.open("https://wa.me/2347065498338?text="+encodeURIComponent(msg));
 }
 
 function showToast(msg){
@@ -227,46 +273,7 @@ t.style.display="block";
 setTimeout(()=>t.style.display="none",1500);
 }
 
-function openCart(){
-let div=document.getElementById("cart-items");
-div.innerHTML="";
-cart.forEach(item=>{
-div.innerHTML+=item+"<br>";
-});
-document.getElementById("cart-modal").style.display="flex";
-}
-
-function closeCart(){
-document.getElementById("cart-modal").style.display="none";
-}
-
-function sendCartOrder(){
-if(cart.length===0){
-showToast("No item in cart");
-return;
-}
-let msg="Order: "+cart.join(", ");
-window.open("https://wa.me/2347065498338?text="+encodeURIComponent(msg));
-}
-
 document.getElementById("floating-cart").onclick=openCart;
-
-// FILTER
-function filterCategory(cat){
-document.querySelectorAll(".card").forEach(card=>{
-if(cat==="all"){card.style.display="block";}
-else{card.style.display=card.dataset.category===cat?"block":"none";}
-});
-}
-
-// SEARCH
-function searchProducts(){
-let input=document.getElementById("search-input").value.toLowerCase();
-document.querySelectorAll(".card").forEach(card=>{
-let name=card.querySelector("h4").innerText.toLowerCase();
-card.style.display=name.includes(input)?"block":"none";
-});
-}
 
 </script>
 
