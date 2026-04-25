@@ -22,7 +22,7 @@ display:flex;align-items:center;justify-content:space-between;
 header img{height:45px}
 header h1{font-size:16px;margin-left:8px}
 
-/* SEARCH FIX */
+/* SEARCH */
 .search-box{
 margin-top:8px;width:100%;
 }
@@ -30,7 +30,7 @@ margin-top:8px;width:100%;
 width:100%;padding:8px 12px;border-radius:20px;border:none;
 }
 
-/* NAV BUTTON STYLE */
+/* NAV */
 nav{
 background:#ff6600;
 display:flex;justify-content:center;gap:8px;
@@ -43,6 +43,19 @@ padding:6px 12px;border-radius:20px;
 font-size:13px;
 }
 nav a:hover{background:#ff6600;color:white}
+
+/* FILTER BUTTONS */
+.filter-section{
+text-align:center;padding:10px
+}
+.filter-btn{
+margin:5px;padding:6px 12px;border:none;
+border-radius:20px;background:#ddd;
+cursor:pointer;font-weight:bold
+}
+.filter-btn:hover{
+background:#ff6600;color:white
+}
 
 /* GRID */
 .container{
@@ -96,7 +109,7 @@ display:flex;align-items:center;justify-content:center;
 font-size:28px;z-index:999
 }
 
-/* CART MODAL (TEMU STYLE FIX) */
+/* CART MODAL */
 #cart-modal{
 position:fixed;top:0;left:0;width:100%;height:100%;
 background:rgba(0,0,0,0.6);display:none;
@@ -162,6 +175,14 @@ border-radius:6px;display:none
 <a href="#contact">Contact</a>
 </nav>
 
+<!-- ✅ FILTER SECTION ADDED BACK -->
+<div class="filter-section">
+<button class="filter-btn" onclick="filterCategory('all')">All</button>
+<button class="filter-btn" onclick="filterCategory('grain')">Grains</button>
+<button class="filter-btn" onclick="filterCategory('protein')">Protein</button>
+<button class="filter-btn" onclick="filterCategory('additives')">Additives</button>
+</div>
+
 <div id="floating-cart">🛒 Proceed to Cart (<span id="cart-count">0</span>)</div>
 <div id="whatsapp-float" onclick="openWhatsApp()">💬</div>
 <div id="cart-toast"></div>
@@ -219,36 +240,36 @@ border-radius:6px;display:none
 
 <script>
 
-// PRODUCTS
+// PRODUCTS (NOW WITH CATEGORY BACK)
 const products=[
-{name:"MAIZE",price:"₦320/kg"},
-{name:"SOYA_MEAL",price:"₦750/kg"},
-{name:"SOYA_CAKE",price:"₦700/kg"},
-{name:"GROUDNUT_CAKE",price:"₦580/kg"},
-{name:"RICE_BRAN",price:"₦100/kg"},
-{name:"PALM_KERNEL_CAKE",price:"₦280/kg"},
-{name:"MAIZE_OFFAL",price:"₦190/kg"},
-{name:"WHEAT_OFFAL",price:"₦350/kg"},
-{name:"LIMESTONE",price:"₦60/kg"},
-{name:"BONE_MEAL",price:"₦250/kg"},
-{name:"BLOOD_MEAL",price:"₦700/bag"},
-{name:"METHIONINE",price:"₦125,000/bag"},
-{name:"LYSINE",price:"₦80,000/bag"},
-{name:"ENZYMES",price:"₦110,000/bag"},
-{name:"TOXIN_BLINDER",price:"₦55,000/bag"},
-{name:"DCP",price:"₦55,000/bag"},
-{name:"SALT",price:"₦20,000/bag"},
-{name:"PREMIX",price:"₦3,500"},
-{name:"BREAD",price:"₦280/kg"},
-{name:"VITAMIN_C",price:"₦5,500"},
-{name:"CASSAVA",price:"₦800/kg"}
+{name:"MAIZE",price:"₦320/kg",category:"grain"},
+{name:"SOYA_MEAL",price:"₦750/kg",category:"protein"},
+{name:"SOYA_CAKE",price:"₦700/kg",category:"protein"},
+{name:"GROUDNUT_CAKE",price:"₦580/kg",category:"protein"},
+{name:"RICE_BRAN",price:"₦100/kg",category:"grain"},
+{name:"PALM_KERNEL_CAKE",price:"₦280/kg",category:"protein"},
+{name:"MAIZE_OFFAL",price:"₦190/kg",category:"grain"},
+{name:"WHEAT_OFFAL",price:"₦350/kg",category:"grain"},
+{name:"LIMESTONE",price:"₦60/kg",category:"additives"},
+{name:"BONE_MEAL",price:"₦250/kg",category:"additives"},
+{name:"BLOOD_MEAL",price:"₦700/bag",category:"protein"},
+{name:"METHIONINE",price:"₦125,000/bag",category:"additives"},
+{name:"LYSINE",price:"₦80,000/bag",category:"additives"},
+{name:"ENZYMES",price:"₦110,000/bag",category:"additives"},
+{name:"TOXIN_BLINDER",price:"₦55,000/bag",category:"additives"},
+{name:"DCP",price:"₦55,000/bag",category:"additives"},
+{name:"SALT",price:"₦20,000/bag",category:"additives"},
+{name:"PREMIX",price:"₦3,500",category:"additives"},
+{name:"BREAD",price:"₦280/kg",category:"grain"},
+{name:"VITAMIN_C",price:"₦5,500",category:"additives"},
+{name:"CASSAVA",price:"₦800/kg",category:"grain"}
 ];
 
 const container=document.getElementById("container");
 
 products.forEach(p=>{
 container.innerHTML+=`
-<div class="card">
+<div class="card" data-cat="${p.category}">
 <img src="images/${p.name}.jpg">
 <h4>${p.name}</h4>
 <div class="price">${p.price}</div>
@@ -257,7 +278,14 @@ container.innerHTML+=`
 </div>`;
 });
 
-// CART SYSTEM
+// FILTER FUNCTION
+function filterCategory(cat){
+document.querySelectorAll(".card").forEach(c=>{
+c.style.display=(cat==="all"||c.dataset.cat===cat)?"block":"none";
+});
+}
+
+// REST OF YOUR JS (UNCHANGED)
 let cart=JSON.parse(localStorage.getItem("cart"))||[];
 
 function updateCart(){
