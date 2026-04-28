@@ -192,7 +192,9 @@ border-radius:10px;
 <div class="cart-items" id="cartItems"></div>
 
 <div style="padding:10px">
-<button onclick="order()">Proceed to Order</button>
+<button onclick="order()" style="background:#25D366;color:white;font-weight:bold;">
+Proceed to Order
+</button>
 <button onclick="closeCart()" style="background:red;color:white">Close</button>
 </div>
 
@@ -241,12 +243,12 @@ container.innerHTML+=`
 });
 
 /* CART */
-let cart=[];
+let cart = JSON.parse(localStorage.getItem("jt_cart")) || [];
 
 function update(){
-document.getElementById("count").innerText=cart.reduce((a,b)=>a+b.qty,0);
-}
-
+document.getElementById("count").innerText = cart.reduce((a,b)=>a+b.qty,0);
+localStorage.setItem("jt_cart", JSON.stringify(cart));
+  }
 function add(name){
 let item=cart.find(i=>i.name===name);
 if(item){item.qty++}else{cart.push({name,qty:1})}
@@ -274,10 +276,16 @@ document.getElementById("cart-modal").style.display="none";
 }
 
 function order(){
-if(cart.length===0){alert("No item in cart");return;}
-let msg="Order:\n"+cart.map(i=>i.name+" x"+i.qty).join("\n");
-window.open("https://wa.me/2347065498338?text="+encodeURIComponent(msg));
+if(cart.length===0){
+alert("No item in cart");
+return;
 }
+
+let msg = "I want to order the following items:\n\n" +
+cart.map(i => i.name + " x" + i.qty).join("\n");
+
+window.open("https://wa.me/2347065498338?text=" + encodeURIComponent(msg));
+                      }
 
 function orderNow(name){
 window.open("https://wa.me/2347065498338?text=I want "+name);
