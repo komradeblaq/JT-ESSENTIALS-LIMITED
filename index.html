@@ -4,240 +4,233 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ✅ SEO TITLE -->
-<title>JT Essentials Limited | Animal Feed, Poultry Feed & Livestock Raw Materials Nigeria</title>
+<title>JT Essentials Limited | Animal Feed & Livestock Raw Materials Nigeria</title>
 
-<!-- ✅ SEO META -->
-<meta name="description" content="JT Essentials Limited supplies high quality animal feeds, poultry feeds, livestock feed raw materials in Nigeria with nationwide delivery.">
-<meta name="keywords" content="animal feed, poultry feed, livestock feed, chicken feed, goat feed, pig feed, cow feed, feed raw materials Nigeria, JT Essentials Limited">
+<meta name="description" content="Buy quality poultry feed, animal feed and livestock raw materials in Nigeria. Nationwide delivery available.">
+<meta name="keywords" content="animal feed Nigeria, poultry feed, chicken feed, fish feed, livestock raw materials, maize, soya meal">
 <meta name="author" content="JT Essentials Limited">
 
-<!-- ✅ GOOGLE VERIFICATION (PUT YOUR CODE LATER) -->
-<meta name="google-site-verification" content="PUT-YOUR-CODE-HERE" />
-
-<!-- ✅ OPEN GRAPH (SOCIAL SHARING) -->
-<meta property="og:title" content="JT Essentials Limited">
-<meta property="og:description" content="Premium livestock feed and raw materials supplier in Nigeria">
-<meta property="og:type" content="website">
-
-<!-- ✅ STRUCTURED DATA (VERY IMPORTANT FOR GOOGLE) -->
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "Organization",
- "name": "JT Essentials Limited",
- "url": "https://jtessentialslimited.com",
- "contactPoint": {
-   "@type": "ContactPoint",
-   "telephone": "+2347065498338",
-   "contactType": "customer service"
- }
-}
-</script>
-
 <style>
-/* KEEP YOUR ORIGINAL CSS EXACTLY */
-body{margin:0;font-family:Arial;background:#f4f6f9;overflow-x:hidden}
+body{margin:0;font-family:Arial;background:#f4f6f9}
 
 /* HEADER */
-header{
-background:#1f2d3d;color:white;padding:10px;
-display:flex;flex-direction:column;
-position:sticky;top:0;z-index:100
-}
-
-.header-top{
-display:flex;align-items:center;justify-content:space-between;
-}
-
+header{background:#1f2d3d;color:white;padding:10px;position:sticky;top:0;z-index:100}
+.header-top{display:flex;align-items:center}
 header img{height:45px}
 header h1{font-size:16px;margin-left:8px}
 
 /* SEARCH */
-.search-box{
-margin-top:8px;width:100%;
-}
-.search-box input{
-width:100%;padding:8px 12px;border-radius:20px;border:none;
-}
+.search-box{margin-top:8px}
+.search-box input{width:100%;padding:8px;border-radius:20px;border:none}
 
 /* NAV */
-nav{
-background:#ff6600;
-display:flex;justify-content:center;gap:8px;
-padding:10px;flex-wrap:wrap
-}
-nav a{
-background:white;color:#ff6600;
-text-decoration:none;font-weight:bold;
-padding:6px 12px;border-radius:20px;
-font-size:13px;
-}
-nav a:hover{background:#ff6600;color:white}
+nav{background:#ff6600;display:flex;justify-content:center;gap:8px;padding:10px;flex-wrap:wrap}
+nav a{background:white;color:#ff6600;padding:6px 12px;border-radius:20px;text-decoration:none;font-weight:bold}
 
-/* FILTER BUTTONS */
-.filter-section{
-text-align:center;padding:10px
-}
-.filter-btn{
-margin:5px;padding:6px 12px;border:none;
-border-radius:20px;background:#ddd;
-cursor:pointer;font-weight:bold
-}
-.filter-btn:hover{
-background:#ff6600;color:white
-}
+/* FILTER */
+.filter{text-align:center;padding:10px}
+.filter button{margin:5px;padding:6px 12px;border:none;border-radius:20px;font-weight:bold}
 
 /* GRID */
-.container{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px;
-}
-
-@media(max-width:1024px){
-.container{grid-template-columns:repeat(3,1fr);}
-}
-
-@media(max-width:768px){
-.container{grid-template-columns:repeat(2,1fr);}
-.card img{height:100px}
-}
+.container{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:10px}
+@media(max-width:768px){.container{grid-template-columns:repeat(2,1fr)}}
 
 /* CARD */
-.card{
-background:white;padding:10px;border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.08);
-text-align:center
-}
-.card img{
-width:100%;height:130px;object-fit:cover;border-radius:6px
-}
-
+.card{background:white;padding:10px;border-radius:10px;text-align:center}
+.card img{width:100%;height:110px;object-fit:cover;border-radius:6px}
 .price{color:red;font-weight:bold}
 
-button{
-width:100%;padding:6px;border:none;border-radius:20px;
-margin-top:5px;font-weight:bold
-}
-.view-products{background:#25D366;color:white}
-.contact-us{background:#007bff;color:white}
+button{width:100%;padding:6px;border:none;border-radius:20px;margin-top:5px;font-weight:bold}
+.order{background:#25D366;color:white}
+.add{background:#007bff;color:white}
 
-/* FLOAT BUTTONS */
-#floating-cart{
+/* FLOAT */
+#cart-btn{
 position:fixed;bottom:20px;right:20px;
 background:#007bff;color:white;
 padding:14px 20px;border-radius:30px;
 font-weight:bold;z-index:999;
-min-width:170px;text-align:center;
 }
 
-#whatsapp-float{
-position:fixed;bottom:90px;right:20px;
-background:#25D366;color:white;
-width:60px;height:60px;border-radius:50%;
-display:flex;align-items:center;justify-content:center;
-font-size:28px;z-index:999
-}
-
-/* CART MODAL */
+/* CART */
 #cart-modal{
 position:fixed;top:0;left:0;width:100%;height:100%;
 background:rgba(0,0,0,0.6);display:none;
 justify-content:center;align-items:center;
-z-index:1000;
 }
 
-.cart-content{
+.cart{
 background:white;width:95%;max-width:400px;
 border-radius:10px;display:flex;flex-direction:column;
 max-height:90%;
 }
 
-.cart-header{
-padding:10px;font-weight:bold;
-border-bottom:1px solid #ddd;
-}
+.cart-items{flex:1;overflow-y:auto;padding:10px}
+.cart-footer{padding:10px}
 
-.cart-items{
-padding:10px;
-overflow-y:auto;
-flex:1;
-}
-
-.cart-footer{
-padding:10px;border-top:1px solid #ddd;
-}
-
-.cart-footer button{
-margin-top:5px;
-}
-
-/* TOAST */
-#cart-toast{
-position:fixed;bottom:150px;right:20px;
-background:#28a745;color:white;padding:10px;
-border-radius:6px;display:none
-}
-
-.about, #contact{padding:20px}
+/* CONTACT */
+section{padding:20px}
 </style>
 </head>
 
 <body>
 
-<!-- KEEP YOUR BODY EXACTLY SAME (NO CHANGES) -->
-
 <header>
 <div class="header-top">
-<div style="display:flex;align-items:center">
 <img src="images/LOGO.jpg">
 <h1>JT ESSENTIALS LIMITED</h1>
 </div>
-</div>
 
 <div class="search-box">
-<input type="text" placeholder="Search products..." id="search-input" onkeyup="searchProducts()">
+<input type="text" placeholder="Search..." id="search" onkeyup="searchProducts()">
 </div>
 </header>
 
 <nav>
-<a href="#raw-materials">Raw Materials</a>
-<a href="#about">About Us</a>
-<a href="consultancy.html">Consultancy</a>
+<a href="#products">Products</a>
+<a href="#about">About</a>
 <a href="#contact">Contact</a>
 </nav>
 
-<div class="filter-section">
-<button class="filter-btn" onclick="filterCategory('all')">All</button>
-<button class="filter-btn" onclick="filterCategory('grain')">Grains</button>
-<button class="filter-btn" onclick="filterCategory('protein')">Protein</button>
-<button class="filter-btn" onclick="filterCategory('additives')">Additives</button>
+<div class="filter">
+<button onclick="filter('all')">All</button>
+<button onclick="filter('grain')">Grains</button>
+<button onclick="filter('protein')">Protein</button>
+<button onclick="filter('additives')">Additives</button>
 </div>
 
-<div id="floating-cart">🛒 Proceed to Cart (<span id="cart-count">0</span>)</div>
-<div id="whatsapp-float" onclick="openWhatsApp()">💬</div>
-<div id="cart-toast"></div>
+<div id="cart-btn">🛒 Cart (<span id="count">0</span>)</div>
 
-<section id="raw-materials">
-<h2 style="padding-left:10px">Raw Materials</h2>
-<div class="container" id="container"></div>
+<section id="products">
+<h2>Raw Materials</h2>
+<div class="container" id="box"></div>
 </section>
 
-<section id="about" class="about">
+<section id="about">
 <h2>About Us</h2>
-<p><strong>REG. NO. 6899712</strong></p>
-<p><strong>JT ESSENTIALS LIMITED – Consistency in Quality Delivery</strong></p>
-<p><strong>Our Vision:</strong> To be the leading provider of high-quality grains and livestock feed raw materials supplies and services while educating livestock producers.</p>
+<p>JT Essentials Limited delivers high-quality livestock feed and raw materials across Nigeria.</p>
 </section>
 
 <section id="contact">
-<h2>Contact Us</h2>
-<p>
-📧 jtessentialslimited@gmail.com<br>
-📞 +2347065498338
-</p>
+<h2>Contact</h2>
+<p>📞 +2347065498338</p>
+<p>📧 jtessentialslimited@gmail.com</p>
 </section>
+
+<!-- CART -->
+<div id="cart-modal">
+<div class="cart">
+
+<div class="cart-items" id="cart-items"></div>
+
+<div class="cart-footer">
+<button onclick="sendCart()" style="background:#25D366;color:white">Order on WhatsApp</button>
+<button onclick="closeCart()" style="background:red;color:white">Close</button>
+</div>
+
+</div>
+</div>
+
+<script>
+
+// FULL PRODUCTS
+const products=[
+{name:"MAIZE",price:"₦320/kg",cat:"grain"},
+{name:"SOYA_MEAL",price:"₦750/kg",cat:"protein"},
+{name:"SOYA_CAKE",price:"₦700/kg",cat:"protein"},
+{name:"GROUDNUT_CAKE",price:"₦580/kg",cat:"protein"},
+{name:"RICE_BRAN",price:"₦100/kg",cat:"grain"},
+{name:"PALM_KERNEL_CAKE",price:"₦280/kg",cat:"protein"},
+{name:"MAIZE_OFFAL",price:"₦190/kg",cat:"grain"},
+{name:"WHEAT_OFFAL",price:"₦350/kg",cat:"grain"},
+{name:"LIMESTONE",price:"₦60/kg",cat:"additives"},
+{name:"BONE_MEAL",price:"₦250/kg",cat:"additives"},
+{name:"BLOOD_MEAL",price:"₦700/bag",cat:"protein"},
+{name:"METHIONINE",price:"₦125,000/bag",cat:"additives"},
+{name:"LYSINE",price:"₦80,000/bag",cat:"additives"},
+{name:"ENZYMES",price:"₦110,000/bag",cat:"additives"},
+{name:"TOXIN_BLINDER",price:"₦55,000/bag",cat:"additives"},
+{name:"DCP",price:"₦55,000/bag",cat:"additives"},
+{name:"SALT",price:"₦20,000/bag",cat:"additives"},
+{name:"PREMIX",price:"₦3,500",cat:"additives"},
+{name:"BREAD",price:"₦280/kg",cat:"grain"},
+{name:"VITAMIN_C",price:"₦5,500",cat:"additives"},
+{name:"CASSAVA",price:"₦800/kg",cat:"grain"}
+];
+
+// RENDER
+const box=document.getElementById("box");
+products.forEach(p=>{
+box.innerHTML+=`
+<div class="card" data-cat="${p.cat}">
+<img src="images/${p.name}.jpg">
+<h4>${p.name}</h4>
+<div class="price">${p.price}</div>
+<button class="order" onclick="order('${p.name}')">Order</button>
+<button class="add" onclick="addToCart('${p.name}')">Add to Cart</button>
+</div>`;
+});
+
+// FILTER
+function filter(cat){
+document.querySelectorAll(".card").forEach(c=>{
+c.style.display=(cat==="all"||c.dataset.cat===cat)?"block":"none";
+});
+}
+
+// SEARCH
+function searchProducts(){
+let v=document.getElementById("search").value.toLowerCase();
+document.querySelectorAll(".card").forEach(c=>{
+c.style.display=c.innerText.toLowerCase().includes(v)?"block":"none";
+});
+}
+
+// CART SYSTEM
+let cart=[];
+
+function updateCart(){
+document.getElementById("count").innerText=cart.reduce((a,b)=>a+b.qty,0);
+}
+
+function addToCart(name){
+let item=cart.find(i=>i.name===name);
+if(item){item.qty++}else{cart.push({name,qty:1})}
+updateCart();
+}
+
+function openCart(){
+let div=document.getElementById("cart-items");
+div.innerHTML="";
+cart.forEach((item,i)=>{
+div.innerHTML+=`
+${item.name} x${item.qty}
+<button onclick="inc(${i})">+</button>
+<button onclick="dec(${i})">-</button>
+<button onclick="removeItem(${i})">❌</button><br><br>`;
+});
+document.getElementById("cart-modal").style.display="flex";
+}
+
+function inc(i){cart[i].qty++;updateCart();openCart()}
+function dec(i){cart[i].qty>1?cart[i].qty--:cart.splice(i,1);updateCart();openCart()}
+function removeItem(i){cart.splice(i,1);updateCart();openCart()}
+
+function closeCart(){document.getElementById("cart-modal").style.display="none"}
+
+function sendCart(){
+if(cart.length===0){alert("No item in cart");return;}
+let msg="Hello, I want to order:\n"+cart.map(i=>i.name+" x"+i.qty).join("\n");
+window.open("https://wa.me/2347065498338?text="+encodeURIComponent(msg));
+}
+
+function order(name){
+window.open("https://wa.me/2347065498338?text=I want "+name);
+}
+
+document.getElementById("cart-btn").onclick=openCart;
+
+</script>
 
 </body>
 </html>
