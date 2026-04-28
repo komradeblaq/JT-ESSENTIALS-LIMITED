@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JT ESSENTIALS LIMITED</title>
+
+<!-- ✅ SEO TITLE -->
+<title>JT Essentials Limited | Animal Feed, Livestock Feed & Raw Materials Nigeria</title>
+
+<!-- ✅ SEO META -->
+<meta name="description" content="JT Essentials Limited supplies high-quality animal feed, poultry feed, livestock feed raw materials in Nigeria. Nationwide delivery available.">
+<meta name="keywords" content="animal feed, livestock feed, poultry feed, chicken feed, goat feed, pig feed, fish feed, feed raw materials Nigeria">
+<meta name="author" content="JT Essentials Limited">
+
+<!-- ✅ GOOGLE INDEXING -->
+<meta name="robots" content="index, follow">
 
 <style>
 body{margin:0;font-family:Arial;background:#f4f6f9;overflow-x:hidden}
@@ -23,9 +34,7 @@ header img{height:45px}
 header h1{font-size:16px;margin-left:8px}
 
 /* SEARCH */
-.search-box{
-margin-top:8px;width:100%;
-}
+.search-box{margin-top:8px;width:100%;}
 .search-box input{
 width:100%;padding:8px 12px;border-radius:20px;border:none;
 }
@@ -44,18 +53,14 @@ font-size:13px;
 }
 nav a:hover{background:#ff6600;color:white}
 
-/* FILTER BUTTONS */
-.filter-section{
-text-align:center;padding:10px
-}
+/* FILTER */
+.filter-section{text-align:center;padding:10px}
 .filter-btn{
 margin:5px;padding:6px 12px;border:none;
 border-radius:20px;background:#ddd;
 cursor:pointer;font-weight:bold
 }
-.filter-btn:hover{
-background:#ff6600;color:white
-}
+.filter-btn:hover{background:#ff6600;color:white}
 
 /* GRID */
 .container{
@@ -92,7 +97,7 @@ margin-top:5px;font-weight:bold
 .view-products{background:#25D366;color:white}
 .contact-us{background:#007bff;color:white}
 
-/* FLOAT BUTTONS */
+/* FLOAT */
 #floating-cart{
 position:fixed;bottom:20px;right:20px;
 background:#007bff;color:white;
@@ -109,7 +114,7 @@ display:flex;align-items:center;justify-content:center;
 font-size:28px;z-index:999
 }
 
-/* CART MODAL */
+/* CART */
 #cart-modal{
 position:fixed;top:0;left:0;width:100%;height:100%;
 background:rgba(0,0,0,0.6);display:none;
@@ -138,10 +143,6 @@ flex:1;
 padding:10px;border-top:1px solid #ddd;
 }
 
-.cart-footer button{
-margin-top:5px;
-}
-
 /* TOAST */
 #cart-toast{
 position:fixed;bottom:150px;right:20px;
@@ -164,7 +165,7 @@ border-radius:6px;display:none
 </div>
 
 <div class="search-box">
-<input type="text" placeholder="Search products..." id="search-input" onkeyup="searchProducts()">
+<input type="text" placeholder="Search animal feed, poultry feed..." id="search-input" onkeyup="searchProducts()">
 </div>
 </header>
 
@@ -175,7 +176,7 @@ border-radius:6px;display:none
 <a href="#contact">Contact</a>
 </nav>
 
-<!-- ✅ FILTER SECTION ADDED BACK -->
+<!-- FILTER -->
 <div class="filter-section">
 <button class="filter-btn" onclick="filterCategory('all')">All</button>
 <button class="filter-btn" onclick="filterCategory('grain')">Grains</button>
@@ -198,13 +199,22 @@ border-radius:6px;display:none
 <h2>About Us</h2>
 <p><strong>REG. NO. 6899712</strong></p>
 <p><strong>JT ESSENTIALS LIMITED – Consistency in Quality Delivery</strong></p>
-<p><strong>Our Vision:</strong> To be the leading provider of high-quality grains and livestock feed raw materials supplies and services while educating livestock producers.</p>
+
+<p>
+JT Essentials Limited is a leading supplier of livestock feed raw materials including
+<strong>animal feed, poultry feed, chicken feed, fish feed, goat feed, pig feed and more</strong>.
+We deliver nationwide across Nigeria.
+</p>
+
+<p><strong>Our Vision:</strong> To lead in livestock nutrition and feed supply.</p>
+
 <ul>
-<li>Quality & Safety of livestock</li>
+<li>Quality & Safety</li>
 <li>Better growth rate</li>
 <li>Immunity boost</li>
 <li>Digestive support</li>
 </ul>
+
 <p><strong>Our Mission:</strong></p>
 <ul>
 <li>Deliver reliable solutions</li>
@@ -240,7 +250,7 @@ border-radius:6px;display:none
 
 <script>
 
-// PRODUCTS (NOW WITH CATEGORY BACK)
+// PRODUCTS
 const products=[
 {name:"MAIZE",price:"₦320/kg",category:"grain"},
 {name:"SOYA_MEAL",price:"₦750/kg",category:"protein"},
@@ -278,14 +288,7 @@ container.innerHTML+=`
 </div>`;
 });
 
-// FILTER FUNCTION
-function filterCategory(cat){
-document.querySelectorAll(".card").forEach(c=>{
-c.style.display=(cat==="all"||c.dataset.cat===cat)?"block":"none";
-});
-}
-
-// REST OF YOUR JS (UNCHANGED)
+// CART LOGIC
 let cart=JSON.parse(localStorage.getItem("cart"))||[];
 
 function updateCart(){
@@ -305,12 +308,10 @@ function openCart(){
 let div=document.getElementById("cart-items");
 div.innerHTML="";
 cart.forEach((item,i)=>{
-div.innerHTML+=`
-${item.name} (x${item.qty})
+div.innerHTML+=`${item.name} (x${item.qty})
 <button onclick="inc(${i})">+</button>
 <button onclick="dec(${i})">-</button>
-<button onclick="removeItem(${i})">❌</button>
-<br><br>`;
+<button onclick="removeItem(${i})">❌</button><br><br>`;
 });
 document.getElementById("cart-modal").style.display="flex";
 }
@@ -348,6 +349,12 @@ function searchProducts(){
 let val=document.getElementById("search-input").value.toLowerCase();
 document.querySelectorAll(".card").forEach(c=>{
 c.style.display=c.innerText.toLowerCase().includes(val)?"block":"none";
+});
+}
+
+function filterCategory(cat){
+document.querySelectorAll(".card").forEach(c=>{
+c.style.display=(cat==="all"||c.dataset.cat===cat)?"block":"none";
 });
 }
 
