@@ -4,107 +4,87 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>JT Essentials Limited | Animal Feed & Livestock Raw Materials Nigeria</title>
+<title>JT Essentials Limited | Animal Feed, Poultry Feed & Livestock Raw Materials Nigeria</title>
 
-<meta name="description" content="JT Essentials Limited supplies animal feed, poultry feed, livestock raw materials with nationwide delivery in Nigeria.">
-<meta name="keywords" content="animal feed, poultry feed, livestock feed, chicken feed, goat feed, pig feed, cow feed Nigeria">
+<meta name="description" content="Buy animal feed, poultry feed, livestock feed raw materials in Nigeria. JT Essentials Limited supplies maize, soya, fish meal, additives with nationwide delivery.">
+<meta name="keywords" content="animal feed Nigeria, poultry feed, livestock feed, chicken feed, fish meal Nigeria, feed raw materials Abuja Lagos">
 <meta name="author" content="JT Essentials Limited">
 
 <style>
 body{margin:0;font-family:Arial;background:#f4f6f9}
 
 /* HEADER */
-header{
-background:#1f2d3d;color:white;padding:10px;
-position:sticky;top:0;z-index:100
-}
-.header-top{display:flex;align-items:center}
+header{background:#1f2d3d;color:white;padding:10px;position:sticky;top:0;z-index:100}
+.header-top{display:flex;align-items:center;justify-content:space-between}
 header img{height:45px}
 header h1{font-size:16px;margin-left:8px}
 
 /* SEARCH */
-.search-box{margin-top:8px}
-.search-box input{
-width:100%;padding:8px;border-radius:20px;border:none;
-}
+.search-box input{width:100%;padding:8px;border-radius:20px;border:none;margin-top:8px}
 
 /* NAV */
-nav{
-background:#ff6600;
-display:flex;justify-content:center;gap:8px;
-padding:10px;flex-wrap:wrap
-}
-nav a{
-background:white;color:#ff6600;
-padding:6px 12px;border-radius:20px;
-text-decoration:none;font-weight:bold;font-size:13px;
-}
+nav{background:#ff6600;padding:10px;text-align:center}
+nav a{background:white;color:#ff6600;padding:6px 10px;border-radius:20px;text-decoration:none;margin:5px;font-weight:bold}
 
 /* FILTER */
 .filter-section{text-align:center;padding:10px}
-.filter-btn{
-margin:5px;padding:6px 12px;border:none;
-border-radius:20px;background:#ddd;font-weight:bold
-}
+.filter-btn{margin:5px;padding:6px 12px;border:none;border-radius:20px}
 
 /* GRID */
-.container{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:10px;padding:10px;
-}
-
+.container{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:10px}
 @media(max-width:768px){
 .container{grid-template-columns:repeat(2,1fr);}
 }
 
 /* CARD */
-.card{
-background:white;padding:10px;border-radius:10px;
-text-align:center;
-}
-.card img{
-width:100%;height:120px;object-fit:cover;border-radius:6px
-}
+.card{background:white;padding:10px;border-radius:10px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.08)}
+.card img{width:100%;height:110px;object-fit:cover;border-radius:6px}
 .price{color:red;font-weight:bold}
 
-button{
-width:100%;padding:6px;border:none;border-radius:20px;
-margin-top:5px;font-weight:bold
-}
-.order{background:#25D366;color:white}
-.cart-btn{background:#007bff;color:white}
+/* BUTTONS */
+button{width:100%;padding:6px;border:none;border-radius:20px;margin-top:5px;font-weight:bold}
+.view-products{background:#25D366;color:white}
+.contact-us{background:#007bff;color:white}
 
-/* FLOAT */
+/* CART */
 #floating-cart{
 position:fixed;bottom:20px;right:20px;
 background:#007bff;color:white;
-padding:12px 18px;border-radius:30px;
-z-index:999;
-}
-#whatsapp{
-position:fixed;bottom:90px;right:20px;
-background:#25D366;color:white;
-width:60px;height:60px;border-radius:50%;
-display:flex;align-items:center;justify-content:center;
-font-size:28px;z-index:999;
+padding:14px 20px;border-radius:30px;
+font-weight:bold;z-index:999;min-width:180px;text-align:center;
 }
 
-/* CART */
 #cart-modal{
 position:fixed;top:0;left:0;width:100%;height:100%;
-background:rgba(0,0,0,0.6);display:none;
-justify-content:center;align-items:center;
+background:rgba(0,0,0,0.6);
+display:none;justify-content:center;align-items:center;
+z-index:1000;
 }
-.cart-box{
-background:white;width:90%;max-width:400px;
-max-height:90%;display:flex;flex-direction:column;
-border-radius:10px;
-}
-.cart-items{overflow:auto;padding:10px;flex:1}
 
-/* SECTIONS */
-.about,#contact{padding:20px}
+.cart-content{
+background:white;width:95%;max-width:400px;
+border-radius:10px;display:flex;flex-direction:column;
+max-height:90%;
+}
+
+.cart-items{
+padding:10px;overflow-y:auto;flex:1;
+}
+
+.cart-footer{
+padding:10px;border-top:1px solid #ddd;
+}
+
+.cart-footer button{
+margin-top:5px;
+}
+
+/* ABOUT */
+.about{padding:20px}
+.about ul{line-height:1.6}
+
+/* CONTACT */
+#contact{padding:20px}
 </style>
 </head>
 
@@ -112,38 +92,45 @@ border-radius:10px;
 
 <header>
 <div class="header-top">
+<div style="display:flex;align-items:center">
 <img src="images/LOGO.jpg">
 <h1>JT ESSENTIALS LIMITED</h1>
 </div>
+</div>
 
 <div class="search-box">
-<input type="text" placeholder="Search..." onkeyup="searchProducts()" id="search">
+<input type="text" placeholder="Search products..." id="search-input" onkeyup="searchProducts()">
 </div>
 </header>
 
 <nav>
 <a href="#raw">Raw Materials</a>
-<a href="#about">About</a>
+<a href="#about">About Us</a>
 <a href="consultancy.html">Consultancy</a>
 <a href="#contact">Contact</a>
 </nav>
 
+<!-- SEO TEXT -->
+<section style="padding:15px">
+<h2>Animal Feed & Poultry Feed Supplier in Nigeria</h2>
+<p>We supply high quality livestock feed, poultry feed, and raw materials across Nigeria.</p>
+</section>
+
 <div class="filter-section">
-<button class="filter-btn" onclick="filter('all')">All</button>
-<button class="filter-btn" onclick="filter('grain')">Grains</button>
-<button class="filter-btn" onclick="filter('protein')">Protein</button>
-<button class="filter-btn" onclick="filter('additives')">Additives</button>
+<button onclick="filterCategory('all')">All</button>
+<button onclick="filterCategory('grain')">Grains</button>
+<button onclick="filterCategory('protein')">Protein</button>
+<button onclick="filterCategory('additives')">Additives</button>
 </div>
 
-<div id="floating-cart">🛒 Cart (<span id="count">0</span>)</div>
-<div id="whatsapp" onclick="openWhatsApp()">💬</div>
+<div id="floating-cart">🛒 Proceed to Cart (<span id="count">0</span>)</div>
 
 <section id="raw">
 <h2 style="padding-left:10px">Raw Materials</h2>
-<div class="container" id="products"></div>
+<div class="container" id="container"></div>
 </section>
 
-<!-- FULL ABOUT -->
+<!-- ABOUT -->
 <section id="about" class="about">
 <h2>About Us</h2>
 
@@ -156,21 +143,21 @@ border-radius:10px;
 <p><strong>WHY CHOOSE JT ESSENTIALS:</strong></p>
 <ul>
 <li>Quality & Safety of your livestock</li>
-<li>Innovative feed additives that enhance nutrients</li>
 <li>Better growth rate</li>
 <li>Immunity boost</li>
 <li>Digestive support</li>
 <li>Cost efficiency</li>
 </ul>
 
-<p><strong>Establishment:</strong> Abuja FCT, South West, South East (Nationwide)</p>
+<p><strong>Establishment:</strong> Nationwide delivery across Nigeria including Abuja, Lagos and beyond.</p>
 
 <p><strong>Our Mission:</strong></p>
 <ul>
 <li>Deliver reliable solutions</li>
 <li>Provide high-quality materials</li>
-<li>Maintain customer satisfaction</li>
+<li>Maintain excellent customer service</li>
 </ul>
+
 </section>
 
 <!-- CONTACT -->
@@ -178,23 +165,18 @@ border-radius:10px;
 <h2>Contact Us</h2>
 <p>
 📧 jtessentialslimited@gmail.com<br>
-📞 +2347065498338<br><br>
-<a href="https://wa.me/2347065498338">Chat on WhatsApp</a>
+📞 +2347065498338
 </p>
 </section>
 
 <!-- CART -->
 <div id="cart-modal">
-<div class="cart-box">
+<div class="cart-content">
 
-<div style="padding:10px;font-weight:bold">Your Cart</div>
+<div class="cart-items" id="cart-items"></div>
 
-<div class="cart-items" id="cartItems"></div>
-
-<div style="padding:10px">
-<button onclick="order()" style="background:#25D366;color:white;font-weight:bold;">
-Proceed to Order
-</button>
+<div class="cart-footer">
+<button onclick="order()" style="background:#25D366;color:white">Proceed to Order</button>
 <button onclick="closeCart()" style="background:red;color:white">Close</button>
 </div>
 
@@ -203,52 +185,54 @@ Proceed to Order
 
 <script>
 
-/* PRODUCTS FULL */
+/* FULL PRODUCTS */
 const products=[
-{name:"MAIZE",price:"₦320/kg",cat:"grain"},
-{name:"SOYA_MEAL",price:"₦750/kg",cat:"protein"},
-{name:"SOYA_CAKE",price:"₦700/kg",cat:"protein"},
-{name:"GROUDNUT_CAKE",price:"₦580/kg",cat:"protein"},
-{name:"RICE_BRAN",price:"₦100/kg",cat:"grain"},
-{name:"PALM_KERNEL_CAKE",price:"₦280/kg",cat:"protein"},
-{name:"MAIZE_OFFAL",price:"₦190/kg",cat:"grain"},
-{name:"WHEAT_OFFAL",price:"₦350/kg",cat:"grain"},
-{name:"LIMESTONE",price:"₦60/kg",cat:"additives"},
-{name:"BONE_MEAL",price:"₦250/kg",cat:"additives"},
-{name:"BLOOD_MEAL",price:"₦700/bag",cat:"protein"},
-{name:"METHIONINE",price:"₦125,000",cat:"additives"},
-{name:"LYSINE",price:"₦80,000",cat:"additives"},
-{name:"FISH_MEAL",price:"Available",cat:"protein"},
-{name:"ENZYMES",price:"₦110,000",cat:"additives"},
-{name:"TOXIN_BLINDER",price:"₦55,000",cat:"additives"},
-{name:"DCP",price:"₦55,000",cat:"additives"},
-{name:"SALT",price:"₦20,000",cat:"additives"},
-{name:"PREMIX",price:"₦3,500",cat:"additives"},
-{name:"BREAD",price:"₦280/kg",cat:"grain"},
-{name:"VITAMIN_C",price:"₦5,500",cat:"additives"},
-{name:"CASSAVA",price:"₦800/kg",cat:"grain"}
+{name:"MAIZE",price:"₦320/kg",category:"grain"},
+{name:"SOYA_MEAL",price:"₦750/kg",category:"protein"},
+{name:"SOYA_CAKE",price:"₦700/kg",category:"protein"},
+{name:"GROUDNUT_CAKE",price:"₦580/kg",category:"protein"},
+{name:"RICE_BRAN",price:"₦100/kg",category:"grain"},
+{name:"PALM_KERNEL_CAKE",price:"₦280/kg",category:"protein"},
+{name:"MAIZE_OFFAL",price:"₦190/kg",category:"grain"},
+{name:"WHEAT_OFFAL",price:"₦350/kg",category:"grain"},
+{name:"LIMESTONE",price:"₦60/kg",category:"additives"},
+{name:"BONE_MEAL",price:"₦250/kg",category:"additives"},
+{name:"BLOOD_MEAL",price:"₦700/bag",category:"protein"},
+{name:"METHIONINE",price:"₦125,000/bag",category:"additives"},
+{name:"LYSINE",price:"₦80,000/bag",category:"additives"},
+{name:"FISH_MEAL",price:"Available",category:"protein"},
+{name:"ENZYMES",price:"₦110,000/bag",category:"additives"},
+{name:"TOXIN_BLINDER",price:"₦55,000/bag",category:"additives"},
+{name:"DCP",price:"₦55,000/bag",category:"additives"},
+{name:"SALT",price:"₦20,000/bag",category:"additives"},
+{name:"PREMIX",price:"₦3,500",category:"additives"},
+{name:"BREAD",price:"₦280/kg",category:"grain"},
+{name:"VITAMIN_C",price:"₦5,500",category:"additives"},
+{name:"CASSAVA",price:"₦800/kg",category:"grain"}
 ];
 
-const container=document.getElementById("products");
+const container=document.getElementById("container");
 
 products.forEach(p=>{
 container.innerHTML+=`
-<div class="card" data-cat="${p.cat}">
+<div class="card" data-cat="${p.category}">
 <img src="images/${p.name}.jpg">
 <h4>${p.name}</h4>
 <div class="price">${p.price}</div>
-<button class="order" onclick="orderNow('${p.name}')">Order</button>
-<button class="cart-btn" onclick="add('${p.name}')">Add</button>
+<button class="view-products" onclick="orderNow('${p.name}')">Order</button>
+<button class="contact-us" onclick="add('${p.name}')">Add</button>
 </div>`;
 });
 
-/* CART */
-let cart = JSON.parse(localStorage.getItem("jt_cart")) || [];
+/* CART FIXED */
+let cart=JSON.parse(localStorage.getItem("jt_cart"))||[];
 
 function update(){
-document.getElementById("count").innerText = cart.reduce((a,b)=>a+b.qty,0);
-localStorage.setItem("jt_cart", JSON.stringify(cart));
-  }
+document.getElementById("count").innerText=cart.reduce((a,b)=>a+b.qty,0);
+localStorage.setItem("jt_cart",JSON.stringify(cart));
+}
+update();
+
 function add(name){
 let item=cart.find(i=>i.name===name);
 if(item){item.qty++}else{cart.push({name,qty:1})}
@@ -256,14 +240,12 @@ update();
 }
 
 function openCart(){
-let div=document.getElementById("cartItems");
+let div=document.getElementById("cart-items");
 div.innerHTML="";
 cart.forEach((i,index)=>{
-div.innerHTML+=`
-${i.name} x${i.qty}
+div.innerHTML+=`${i.name} x${i.qty}
 <button onclick="inc(${index})">+</button>
-<button onclick="dec(${index})">-</button>
-<br><br>`;
+<button onclick="dec(${index})">-</button><br><br>`;
 });
 document.getElementById("cart-modal").style.display="flex";
 }
@@ -276,39 +258,32 @@ document.getElementById("cart-modal").style.display="none";
 }
 
 function order(){
-if(cart.length===0){
-alert("No item in cart");
-return;
+if(cart.length===0){alert("Cart empty");return;}
+
+let msg="I want to order the following items:\n\n"+
+cart.map(i=>i.name+" x"+i.qty).join("\n");
+
+window.open("https://wa.me/2347065498338?text="+encodeURIComponent(msg));
 }
 
-let msg = "I want to order the following items:\n\n" +
-cart.map(i => i.name + " x" + i.qty).join("\n");
-
-window.open("https://wa.me/2347065498338?text=" + encodeURIComponent(msg));
-                      }
-
-function orderNow(name){
-window.open("https://wa.me/2347065498338?text=I want "+name);
-}
-
-function openWhatsApp(){
-window.open("https://wa.me/2347065498338");
+function orderNow(item){
+window.open("https://wa.me/2347065498338?text=I want to order "+item);
 }
 
 document.getElementById("floating-cart").onclick=openCart;
 
-/* FILTER */
-function filter(cat){
+/* SEARCH */
+function searchProducts(){
+let val=document.getElementById("search-input").value.toLowerCase();
 document.querySelectorAll(".card").forEach(c=>{
-c.style.display=(cat==="all"||c.dataset.cat===cat)?"block":"none";
+c.style.display=c.innerText.toLowerCase().includes(val)?"block":"none";
 });
 }
 
-/* SEARCH */
-function searchProducts(){
-let val=document.getElementById("search").value.toLowerCase();
+/* FILTER */
+function filterCategory(cat){
 document.querySelectorAll(".card").forEach(c=>{
-c.style.display=c.innerText.toLowerCase().includes(val)?"block":"none";
+c.style.display=(cat==="all"||c.dataset.cat===cat)?"block":"block";
 });
 }
 
