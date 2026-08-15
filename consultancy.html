@@ -3,247 +3,1450 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JT ESSENTIALS LIMITED - Consultancy</title>
+
+<title>JT ESSENTIALS LIMITED - Livestock Consultancy</title>
+
+<meta name="description" content="Professional livestock consultancy, farm setup, nutrition, feed formulation, farm management and training services by JT Essentials Limited.">
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial,sans-serif;
-  background: #f4f6f9;
+* {
+  box-sizing: border-box;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
-/* HEADER */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  color: #1f2d3d;
+  overflow-x: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
 header {
   background: #1f2d3d;
   color: white;
-  padding: 15px 20px;
+  padding: 12px 25px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
 }
-header img { height:50px; }
-header h1 { font-size: 20px; margin:0; }
 
-/* NAV */
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+header img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+}
+
+header h1 {
+  font-size: 20px;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
 nav {
-  background:#ff6600;
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  padding:10px;
-  position:sticky;
-  top:65px;
-  z-index:99;
-  flex-wrap:wrap;
+  background: #ff6600;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px;
+  position: sticky;
+  top: 76px;
+  z-index: 999;
+  flex-wrap: wrap;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
 }
+
 nav a {
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-  font-size:14px;
-  padding:6px 10px;
-  border-radius:5px;
-  transition:0.3s;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: 0.3s ease;
 }
+
 nav a.active,
-nav a:hover { background:white; color:#ff6600; }
+nav a:hover {
+  background: white;
+  color: #ff6600;
+  transform: translateY(-2px);
+}
 
-/* HERO VIDEO */
+/* =========================
+   PREMIUM HERO
+========================= */
+
 .hero {
-  position:relative;
-  height:300px;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:white;
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,102,0,0.35), transparent 30%),
+    radial-gradient(circle at 85% 80%, rgba(0,123,255,0.20), transparent 30%),
+    linear-gradient(135deg, #101c29, #1f2d3d 55%, #101820);
 }
-.hero video {
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:1;
-  filter: brightness(0.45);
-  transition: 0.5s;
+
+/* Animated glowing background */
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(5px);
+  animation: floatingGlow 8s infinite ease-in-out;
 }
-.hero-overlay {
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background: rgba(0,0,0,0.35);
-  z-index:2;
+
+.hero::before {
+  width: 320px;
+  height: 320px;
+  background: rgba(255,102,0,0.14);
+  top: -120px;
+  left: -100px;
 }
+
+.hero::after {
+  width: 280px;
+  height: 280px;
+  background: rgba(255,255,255,0.06);
+  bottom: -120px;
+  right: -80px;
+  animation-delay: 2s;
+}
+
+@keyframes floatingGlow {
+  0%,100% {
+    transform: translate(0,0) scale(1);
+  }
+
+  50% {
+    transform: translate(35px,25px) scale(1.15);
+  }
+}
+
+/* Decorative lines */
+
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.07;
+  background-image:
+    linear-gradient(45deg, transparent 48%, white 49%, transparent 50%),
+    linear-gradient(-45deg, transparent 48%, white 49%, transparent 50%);
+  background-size: 55px 55px;
+  animation: patternMove 20s linear infinite;
+}
+
+@keyframes patternMove {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 110px 110px;
+  }
+}
+
 .hero-content {
-  position:relative;
-  z-index:3;
-  padding:10px;
+  position: relative;
+  z-index: 5;
+  max-width: 900px;
+  padding: 50px 20px;
 }
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,102,0,0.15);
+  border: 1px solid rgba(255,102,0,0.6);
+  color: #ff8a3d;
+  padding: 9px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(8px);
+}
+
 .hero-content h2 {
-  font-size:28px;
-  margin-bottom:10px;
+  font-size: clamp(34px, 6vw, 62px);
+  margin: 0;
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -1px;
 }
+
+.hero-content h2 span {
+  color: #ff6600;
+}
+
 .hero-content p {
-  font-size:15px;
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 22px auto;
+  color: rgba(255,255,255,0.86);
 }
 
-/* SECTION */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.hero-btn {
+  padding: 13px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.hero-btn.primary {
+  background: #ff6600;
+  color: white;
+  box-shadow: 0 8px 25px rgba(255,102,0,0.35);
+}
+
+.hero-btn.primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(255,102,0,0.45);
+}
+
+.hero-btn.secondary {
+  border: 1px solid rgba(255,255,255,0.35);
+  color: white;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+}
+
+.hero-btn.secondary:hover {
+  background: white;
+  color: #1f2d3d;
+}
+
+/* HERO STATS */
+
+.hero-stats {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 38px;
+}
+
+.stat {
+  min-width: 150px;
+  padding: 15px 20px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.13);
+  backdrop-filter: blur(10px);
+}
+
+.stat strong {
+  display: block;
+  font-size: 21px;
+  color: #ff6600;
+}
+
+.stat span {
+  font-size: 11px;
+  color: rgba(255,255,255,0.75);
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+  padding: 55px 20px 30px;
+  text-align: center;
+  max-width: 850px;
+  margin: auto;
+}
+
+.intro h2 {
+  color: #e65c00;
+  margin-bottom: 12px;
+  font-size: 30px;
+}
+
+.intro p {
+  color: #5f6b76;
+  line-height: 1.7;
+}
+
+/* =========================
+   SECTION
+========================= */
+
 section {
-  padding:25px 15px;
-}
-h2 {
-  text-align:center;
-  margin-bottom:20px;
-  color:#e65c00;
+  padding: 25px 15px 50px;
 }
 
-/* CONSULTANCY GRID */
+h2.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #e65c00;
+  font-size: 30px;
+}
+
+/* =========================
+   CONSULTANCY GRID
+========================= */
+
 .container {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-  gap:15px;
-  max-width:1000px;
-  margin:auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
 }
 
-/* CARDS */
+/* =========================
+   PREMIUM CARDS
+========================= */
+
 .card {
-  background:white;
-  padding:18px 12px;
-  border-radius:10px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.08);
-  text-align:center;
-  transition:0.35s;
-  position:relative;
-  overflow:hidden;
+  background: white;
+  padding: 25px 18px;
+  border-radius: 18px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+  text-align: center;
+  transition: 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(31,45,61,0.05);
 }
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg,#ff6600,#1f2d3d,#ff6600);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.4s;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
 .card:hover {
-  transform:translateY(-7px);
-  box-shadow:0 8px 25px rgba(0,0,0,0.18);
+  transform: translateY(-9px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.14);
 }
+
 .icon {
-  font-size:35px;
-  margin-bottom:10px;
+  width: 65px;
+  height: 65px;
+  margin: auto auto 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  background: linear-gradient(135deg,#fff1e8,#ffffff);
+  box-shadow: 0 8px 20px rgba(255,102,0,0.12);
 }
+
 .card h4 {
-  font-size:14px;
-  margin-bottom:10px;
+  font-size: 14px;
+  margin: 10px 0 15px;
+  color: #1f2d3d;
+  line-height: 1.4;
 }
+
+/* =========================
+   BOOK BUTTON
+========================= */
+
 button {
-  padding:7px 12px;
-  margin-top:6px;
-  border:none;
-  border-radius:20px;
-  cursor:pointer;
-  font-weight:bold;
-  font-size:12px;
-  width:100%;
-  transition:0.3s;
+  padding: 10px 15px;
+  margin-top: 6px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12px;
+  width: 100%;
+  transition: 0.3s;
 }
-/* ORDER BUTTON */
+
 .order {
-  background:#25D366;
-  color:white;
-  border:2px solid #25D366;
+  background: #25D366;
+  color: white;
+  border: 2px solid #25D366;
 }
+
 .order:hover {
-  background:white;
-  color:#25D366;
+  background: white;
+  color: #25D366;
+  transform: translateY(-2px);
 }
 
-/* FOOTER */
+/* =========================
+   LOCATIONS
+========================= */
+
+.locations {
+  background: #1f2d3d;
+  color: white;
+  padding: 55px 20px;
+}
+
+.locations-title {
+  text-align: center;
+  color: white !important;
+  margin-bottom: 30px;
+}
+
+.location-grid {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 20px;
+}
+
+.location-card {
+  padding: 25px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+  transition: 0.3s;
+}
+
+.location-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.09);
+}
+
+.location-card h3 {
+  margin-top: 0;
+  color: #ff6600;
+}
+
+.location-card p {
+  line-height: 1.6;
+  color: rgba(255,255,255,0.82);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
-  background:#1f2d3d;
-  color:white;
-  text-align:center;
-  padding:15px;
-  margin-top:30px;
-  font-size:13px;
+  background: #101820;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+  font-size: 13px;
 }
 
-/* MOBILE */
+footer strong {
+  color: #ff6600;
+}
+
+/* =========================
+   BOOKING MODAL
+========================= */
+
+#booking-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(5,12,18,0.78);
+  backdrop-filter: blur(8px);
+  z-index: 5000;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.booking-box {
+  background: white;
+  width: 100%;
+  max-width: 600px;
+  max-height: 94vh;
+  overflow-y: auto;
+  border-radius: 22px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+  animation: modalIn 0.3s ease;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.booking-header {
+  background: linear-gradient(135deg,#1f2d3d,#101820);
+  color: white;
+  padding: 25px;
+  position: relative;
+}
+
+.booking-header h2 {
+  color: white;
+  text-align: left;
+  margin: 0 0 6px;
+}
+
+.booking-header p {
+  margin: 0;
+  color: rgba(255,255,255,0.7);
+  font-size: 13px;
+}
+
+.close-booking {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.booking-form {
+  padding: 25px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #1f2d3d;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d9dee4;
+  border-radius: 10px;
+  outline: none;
+  font-family: Arial,sans-serif;
+  font-size: 13px;
+  transition: 0.25s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #ff6600;
+  box-shadow: 0 0 0 3px rgba(255,102,0,0.1);
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.submit-booking {
+  background: #25D366;
+  color: white;
+  padding: 14px;
+  border-radius: 30px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.submit-booking:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   WHATSAPP FLOAT
+========================= */
+
+.whatsapp-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 58px;
+  height: 58px;
+  background: #25D366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 27px;
+  text-decoration: none;
+  z-index: 3000;
+  box-shadow: 0 8px 25px rgba(37,211,102,0.35);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37,211,102,0.45);
+  }
+
+  70% {
+    box-shadow: 0 0 0 14px rgba(37,211,102,0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(37,211,102,0);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:768px) {
-  header { flex-direction:column; align-items:flex-start; }
-  header h1 { font-size:16px; margin-top:5px; }
-  .hero { height:250px; }
-  .hero-content h2 { font-size:22px; }
+
+  header {
+    padding: 10px 15px;
+  }
+
+  header img {
+    height: 43px;
+  }
+
+  header h1 {
+    font-size: 15px;
+  }
+
+  nav {
+    top: 63px;
+    gap: 6px;
+  }
+
+  nav a {
+    font-size: 12px;
+    padding: 7px 12px;
+  }
+
+  .hero {
+    min-height: 530px;
+  }
+
+  .hero-content {
+    padding: 40px 18px;
+  }
+
+  .hero-content h2 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+  }
+
+  .stat {
+    min-width: 130px;
+  }
+
+  .container {
+    grid-template-columns: repeat(2,1fr);
+    gap: 12px;
+  }
+
+  .card {
+    padding: 20px 10px;
+  }
+
+  .card h4 {
+    font-size: 12px;
+  }
+
+  .icon {
+    width: 55px;
+    height: 55px;
+    font-size: 27px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width:420px) {
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h2 {
+    font-size: 32px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-btn {
+    width: 100%;
+  }
+
+  .hero-stats {
+    gap: 7px;
+  }
+
+  .stat {
+    min-width: 110px;
+    padding: 12px 8px;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
-<img src="images/LOGO.jpg" alt="JT ESSENTIALS LIMITED">
-<h1>JT ESSENTIALS LIMITED</h1>
+
+  <div class="header-brand">
+    <img src="images/LOGO.jpg" alt="JT ESSENTIALS LIMITED">
+    <h1>JT ESSENTIALS LIMITED</h1>
+  </div>
+
 </header>
 
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
 <nav id="navbar">
-<a href="index.html">Home</a>
-<a href="consultancy.html" class="active">Consultancy</a>
+
+  <a href="index.html">Home</a>
+
+  <a href="consultancy.html" class="active">
+    Consultancy
+  </a>
+
 </nav>
 
-<!-- HERO VIDEO -->
+
+<!-- =========================
+     PREMIUM HERO
+========================= -->
+
 <div class="hero">
-<video autoplay muted loop playsinline>
-<source src="images/farm.mp4" type="video/mp4">
-Your browser does not support HTML5 video.
-</video>
-<div class="hero-overlay"></div>
-<div class="hero-content">
-<h2>Livestock Consultancy Services</h2>
-<p>Professional livestock nutrition, farm setup and management support.</p>
-</div>
+
+  <div class="hero-pattern"></div>
+
+  <div class="hero-content">
+
+    <div class="hero-badge">
+      PROFESSIONAL LIVESTOCK SOLUTIONS
+    </div>
+
+    <h2>
+      Build Better Farms.<br>
+      <span>Grow With Confidence.</span>
+    </h2>
+
+    <p>
+      Expert livestock nutrition, farm setup, management,
+      feed programmes and practical agricultural consultancy
+      designed to help farmers make better decisions and achieve
+      stronger results.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a
+        href="#services"
+        class="hero-btn primary"
+      >
+        Explore Our Services
+      </a>
+
+      <a
+        href="#locations"
+        class="hero-btn secondary"
+      >
+        Our Locations
+      </a>
+
+    </div>
+
+    <div class="hero-stats">
+
+      <div class="stat">
+        <strong>10+</strong>
+        <span>Consultancy Services</span>
+      </div>
+
+      <div class="stat">
+        <strong>Nationwide</strong>
+        <span>Support Available</span>
+      </div>
+
+      <div class="stat">
+        <strong>Professional</strong>
+        <span>Practical Guidance</span>
+      </div>
+
+    </div>
+
+  </div>
+
 </div>
 
-<section>
-<h2>Consultancy Services</h2>
-<div class="container" id="consultancy-container"></div>
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<div class="intro">
+
+  <h2>
+    Your Farm. Our Expertise.
+  </h2>
+
+  <p>
+    At <strong>JT ESSENTIALS LIMITED</strong>, we provide practical
+    livestock and agricultural consultancy services to help farmers,
+    investors and farm owners make informed decisions — from feed
+    planning and nutrition to farm setup, management and capacity
+    building.
+  </p>
+
+</div>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="services">
+
+  <h2 class="section-title">
+    Our Consultancy Services
+  </h2>
+
+  <div class="container" id="consultancy-container"></div>
+
 </section>
 
+
+<!-- =========================
+     LOCATIONS
+========================= -->
+
+<section class="locations" id="locations">
+
+  <h2 class="section-title locations-title">
+    Our Locations
+  </h2>
+
+  <div class="location-grid">
+
+    <div class="location-card">
+
+      <h3>📍 Abuja Office</h3>
+
+      <p>
+        El-Gumi Plaza by Labour House,<br>
+        Kuje-Gwagwalada Road,<br>
+        Abuja, Nigeria.
+      </p>
+
+    </div>
+
+
+    <div class="location-card">
+
+      <h3>📍 Ogun / Lagos Axis</h3>
+
+      <p>
+        KM 128, Idiroko Road,<br>
+        Beside Chicken Republic,<br>
+        Otta, Ogun State, Nigeria.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
-JT ESSENTIALS LIMITED • Professional Livestock Consultancy
+
+  <strong>JT ESSENTIALS LIMITED</strong>
+
+  <br><br>
+
+  Professional Livestock Consultancy • Feed Solutions •
+  Agricultural Raw Materials
+
+  <br><br>
+
+  📞 +234 706 549 8338
+
+  <br>
+
+  📧 jtessentialslimited@gmail.com
+
 </footer>
 
+
+<!-- =========================
+     WHATSAPP
+========================= -->
+
+<a
+  class="whatsapp-float"
+  href="https://wa.me/2347065498338"
+  target="_blank"
+  aria-label="Chat with JT Essentials Limited on WhatsApp"
+>
+  💬
+</a>
+
+
+<!-- =========================
+     BOOKING MODAL
+========================= -->
+
+<div id="booking-modal">
+
+  <div class="booking-box">
+
+    <div class="booking-header">
+
+      <button
+        class="close-booking"
+        onclick="closeBooking()"
+      >
+        ×
+      </button>
+
+      <h2>Book a Consultancy Session</h2>
+
+      <p>
+        Tell us a little about your farm or project.
+        Our team will receive your request through WhatsApp.
+      </p>
+
+    </div>
+
+
+    <form
+      class="booking-form"
+      id="booking-form"
+      onsubmit="submitBooking(event)"
+    >
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label for="fullname">
+            Full Name *
+          </label>
+
+          <input
+            type="text"
+            id="fullname"
+            placeholder="Enter your full name"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="phone">
+            Phone / WhatsApp *
+          </label>
+
+          <input
+            type="tel"
+            id="phone"
+            placeholder="080..."
+            required
+          >
+
+        </div>
+
+      </div>
+
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label for="email">
+            Email Address
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            placeholder="you@example.com"
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="location">
+            Your Location *
+          </label>
+
+          <input
+            type="text"
+            id="location"
+            placeholder="City / State / Country"
+            required
+          >
+
+        </div>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="service">
+          Consultancy Service *
+        </label>
+
+        <select
+          id="service"
+          required
+        >
+
+          <option value="">
+            Select a service
+          </option>
+
+          <option value="CHICKEN FEED">
+            Chicken Feed
+          </option>
+
+          <option value="TURKEY RATION">
+            Turkey Ration
+          </option>
+
+          <option value="FISH FEED">
+            Fish Feed
+          </option>
+
+          <option value="RABBIT FEED">
+            Rabbit Feed
+          </option>
+
+          <option value="PIG FEED">
+            Pig Feed
+          </option>
+
+          <option value="OTHERS">
+            Others
+          </option>
+
+          <option value="LOCALIZED FEED PROGRAMME">
+            Localized Feed Programme
+          </option>
+
+          <option value="FARM PLAN AND SET-UP">
+            Farm Plan & Set-Up
+          </option>
+
+          <option value="FARM MANAGEMENT SERVICE">
+            Farm Management Service
+          </option>
+
+          <option value="TRAINING AND CAPACITY BUILDING">
+            Training & Capacity Building
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="farmtype">
+          Farm / Livestock Type
+        </label>
+
+        <select id="farmtype">
+
+          <option value="">
+            Select if applicable
+          </option>
+
+          <option value="Poultry">
+            Poultry
+          </option>
+
+          <option value="Fish Farming">
+            Fish Farming
+          </option>
+
+          <option value="Pig Farming">
+            Pig Farming
+          </option>
+
+          <option value="Rabbit Farming">
+            Rabbit Farming
+          </option>
+
+          <option value="Turkey Farming">
+            Turkey Farming
+          </option>
+
+          <option value="Mixed Livestock">
+            Mixed Livestock
+          </option>
+
+          <option value="Farm Setup / Investment">
+            Farm Setup / Investment
+          </option>
+
+          <option value="Other">
+            Other
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="message">
+          Tell Us About Your Request
+        </label>
+
+        <textarea
+          id="message"
+          placeholder="Briefly describe what you need help with..."
+        ></textarea>
+
+      </div>
+
+
+      <button
+        type="submit"
+        class="submit-booking"
+      >
+        💬 Submit & Continue to WhatsApp
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
 <script>
-// Consultancy List with Icons
+
+/* =========================
+   CONSULTANCY SERVICES
+========================= */
+
 const consultancy = [
-{name:"CHICKEN FEED",icon:"🐔"},
-{name:"TURKEY RATION",icon:"🦃"},
-{name:"FISH FEED",icon:"🐟"},
-{name:"RABBIT FEED",icon:"🐇"},
-{name:"PIG FEED",icon:"🐖"},
-{name:"OTHERS",icon:"📦"},
-{name:"LOCALIZED FEED PROGRAMME",icon:"📊"},
-{name:"FARM PLAN AND SET-UP",icon:"🏡"},
-{name:"FARM MANAGEMENT SERVICE",icon:"👨‍🌾"},
-{name:"TRAINING AND CAPACITY BUILDING",icon:"🎓"}
+
+  {
+    name:"CHICKEN FEED",
+    icon:"🐔"
+  },
+
+  {
+    name:"TURKEY RATION",
+    icon:"🦃"
+  },
+
+  {
+    name:"FISH FEED",
+    icon:"🐟"
+  },
+
+  {
+    name:"RABBIT FEED",
+    icon:"🐇"
+  },
+
+  {
+    name:"PIG FEED",
+    icon:"🐖"
+  },
+
+  {
+    name:"OTHERS",
+    icon:"📦"
+  },
+
+  {
+    name:"LOCALIZED FEED PROGRAMME",
+    icon:"📊"
+  },
+
+  {
+    name:"FARM PLAN AND SET-UP",
+    icon:"🏡"
+  },
+
+  {
+    name:"FARM MANAGEMENT SERVICE",
+    icon:"👨‍🌾"
+  },
+
+  {
+    name:"TRAINING AND CAPACITY BUILDING",
+    icon:"🎓"
+  }
+
 ];
 
-const container = document.getElementById("consultancy-container");
 
-consultancy.forEach(service=>{
-    container.innerHTML += `
+const container =
+document.getElementById("consultancy-container");
+
+
+/* =========================
+   DISPLAY SERVICES
+========================= */
+
+consultancy.forEach(service => {
+
+  container.innerHTML += `
+
     <div class="card">
-      <div class="icon">${service.icon}</div>
-      <h4>${service.name}</h4>
-      <button class="order" onclick="bookConsultancy('${service.name}')">Book Now</button>
-    </div>`;
+
+      <div class="icon">
+        ${service.icon}
+      </div>
+
+      <h4>
+        ${service.name}
+      </h4>
+
+      <button
+        class="order"
+        onclick="bookConsultancy('${service.name}')"
+      >
+        Book Now
+      </button>
+
+    </div>
+
+  `;
+
 });
 
-function bookConsultancy(service){
-    let message = "Hello JT Essentials Limited, I want to book consultancy on " + service;
-    window.open("https://wa.me/2347065498338?text=" + encodeURIComponent(message));
+
+/* =========================
+   OPEN BOOKING FORM
+========================= */
+
+function bookConsultancy(service) {
+
+  document.getElementById("booking-modal")
+    .style.display = "flex";
+
+  document.getElementById("service").value = service;
+
+  document.getElementById("fullname").focus();
+
 }
+
+
+/* =========================
+   CLOSE BOOKING FORM
+========================= */
+
+function closeBooking() {
+
+  document.getElementById("booking-modal")
+    .style.display = "none";
+
+}
+
+
+/* =========================
+   CLOSE WHEN CLICKING OUTSIDE
+========================= */
+
+document.getElementById("booking-modal")
+  .addEventListener("click", function(event) {
+
+    if(event.target === this) {
+      closeBooking();
+    }
+
+  });
+
+
+/* =========================
+   SUBMIT BOOKING
+========================= */
+
+function submitBooking(event) {
+
+  event.preventDefault();
+
+
+  const fullname =
+    document.getElementById("fullname").value.trim();
+
+  const phone =
+    document.getElementById("phone").value.trim();
+
+  const email =
+    document.getElementById("email").value.trim();
+
+  const location =
+    document.getElementById("location").value.trim();
+
+  const service =
+    document.getElementById("service").value;
+
+  const farmtype =
+    document.getElementById("farmtype").value;
+
+  const message =
+    document.getElementById("message").value.trim();
+
+
+  let whatsappMessage =
+
+`Hello JT Essentials Limited,
+
+I would like to book a consultancy session.
+
+━━━━━━━━━━━━━━━━━━
+
+👤 FULL NAME:
+${fullname}
+
+📞 PHONE / WHATSAPP:
+${phone}
+
+📧 EMAIL:
+${email || "Not provided"}
+
+📍 LOCATION:
+${location}
+
+🧑‍🌾 CONSULTANCY SERVICE:
+${service}
+
+🐄 FARM / LIVESTOCK TYPE:
+${farmtype || "Not specified"}
+
+📝 REQUEST:
+${message || "No additional message"}
+
+━━━━━━━━━━━━━━━━━━
+
+I look forward to hearing from your consultancy team.
+
+Thank you.
+JT ESSENTIALS LIMITED`;
+
+
+  const whatsappURL =
+    "https://wa.me/2347065498338?text=" +
+    encodeURIComponent(whatsappMessage);
+
+
+  window.open(
+    whatsappURL,
+    "_blank"
+  );
+
+}
+
+
+/* =========================
+   ESC KEY CLOSE
+========================= */
+
+document.addEventListener("keydown", function(event) {
+
+  if(event.key === "Escape") {
+    closeBooking();
+  }
+
+});
+
 </script>
 
 </body>
