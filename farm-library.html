@@ -1,0 +1,2732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Farm Library | JT ESSENTIALS LIMITED</title>
+
+<meta
+  name="description"
+  content="JT Essentials Farm Library provides practical livestock farming guides, feeding tips, farm management knowledge and solutions for farmers."
+>
+
+<meta
+  name="keywords"
+  content="farm library Nigeria, poultry farming tips, fish farming tips, pig farming, livestock farming, animal feeding, farm management"
+>
+
+<link rel="icon" type="image/png" href="images/favicon.png">
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f4f6f9;
+  color:#1f2d3d;
+  overflow-x:hidden;
+}
+
+button,
+input,
+select,
+textarea{
+  font-family:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+  background:#1f2d3d;
+  color:white;
+  padding:12px 18px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 4px 20px rgba(0,0,0,.18);
+}
+
+.header-inner{
+  max-width:1200px;
+  margin:auto;
+}
+
+.header-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  min-width:0;
+}
+
+header img{
+  height:48px;
+  width:auto;
+  margin-right:10px;
+  object-fit:contain;
+}
+
+header h1{
+  font-size:18px;
+  margin:0;
+  letter-spacing:.5px;
+}
+
+.brand-subtitle{
+  font-size:11px;
+  color:#ff6600;
+  font-weight:bold;
+  margin-top:3px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav{
+  background:#ff6600;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+  padding:10px;
+  position:relative;
+  z-index:900;
+}
+
+nav a{
+  background:white;
+  color:#ff6600;
+  padding:9px 15px;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:13px;
+  transition:.25s ease;
+}
+
+nav a:hover,
+nav a.active{
+  background:#1f2d3d;
+  color:white;
+  transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:75px 20px 90px;
+  text-align:center;
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(255,102,0,.14),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(31,45,61,.12),
+      transparent 35%
+    ),
+    #ffffff;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  border-radius:50%;
+  background:rgba(255,102,0,.08);
+  top:-140px;
+  left:-100px;
+  animation:floatCircle 7s ease-in-out infinite;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:240px;
+  height:240px;
+  border-radius:50%;
+  background:rgba(31,45,61,.07);
+  bottom:-130px;
+  right:-80px;
+  animation:floatCircle 8s ease-in-out infinite reverse;
+}
+
+@keyframes floatCircle{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(25px);
+  }
+
+}
+
+.hero-content{
+  max-width:900px;
+  margin:auto;
+  position:relative;
+  z-index:2;
+}
+
+.hero-badge{
+  display:inline-block;
+  background:#1f2d3d;
+  color:white;
+  padding:8px 16px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:.5px;
+  margin-bottom:15px;
+}
+
+.hero h2{
+  font-size:40px;
+  margin:8px 0 15px;
+  line-height:1.1;
+  color:#1f2d3d;
+}
+
+.hero h2 span{
+  color:#ff6600;
+}
+
+.hero p{
+  max-width:720px;
+  margin:0 auto;
+  font-size:16px;
+  line-height:1.7;
+  color:#555;
+}
+
+.hero-actions{
+  margin-top:25px;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.hero-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 22px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.3s ease;
+}
+
+.hero-btn.primary{
+  background:#ff6600;
+  color:white;
+  box-shadow:0 8px 20px rgba(255,102,0,.25);
+}
+
+.hero-btn.primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 28px rgba(255,102,0,.35);
+}
+
+.hero-btn.secondary{
+  background:#1f2d3d;
+  color:white;
+}
+
+.hero-btn.secondary:hover{
+  transform:translateY(-3px);
+  background:#111c28;
+}
+
+
+/* =========================================================
+   TRUST STRIP
+========================================================= */
+
+.trust-strip{
+  max-width:1100px;
+  margin:-35px auto 35px;
+  position:relative;
+  z-index:10;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  padding:0 15px;
+}
+
+.trust-card{
+  background:white;
+  border-radius:16px;
+  padding:20px 12px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  border:1px solid rgba(0,0,0,.04);
+  transition:.3s ease;
+}
+
+.trust-card:hover{
+  transform:translateY(-5px);
+}
+
+.trust-icon{
+  font-size:28px;
+  margin-bottom:8px;
+}
+
+.trust-card strong{
+  display:block;
+  font-size:14px;
+}
+
+.trust-card span{
+  display:block;
+  color:#777;
+  font-size:11px;
+  margin-top:4px;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading{
+  max-width:1200px;
+  margin:45px auto 20px;
+  padding:0 15px;
+}
+
+.section-heading h2{
+  margin:0 0 6px;
+  color:#1f2d3d;
+  font-size:28px;
+}
+
+.section-heading p{
+  margin:0;
+  color:#777;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.heading-line{
+  width:60px;
+  height:4px;
+  background:#ff6600;
+  border-radius:10px;
+  margin-top:10px;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.library-search{
+  max-width:900px;
+  margin:25px auto 15px;
+  padding:0 15px;
+}
+
+.search-wrapper{
+  position:relative;
+}
+
+.search-wrapper input{
+  width:100%;
+  padding:17px 20px 17px 50px;
+  border:none;
+  border-radius:40px;
+  outline:none;
+  background:white;
+  font-size:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.search-wrapper input:focus{
+  box-shadow:
+    0 0 0 3px rgba(255,102,0,.15),
+    0 10px 30px rgba(0,0,0,.08);
+}
+
+.search-icon{
+  position:absolute;
+  left:20px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:20px;
+}
+
+
+/* =========================================================
+   CATEGORY FILTER
+========================================================= */
+
+.filter-section{
+  text-align:center;
+  padding:5px 15px 20px;
+}
+
+.filter-btn{
+  margin:5px;
+  padding:9px 16px;
+  border:none;
+  border-radius:25px;
+  background:#ddd;
+  color:#1f2d3d;
+  font-weight:bold;
+  transition:.25s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+  background:#ff6600;
+  color:white;
+  transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   LIBRARY GRID
+========================================================= */
+
+.library-container{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:10px 15px 45px;
+}
+
+
+/* =========================================================
+   ARTICLE CARD
+========================================================= */
+
+.article-card{
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(0,0,0,.05);
+  box-shadow:0 8px 25px rgba(0,0,0,.06);
+  transition:.35s ease;
+  display:flex;
+  flex-direction:column;
+}
+
+.article-card:hover{
+  transform:translateY(-7px);
+  box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+
+.article-image{
+  height:170px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:65px;
+  background:
+    linear-gradient(
+      135deg,
+      #1f2d3d,
+      #30475e
+    );
+}
+
+.article-card:hover .article-image{
+  transform:none;
+}
+
+.article-image::after{
+  content:"";
+  position:absolute;
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  background:rgba(255,102,0,.18);
+  right:-35px;
+  bottom:-50px;
+}
+
+.article-category{
+  position:absolute;
+  top:12px;
+  left:12px;
+  z-index:3;
+  background:#ff6600;
+  color:white;
+  padding:6px 10px;
+  border-radius:20px;
+  font-size:10px;
+  font-weight:bold;
+}
+
+.article-body{
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.article-body h3{
+  margin:0 0 9px;
+  font-size:17px;
+  color:#1f2d3d;
+  line-height:1.3;
+}
+
+.article-body p{
+  color:#666;
+  font-size:13px;
+  line-height:1.6;
+  margin:0 0 15px;
+  flex:1;
+}
+
+.article-meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:11px;
+  color:#888;
+  margin-bottom:12px;
+}
+
+.read-btn{
+  width:100%;
+  padding:11px;
+  border:none;
+  border-radius:25px;
+  background:#1f2d3d;
+  color:white;
+  font-weight:bold;
+  transition:.3s ease;
+}
+
+.read-btn:hover{
+  background:#ff6600;
+  transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   FEATURED SOLUTIONS
+========================================================= */
+
+.solutions{
+  background:white;
+  padding:55px 20px;
+}
+
+.solutions-inner{
+  max-width:1100px;
+  margin:auto;
+}
+
+.solution-grid{
+  display:grid;
+  grid-template-columns:
+    repeat(3,1fr);
+  gap:18px;
+  margin-top:25px;
+}
+
+.solution-card{
+  background:#f4f6f9;
+  border-radius:18px;
+  padding:24px;
+  border-left:4px solid #ff6600;
+  transition:.3s ease;
+}
+
+.solution-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.solution-icon{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.solution-card h3{
+  margin:0 0 8px;
+  font-size:16px;
+}
+
+.solution-card p{
+  color:#666;
+  line-height:1.6;
+  font-size:13px;
+  margin:0;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+  margin:45px 15px;
+  background:
+    linear-gradient(
+      135deg,
+      #1f2d3d,
+      #111c28
+    );
+  color:white;
+  border-radius:25px;
+  overflow:hidden;
+  position:relative;
+}
+
+.cta::before{
+  content:"";
+  position:absolute;
+  width:250px;
+  height:250px;
+  border-radius:50%;
+  background:rgba(255,102,0,.12);
+  right:-80px;
+  top:-100px;
+}
+
+.cta-inner{
+  max-width:950px;
+  margin:auto;
+  padding:45px 25px;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+.cta h2{
+  margin:0 0 10px;
+  font-size:27px;
+}
+
+.cta p{
+  max-width:700px;
+  margin:0 auto;
+  color:#dce2e7;
+  line-height:1.7;
+  font-size:14px;
+}
+
+.cta-actions{
+  margin-top:20px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.cta-btn{
+  display:inline-flex;
+  padding:12px 20px;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.3s ease;
+}
+
+.cta-btn.orange{
+  background:#ff6600;
+  color:white;
+}
+
+.cta-btn.green{
+  background:#25D366;
+  color:white;
+}
+
+.cta-btn:hover{
+  transform:translateY(-3px);
+}
+
+
+/* =========================================================
+   ARTICLE MODAL
+========================================================= */
+
+#article-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(10,15,20,.78);
+  backdrop-filter:blur(7px);
+  justify-content:center;
+  align-items:center;
+  z-index:3000;
+  padding:15px;
+}
+
+.article-modal-box{
+  background:white;
+  width:95%;
+  max-width:720px;
+  max-height:92%;
+  overflow-y:auto;
+  border-radius:24px;
+  box-shadow:0 25px 80px rgba(0,0,0,.35);
+  animation:modalIn .25s ease;
+}
+
+@keyframes modalIn{
+
+  from{
+    opacity:0;
+    transform:translateY(25px) scale(.97);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+
+}
+
+.modal-header{
+  background:#1f2d3d;
+  color:white;
+  padding:22px;
+  position:sticky;
+  top:0;
+  z-index:2;
+}
+
+.modal-header-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.modal-header h2{
+  margin:0;
+  font-size:21px;
+  line-height:1.3;
+}
+
+.modal-category{
+  color:#ff6600;
+  font-size:11px;
+  font-weight:bold;
+  margin-bottom:7px;
+  text-transform:uppercase;
+}
+
+.modal-close{
+  width:36px;
+  height:36px;
+  min-width:36px;
+  margin:0;
+  border:none;
+  border-radius:50%;
+  background:rgba(255,255,255,.12);
+  color:white;
+  font-size:20px;
+}
+
+.modal-close:hover{
+  background:#ff6600;
+}
+
+.modal-body{
+  padding:25px;
+}
+
+.modal-intro{
+  background:#f4f6f9;
+  border-left:4px solid #ff6600;
+  padding:15px;
+  border-radius:10px;
+  margin-bottom:20px;
+  color:#555;
+  line-height:1.7;
+  font-size:14px;
+}
+
+.modal-body h3{
+  color:#1f2d3d;
+  margin:22px 0 8px;
+  font-size:17px;
+}
+
+.modal-body p{
+  color:#555;
+  line-height:1.75;
+  font-size:14px;
+}
+
+.modal-body ul{
+  color:#555;
+  line-height:1.8;
+  padding-left:20px;
+}
+
+.modal-tip{
+  background:#fff7f0;
+  border:1px solid rgba(255,102,0,.2);
+  padding:16px;
+  border-radius:14px;
+  margin-top:20px;
+}
+
+.modal-tip strong{
+  color:#ff6600;
+}
+
+.modal-footer{
+  padding:18px 25px 25px;
+  border-top:1px solid #eee;
+}
+
+.ask-btn{
+  width:100%;
+  background:#25D366;
+  color:white;
+  padding:13px;
+  border:none;
+  border-radius:25px;
+  font-weight:bold;
+}
+
+
+/* =========================================================
+   NO RESULTS
+========================================================= */
+
+.no-results{
+  display:none;
+  max-width:600px;
+  margin:10px auto 50px;
+  padding:30px 20px;
+  text-align:center;
+  color:#777;
+}
+
+.no-results-icon{
+  font-size:45px;
+  margin-bottom:10px;
+}
+
+
+/* =========================================================
+   FLOATING WHATSAPP
+========================================================= */
+
+#whatsapp{
+  position:fixed;
+  bottom:22px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:27px;
+  z-index:999;
+  cursor:pointer;
+  box-shadow:0 8px 25px rgba(37,211,102,.35);
+  transition:.3s ease;
+}
+
+#whatsapp:hover{
+  transform:scale(1.1);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+  background:#101a24;
+  color:white;
+  text-align:center;
+  padding:28px 15px;
+  font-size:13px;
+}
+
+footer span{
+  color:#ff6600;
+  font-weight:bold;
+}
+
+.footer-links{
+  margin-top:12px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  color:#dce2e7;
+  text-decoration:none;
+  font-size:12px;
+}
+
+.footer-links a:hover{
+  color:#ff6600;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:850px){
+
+  .trust-strip{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .solution-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+@media(max-width:600px){
+
+  header{
+    padding:10px;
+  }
+
+  header img{
+    height:40px;
+  }
+
+  header h1{
+    font-size:15px;
+  }
+
+  .hero{
+    padding:50px 18px 70px;
+  }
+
+  .hero h2{
+    font-size:28px;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  .trust-strip{
+    margin-top:-20px;
+    gap:8px;
+    padding:0 10px;
+  }
+
+  .trust-card{
+    padding:15px 8px;
+  }
+
+  .trust-icon{
+    font-size:23px;
+  }
+
+  .trust-card strong{
+    font-size:12px;
+  }
+
+  .trust-card span{
+    font-size:10px;
+  }
+
+  .library-container{
+    grid-template-columns:1fr;
+    padding-left:10px;
+    padding-right:10px;
+  }
+
+  .article-image{
+    height:150px;
+  }
+
+  .solution-grid{
+    grid-template-columns:1fr;
+  }
+
+  .section-heading h2{
+    font-size:24px;
+  }
+
+  .modal-body{
+    padding:18px;
+  }
+
+  .modal-header{
+    padding:18px;
+  }
+
+  #whatsapp{
+    width:52px;
+    height:52px;
+    right:12px;
+    bottom:18px;
+    font-size:24px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+  <div class="header-inner">
+
+    <div class="header-top">
+
+      <div class="brand">
+
+        <img
+          src="images/LOGO.jpg"
+          alt="JT Essentials Limited Logo"
+        >
+
+        <div>
+
+          <h1>
+            JT ESSENTIALS LIMITED
+          </h1>
+
+          <div class="brand-subtitle">
+            ...Quality You Can Rely On
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav>
+
+  <a href="index.html">
+    Home
+  </a>
+
+  <a href="consultancy.html">
+    Consultancy
+  </a>
+
+  <a href="farm-help.html">
+    Farm Help
+  </a>
+
+  <a href="farm-library.html" class="active">
+    Farm Library
+  </a>
+
+</nav>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="hero-badge">
+      JT ESSENTIALS FARM KNOWLEDGE CENTRE
+    </div>
+
+    <h2>
+      Learn Better.
+      <span>Farm Smarter.</span>
+    </h2>
+
+    <p>
+      Practical farming knowledge designed to help farmers
+      make better decisions about feeding, animal health,
+      farm management, production and profitability.
+    </p>
+
+    <div class="hero-actions">
+
+      <a
+        href="#library"
+        class="hero-btn primary"
+      >
+        Explore Farm Guides
+      </a>
+
+      <a
+        href="farm-help.html"
+        class="hero-btn secondary"
+      >
+        Get Farm Help
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     TRUST CARDS
+========================================================= -->
+
+<div class="trust-strip">
+
+  <div class="trust-card">
+
+    <div class="trust-icon">
+      📚
+    </div>
+
+    <strong>
+      Practical Knowledge
+    </strong>
+
+    <span>
+      Easy-to-understand guides
+    </span>
+
+  </div>
+
+
+  <div class="trust-card">
+
+    <div class="trust-icon">
+      🐔
+    </div>
+
+    <strong>
+      Livestock Focused
+    </strong>
+
+    <span>
+      Poultry, fish, pigs & more
+    </span>
+
+  </div>
+
+
+  <div class="trust-card">
+
+    <div class="trust-icon">
+      💡
+    </div>
+
+    <strong>
+      Problem Solving
+    </strong>
+
+    <span>
+      Practical farm solutions
+    </span>
+
+  </div>
+
+
+  <div class="trust-card">
+
+    <div class="trust-icon">
+      📈
+    </div>
+
+    <strong>
+      Better Decisions
+    </strong>
+
+    <span>
+      Improve farm performance
+    </span>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     LIBRARY
+========================================================= -->
+
+<section id="library">
+
+  <div class="section-heading">
+
+    <h2>
+      Farm Knowledge Library
+    </h2>
+
+    <p>
+      Search our collection of practical guides and farming
+      information.
+    </p>
+
+    <div class="heading-line"></div>
+
+  </div>
+
+
+  <!-- SEARCH -->
+
+  <div class="library-search">
+
+    <div class="search-wrapper">
+
+      <div class="search-icon">
+        🔍
+      </div>
+
+      <input
+        type="text"
+        id="librarySearch"
+        placeholder="Search e.g. poultry feeding, fish mortality, pig farming..."
+        onkeyup="searchLibrary()"
+      >
+
+    </div>
+
+  </div>
+
+
+  <!-- FILTER -->
+
+  <div class="filter-section">
+
+    <button
+      class="filter-btn active"
+      onclick="filterLibrary('all',this)"
+    >
+      All
+    </button>
+
+    <button
+      class="filter-btn"
+      onclick="filterLibrary('poultry',this)"
+    >
+      🐔 Poultry
+    </button>
+
+    <button
+      class="filter-btn"
+      onclick="filterLibrary('fish',this)"
+    >
+      🐟 Fish
+    </button>
+
+    <button
+      class="filter-btn"
+      onclick="filterLibrary('pig',this)"
+    >
+      🐖 Pig
+    </button>
+
+    <button
+      class="filter-btn"
+      onclick="filterLibrary('goat',this)"
+    >
+      🐐 Goat & Sheep
+    </button>
+
+    <button
+      class="filter-btn"
+      onclick="filterLibrary('rabbit',this)"
+    >
+      🐇 Rabbit
+    </button>
+
+    <button
+      class="filter-btn"
+      onclick="filterLibrary('management',this)"
+    >
+      📊 Farm Management
+    </button>
+
+  </div>
+
+
+  <!-- ARTICLES -->
+
+  <div
+    class="library-container"
+    id="library-container"
+  ></div>
+
+
+  <!-- NO RESULTS -->
+
+  <div
+    class="no-results"
+    id="no-results"
+  >
+
+    <div class="no-results-icon">
+      🔎
+    </div>
+
+    <h3>
+      No guide found
+    </h3>
+
+    <p>
+      Try another search term or select another category.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FARM SOLUTIONS
+========================================================= -->
+
+<section class="solutions">
+
+  <div class="solutions-inner">
+
+    <div class="section-heading" style="padding:0;margin-top:0;">
+
+      <h2>
+        What Can You Learn Here?
+      </h2>
+
+      <p>
+        The library is built around real problems farmers
+        commonly face.
+      </p>
+
+      <div class="heading-line"></div>
+
+    </div>
+
+
+    <div class="solution-grid">
+
+      <div class="solution-card">
+
+        <div class="solution-icon">
+          🍽️
+        </div>
+
+        <h3>
+          Feeding Management
+        </h3>
+
+        <p>
+          Understand feeding practices, feed selection,
+          feed wastage and how feeding affects animal growth.
+        </p>
+
+      </div>
+
+
+      <div class="solution-card">
+
+        <div class="solution-icon">
+          🩺
+        </div>
+
+        <h3>
+          Farm Health
+        </h3>
+
+        <p>
+          Learn how to identify common warning signs and
+          improve hygiene, biosecurity and farm management.
+        </p>
+
+      </div>
+
+
+      <div class="solution-card">
+
+        <div class="solution-icon">
+          💰
+        </div>
+
+        <h3>
+          Farm Profitability
+        </h3>
+
+        <p>
+          Understand how feed costs, mortality, production
+          and farm records affect profitability.
+        </p>
+
+      </div>
+
+
+      <div class="solution-card">
+
+        <div class="solution-icon">
+          🏠
+        </div>
+
+        <h3>
+          Farm Setup
+        </h3>
+
+        <p>
+          Learn important considerations before starting
+          poultry, fish, pig and other livestock farms.
+        </p>
+
+      </div>
+
+
+      <div class="solution-card">
+
+        <div class="solution-icon">
+          📋
+        </div>
+
+        <h3>
+          Farm Records
+        </h3>
+
+        <p>
+          Discover the records every serious farmer should
+          maintain to understand the performance of the farm.
+        </p>
+
+      </div>
+
+
+      <div class="solution-card">
+
+        <div class="solution-icon">
+          📈
+        </div>
+
+        <h3>
+          Production Improvement
+        </h3>
+
+        <p>
+          Learn practical ways to reduce losses and improve
+          productivity through better farm decisions.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta">
+
+  <div class="cta-inner">
+
+    <h2>
+      Can't Find the Answer You Need?
+    </h2>
+
+    <p>
+      Every farm is different. If you have a specific problem
+      with your livestock, feeding programme, farm setup or
+      management, speak directly with JT ESSENTIALS LIMITED.
+    </p>
+
+    <div class="cta-actions">
+
+      <a
+        href="farm-help.html"
+        class="cta-btn orange"
+      >
+        🧑‍🌾 Get Farm Help
+      </a>
+
+      <a
+        href="consultancy.html"
+        class="cta-btn green"
+      >
+        📞 Book Consultancy
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     ARTICLE MODAL
+========================================================= -->
+
+<div id="article-modal">
+
+  <div class="article-modal-box">
+
+    <div class="modal-header">
+
+      <div class="modal-header-top">
+
+        <div>
+
+          <div
+            class="modal-category"
+            id="modal-category"
+          >
+          </div>
+
+          <h2 id="modal-title">
+          </h2>
+
+        </div>
+
+        <button
+          class="modal-close"
+          onclick="closeArticle()"
+        >
+          ×
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="modal-body"
+      id="modal-body"
+    >
+    </div>
+
+
+    <div class="modal-footer">
+
+      <button
+        class="ask-btn"
+        onclick="askAboutArticle()"
+      >
+        💬 Ask JT Essentials About This Topic
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     WHATSAPP
+========================================================= -->
+
+<div
+  id="whatsapp"
+  onclick="openWhatsApp()"
+  title="Chat with JT Essentials Limited"
+>
+  💬
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+  ©
+  <span id="year"></span>
+  JT ESSENTIALS LIMITED.
+  All Rights Reserved.
+
+  <div class="footer-links">
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="consultancy.html">
+      Consultancy
+    </a>
+
+    <a href="farm-help.html">
+      Farm Help
+    </a>
+
+    <a href="farm-library.html">
+      Farm Library
+    </a>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   FARM ARTICLES
+========================================================= */
+
+const articles = [
+
+  {
+    title:
+      "How to Reduce Feed Wastage in Poultry Farms",
+
+    category:
+      "poultry",
+
+    categoryName:
+      "Poultry",
+
+    icon:
+      "🐔",
+
+    read:
+      "5 min read",
+
+    description:
+      "Feed is one of the biggest expenses in poultry farming. Learn practical ways to reduce unnecessary feed wastage.",
+
+    content:`
+
+      <div class="modal-intro">
+
+        Feed represents a major part of poultry production
+        costs. Small amounts of wastage every day can become
+        a significant financial loss over time.
+
+      </div>
+
+      <h3>
+        1. Use the Correct Feeder Height
+      </h3>
+
+      <p>
+        Feeders should be positioned at an appropriate height
+        for the birds. Feeders that are too low encourage birds
+        to scratch and throw feed out.
+      </p>
+
+      <h3>
+        2. Avoid Overfilling Feeders
+      </h3>
+
+      <p>
+        A common mistake is filling feeders completely.
+        Instead, provide an appropriate amount and monitor
+        consumption.
+      </p>
+
+      <h3>
+        3. Monitor Feed Consumption
+      </h3>
+
+      <p>
+        Keep daily records of how much feed is supplied and
+        compare this with the number and age of birds.
+      </p>
+
+      <h3>
+        4. Reduce Spillage
+      </h3>
+
+      <p>
+        Inspect feeders regularly for damage and make sure
+        they are stable.
+      </p>
+
+      <div class="modal-tip">
+
+        <strong>
+          JT Essentials Tip:
+        </strong>
+
+        Don't only look at how much feed you buy.
+        Track how much feed disappears compared with
+        expected consumption.
+
+      </div>
+
+    `
+  },
+
+
+  {
+    title:
+      "Why Are My Broilers Growing Slowly?",
+
+    category:
+      "poultry",
+
+    categoryName:
+      "Poultry",
+
+    icon:
+      "🐔",
+
+    read:
+      "6 min read",
+
+    description:
+      "Slow growth can have several causes. Learn the major areas farmers should investigate.",
+
+    content:`
+
+      <div class="modal-intro">
+
+        Slow growth is usually not caused by one factor alone.
+        Feeding, genetics, water, environment and health all
+        influence bird performance.
+
+      </div>
+
+      <h3>
+        Feed Quality
+      </h3>
+
+      <p>
+        Birds need a properly balanced diet containing the
+        appropriate energy, protein, amino acids, minerals
+        and vitamins for their stage of growth.
+      </p>
+
+      <h3>
+        Water Availability
+      </h3>
+
+      <p>
+        Clean drinking water should always be available.
+        Poor water quality or restricted access can reduce
+        feed intake and performance.
+      </p>
+
+      <h3>
+        Temperature
+      </h3>
+
+      <p>
+        Heat stress can significantly affect appetite and
+        growth. Observe bird behaviour and maintain appropriate
+        environmental conditions.
+      </p>
+
+      <h3>
+        Disease and Parasites
+      </h3>
+
+      <p>
+        If growth is poor despite adequate feeding and
+        management, investigate possible health problems
+        with a qualified animal health professional.
+      </p>
+
+      <div class="modal-tip">
+
+        <strong>
+          JT Essentials Tip:
+        </strong>
+
+        Don't immediately increase feed because birds are
+        growing slowly. First investigate feed quality,
+        water, environment and health.
+
+      </div>
+
+    `
+  },
+
+
+  {
+    title:
+      "Understanding Fish Mortality",
+
+    category:
+      "fish",
+
+    categoryName:
+      "Fish Farming",
+
+    icon:
+      "🐟",
+
+    read:
+      "5 min read",
+
+    description:
+      "Learn some of the major management factors that can contribute to fish deaths.",
+
+    content:`
+
+      <div class="modal-intro">
+
+        Sudden fish mortality should never be ignored.
+        Water quality, oxygen, stocking density, feed and
+        disease can all contribute to losses.
+
+      </div>
+
+      <h3>
+        Check Dissolved Oxygen
+      </h3>
+
+      <p>
+        Fish require adequate dissolved oxygen. Poor aeration,
+        overcrowding and excessive organic matter can reduce
+        oxygen levels.
+      </p>
+
+      <h3>
+        Check Water Quality
+      </h3>
+
+      <p>
+        Monitor important water parameters appropriate for
+        the species being cultured.
+      </p>
+
+      <h3>
+        Avoid Overfeeding
+      </h3>
+
+      <p>
+        Uneaten feed can contribute to poor water quality.
+        Feed should be managed according to fish size,
+        biomass and feeding response.
+      </p>
+
+      <h3>
+        Check Stocking Density
+      </h3>
+
+      <p>
+        Overstocking can increase competition, stress,
+        waste accumulation and oxygen demand.
+      </p>
+
+      <div class="modal-tip">
+
+        <strong>
+          JT Essentials Tip:
+        </strong>
+
+        When mortality occurs, record when it started,
+        the number of fish affected, recent feeding,
+        water changes and environmental conditions.
+
+      </div>
+
+    `
+  },
+
+
+  {
+    title:
+      "How to Improve Pig Farm Management",
+
+    category:
+      "pig",
+
+    categoryName:
+      "Pig Farming",
+
+    icon:
+      "🐖",
+
+    read:
+      "5 min read",
+
+    description:
+      "Better housing, feeding, hygiene and records can make a major difference in pig production.",
+
+    content:`
+
+      <div class="modal-intro">
+
+        Successful pig production requires attention to
+        feeding, housing, hygiene, breeding and health.
+
+      </div>
+
+      <h3>
+        Housing
+      </h3>
+
+      <p>
+        Pens should provide adequate space, drainage,
+        ventilation and protection from excessive heat.
+      </p>
+
+      <h3>
+        Feeding
+      </h3>
+
+      <p>
+        Feed programmes should be appropriate for the
+        pig's production stage and nutritional requirements.
+      </p>
+
+      <h3>
+        Clean Water
+      </h3>
+
+      <p>
+        Fresh drinking water should be available and
+        drinkers should be checked regularly.
+      </p>
+
+      <h3>
+        Farm Hygiene
+      </h3>
+
+      <p>
+        Good cleaning and biosecurity practices help reduce
+        the risk of disease entering or spreading within
+        the farm.
+      </p>
+
+      <div class="modal-tip">
+
+        <strong>
+          JT Essentials Tip:
+        </strong>
+
+        Keep separate records for births, deaths,
+        medication, feed usage and sales.
+
+      </div>
+
+    `
+  },
+
+
+  {
+    title:
+      "Starting a Goat or Sheep Farm",
+
+    category:
+      "goat",
+
+    categoryName:
+      "Goat & Sheep",
+
+    icon:
+      "🐐",
+
+    read:
+      "6 min read",
+
+    description:
+      "Important things to consider before starting a small ruminant farm.",
+
+    content:`
+
+      <div class="modal-intro">
+
+        Starting with a clear plan can prevent many common
+        mistakes in goat and sheep farming.
+
+      </div>
+
+      <h3>
+        Choose Your Production Goal
+      </h3>
+
+      <p>
+        Decide whether the farm is focused on meat,
+        breeding, milk or a combination.
+      </p>
+
+      <h3>
+        Housing
+      </h3>
+
+      <p>
+        Provide dry, clean and well-ventilated housing
+        with protection from rain and extreme weather.
+      </p>
+
+      <h3>
+        Feeding
+      </h3>
+
+      <p>
+        Good forage, appropriate supplementary feed,
+        minerals and clean water are important.
+      </p>
+
+      <h3>
+        Health Management
+      </h3>
+
+      <p>
+        Establish a relationship with an animal health
+        professional and develop an appropriate health plan.
+      </p>
+
+      <div class="modal-tip">
+
+        <strong>
+          JT Essentials Tip:
+        </strong>
+
+        Don't buy animals before you have prepared housing,
+        feeding resources and a basic health management plan.
+
+      </div>
+
+    `
+  },
+
+
+  {
+    title:
+      "Rabbit Farming: Common Beginner Mistakes",
+
+    category:
+      "rabbit",
+
+    categoryName:
+      "Rabbit Farming",
+
+    icon:
+      "🐇",
+
+    read:
+      "4 min read",
+
+    description:
+      "Avoid common mistakes that can affect rabbit growth, reproduction and survival.",
+
+    content:`
+
+      <div class="modal-intro">
+
+        Rabbits can be productive livestock when their
+        housing, nutrition and hygiene are properly managed.
+
+      </div>
+
+      <h3>
+        Poor Ventilation
+      </h3>
+
+      <p>
+        Overcrowded or poorly ventilated housing can create
+        an unhealthy environment.
+      </p>
+
+      <h3>
+        Poor Hygiene
+      </h3>
+
+      <p>
+        Regular cleaning is important for maintaining
+        healthy housing conditions.
+      </p>
+
+      <h3>
+        Inconsistent Feeding
+      </h3>
+
+      <p>
+        Feeding should be planned around the rabbit's age,
+        production stage and nutritional needs.
+      </p>
+
+      <h3>
+        Overstocking
+      </h3>
+
+      <p>
+        Avoid keeping too many rabbits in a limited space.
+      </p>
+
+      <div class="modal-tip">
+
+        <strong>
+          JT Essentials Tip:
+        </strong>
+
+        Start small, learn your management system and
+        expand after you understand your production costs.
+
+      </div>
+
+    `
+  },
+
+
+  {
+    title:
+      "How to Calculate Your Real Farm Cost",
+
+    category:
+      "management",
+
+    categoryName:
+      "Farm Management",
+
+    icon:
+      "📊",
+
+    read:
+      "7 min read",
+
+    description:
+      "Many farmers know their sales but don't know their actual production cost. Here's what to track.",
+
+    content:`
+
+      <div class="modal-intro">
+
+        A farm can generate sales and still lose money.
+        Understanding total production cost is essential.
+
+      </div>
+
+      <h3>
+        Feed Cost
+      </h3>
+
+      <p>
+        Record all feed purchased and the amount actually
+        consumed by the animals.
+      </p>
+
+      <h3>
+        Medication and Health Costs
+      </h3>
+
+      <p>
+        Include medication, veterinary services,
+        vaccination and other health-related expenses.
+      </p>
+
+      <h3>
+        Labour
+      </h3>
+
+      <p>
+        Labour should be included even when the farm owner
+        personally performs most of the work.
+      </p>
+
+      <h3>
+        Utilities and Maintenance
+      </h3>
+
+      <p>
+        Electricity, water, repairs, transportation and
+        equipment maintenance can significantly affect
+        profitability.
+      </p>
+
+      <h3>
+        Mortality
+      </h3>
+
+      <p>
+        Death losses represent lost investment and should
+        be recorded when calculating farm performance.
+      </p>
+
+      <div class="modal-tip">
+
+        <strong>
+          JT Essentials Tip:
+        </strong>
+
+        Keep daily records. Waiting until the end of the
+        production cycle makes it harder to identify where
+        money is being lost.
+
+      </div>
+
+    `
+  },
+
+
+  {
+    title:
+      "Farm Records Every Serious Farmer Should Keep",
+
+    category:
+      "management",
+
+    categoryName:
+      "Farm Management",
+
+    icon:
+      "📋",
+
+    read:
+      "5 min read",
+
+    description:
+      "Good records help farmers understand what is happening on the farm.",
+
+    content:`
+
+      <div class="modal-intro">
+
+        If you don't record it, it becomes difficult to
+        measure it. Farm records help turn farming from
+        guesswork into management.
+
+      </div>
+
+      <h3>
+        Livestock Records
+      </h3>
+
+      <p>
+        Record opening stock, births, purchases, sales,
+        transfers and mortality.
+      </p>
+
+      <h3>
+        Feed Records
+      </h3>
+
+      <p>
+        Record quantity purchased, quantity used and
+        remaining balance.
+      </p>
+
+      <h3>
+        Expense Records
+      </h3>
+
+      <p>
+        Record medication, transportation, labour,
+        electricity, maintenance and other expenses.
+      </p>
+
+      <h3>
+        Sales Records
+      </h3>
+
+      <p>
+        Record what was sold, quantity, selling price,
+        customer and payment status.
+      </p>
+
+      <div class="modal-tip">
+
+        <strong>
+          JT Essentials Tip:
+        </strong>
+
+        A simple daily record is better than having no
+        record at all. Review your records every week.
+
+      </div>
+
+    `
+  },
+
+
+  {
+    title:
+      "How to Prepare Before Starting a Farm",
+
+    category:
+      "management",
+
+    categoryName:
+      "Farm Management",
+
+    icon:
+      "🏡",
+
+    read:
+      "6 min read",
+
+    description:
+      "Planning before purchasing animals can save you from expensive mistakes.",
+
+    content:`
+
+      <div class="modal-intro">
+
+        One of the biggest mistakes new farmers make is
+        buying livestock before preparing the farm.
+
+      </div>
+
+      <h3>
+        Define Your Production Goal
+      </h3>
+
+      <p>
+        Decide what you want to produce and who your target
+        customers will be.
+      </p>
+
+      <h3>
+        Prepare Housing
+      </h3>
+
+      <p>
+        Housing should be ready before livestock arrives.
+      </p>
+
+      <h3>
+        Plan Feeding
+      </h3>
+
+      <p>
+        Know what the animals will eat and estimate your
+        feeding costs before stocking the farm.
+      </p>
+
+      <h3>
+        Create a Health Plan
+      </h3>
+
+      <p>
+        Identify appropriate veterinary and animal health
+        support before problems occur.
+      </p>
+
+      <h3>
+        Calculate Your Budget
+      </h3>
+
+      <p>
+        Include animals, housing, feed, labour, health,
+        utilities, transport and emergency expenses.
+      </p>
+
+      <div class="modal-tip">
+
+        <strong>
+          JT Essentials Tip:
+        </strong>
+
+        Start with the resources you can manage properly
+        instead of stocking more animals than your budget
+        and infrastructure can support.
+
+      </div>
+
+    `
+  }
+
+];
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+const libraryContainer =
+  document.getElementById(
+    "library-container"
+  );
+
+let currentCategory =
+  "all";
+
+let currentArticle =
+  null;
+
+
+/* =========================================================
+   DISPLAY ARTICLES
+========================================================= */
+
+function displayArticles(){
+
+  libraryContainer.innerHTML = "";
+
+  const searchValue =
+    document
+      .getElementById("librarySearch")
+      .value
+      .toLowerCase()
+      .trim();
+
+  let visibleCount = 0;
+
+  articles.forEach((article,index)=>{
+
+    const matchesCategory =
+      currentCategory === "all" ||
+      article.category === currentCategory;
+
+    const searchableText =
+      (
+        article.title +
+        " " +
+        article.description +
+        " " +
+        article.categoryName
+      ).toLowerCase();
+
+    const matchesSearch =
+      searchableText.includes(
+        searchValue
+      );
+
+    if(
+      matchesCategory &&
+      matchesSearch
+    ){
+
+      visibleCount++;
+
+      libraryContainer.innerHTML += `
+
+        <article
+          class="article-card"
+        >
+
+          <div class="article-image">
+
+            <div class="article-category">
+              ${article.categoryName}
+            </div>
+
+            ${article.icon}
+
+          </div>
+
+          <div class="article-body">
+
+            <h3>
+              ${article.title}
+            </h3>
+
+            <p>
+              ${article.description}
+            </p>
+
+            <div class="article-meta">
+
+              <span>
+                📖 ${article.read}
+              </span>
+
+              <span>
+                JT Essentials
+              </span>
+
+            </div>
+
+            <button
+              class="read-btn"
+              onclick="openArticle(${index})"
+            >
+              Read Guide →
+            </button>
+
+          </div>
+
+        </article>
+
+      `;
+
+    }
+
+  });
+
+
+  document.getElementById(
+    "no-results"
+  ).style.display =
+    visibleCount === 0
+      ? "block"
+      : "none";
+
+}
+
+
+/* =========================================================
+   FILTER
+========================================================= */
+
+function filterLibrary(
+  category,
+  clickedButton
+){
+
+  currentCategory =
+    category;
+
+  document
+    .querySelectorAll(".filter-btn")
+    .forEach(btn => {
+
+      btn.classList.remove(
+        "active"
+      );
+
+    });
+
+  if(clickedButton){
+
+    clickedButton.classList.add(
+      "active"
+    );
+
+  }
+
+  displayArticles();
+
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+function searchLibrary(){
+
+  displayArticles();
+
+}
+
+
+/* =========================================================
+   OPEN ARTICLE
+========================================================= */
+
+function openArticle(index){
+
+  const article =
+    articles[index];
+
+  currentArticle =
+    article;
+
+  document.getElementById(
+    "modal-category"
+  ).innerText =
+    article.categoryName;
+
+  document.getElementById(
+    "modal-title"
+  ).innerText =
+    article.title;
+
+  document.getElementById(
+    "modal-body"
+  ).innerHTML =
+    article.content;
+
+  document.getElementById(
+    "article-modal"
+  ).style.display =
+    "flex";
+
+  document.body.style.overflow =
+    "hidden";
+
+}
+
+
+/* =========================================================
+   CLOSE ARTICLE
+========================================================= */
+
+function closeArticle(){
+
+  document.getElementById(
+    "article-modal"
+  ).style.display =
+    "none";
+
+  document.body.style.overflow =
+    "";
+
+}
+
+
+/* =========================================================
+   ASK ABOUT ARTICLE
+========================================================= */
+
+function askAboutArticle(){
+
+  if(!currentArticle){
+
+    return;
+
+  }
+
+  const message =
+
+`Hello JT ESSENTIALS LIMITED,
+
+I was reading your Farm Library guide:
+
+"${currentArticle.title}"
+
+I would like to ask for more information about this topic.
+
+Thank you.`;
+
+  window.open(
+
+    "https://wa.me/2347065498338?text=" +
+    encodeURIComponent(message),
+
+    "_blank"
+
+  );
+
+}
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+function openWhatsApp(){
+
+  const message =
+
+`Hello JT ESSENTIALS LIMITED,
+
+I found your Farm Library and I would like to make an enquiry about livestock farming.`;
+
+  window.open(
+
+    "https://wa.me/2347065498338?text=" +
+    encodeURIComponent(message),
+
+    "_blank"
+
+  );
+
+}
+
+
+/* =========================================================
+   MODAL BACKGROUND CLOSE
+========================================================= */
+
+document
+  .getElementById("article-modal")
+  .addEventListener(
+    "click",
+    function(e){
+
+      if(e.target === this){
+
+        closeArticle();
+
+      }
+
+    }
+  );
+
+
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
+
+document.addEventListener(
+  "keydown",
+  function(e){
+
+    if(e.key === "Escape"){
+
+      closeArticle();
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   YEAR
+========================================================= */
+
+document.getElementById(
+  "year"
+).innerText =
+  new Date().getFullYear();
+
+
+/* =========================================================
+   INITIAL DISPLAY
+========================================================= */
+
+displayArticles();
+
+</script>
+
+</body>
+</html>
