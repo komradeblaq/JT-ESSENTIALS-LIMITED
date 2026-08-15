@@ -1,0 +1,2760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Farm Help & Solutions | JT ESSENTIALS LIMITED</title>
+
+<meta
+  name="description"
+  content="Practical livestock farming help, feed guidance, farm management solutions and professional consultancy support from JT ESSENTIALS LIMITED."
+>
+
+<meta
+  name="keywords"
+  content="farm help Nigeria, livestock farming problems, poultry farming help, fish farming help, pig farming help, animal feed guidance, farm consultancy Nigeria"
+>
+
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f4f6f9;
+  color:#1f2d3d;
+  overflow-x:hidden;
+}
+
+button,
+input,
+select,
+textarea{
+  font-family:inherit;
+}
+
+a{
+  -webkit-tap-highlight-color:transparent;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+  background:#1f2d3d;
+  color:white;
+  padding:12px 18px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 5px 25px rgba(0,0,0,.18);
+}
+
+.header-inner{
+  max-width:1200px;
+  margin:auto;
+}
+
+.header-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  min-width:0;
+}
+
+.brand img{
+  height:48px;
+  width:auto;
+  object-fit:contain;
+  margin-right:10px;
+}
+
+.brand h1{
+  margin:0;
+  font-size:18px;
+  letter-spacing:.5px;
+}
+
+.brand-subtitle{
+  color:#ff6600;
+  font-size:11px;
+  font-weight:bold;
+  margin-top:3px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav{
+  background:#ff6600;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  padding:10px;
+  position:relative;
+  z-index:900;
+}
+
+nav a{
+  background:white;
+  color:#ff6600;
+  text-decoration:none;
+  padding:9px 15px;
+  border-radius:25px;
+  font-size:13px;
+  font-weight:bold;
+  transition:.3s ease;
+}
+
+nav a:hover,
+nav a.active{
+  background:#1f2d3d;
+  color:white;
+  transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  min-height:470px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:70px 20px;
+  background:
+    radial-gradient(circle at 15% 25%,rgba(255,102,0,.18),transparent 32%),
+    radial-gradient(circle at 85% 75%,rgba(31,45,61,.12),transparent 32%),
+    linear-gradient(135deg,#ffffff,#f6f8fa);
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:350px;
+  height:350px;
+  border:1px solid rgba(255,102,0,.18);
+  border-radius:50%;
+  top:-170px;
+  left:-120px;
+  animation:heroFloat 8s ease-in-out infinite;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  border:1px solid rgba(31,45,61,.12);
+  border-radius:50%;
+  right:-120px;
+  bottom:-150px;
+  animation:heroFloat 9s ease-in-out infinite reverse;
+}
+
+@keyframes heroFloat{
+
+  0%,100%{
+    transform:translateY(0) rotate(0deg);
+  }
+
+  50%{
+    transform:translateY(25px) rotate(8deg);
+  }
+
+}
+
+.hero-content{
+  max-width:900px;
+  position:relative;
+  z-index:3;
+}
+
+.hero-badge{
+  display:inline-block;
+  background:#1f2d3d;
+  color:white;
+  padding:9px 17px;
+  border-radius:30px;
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:.8px;
+  box-shadow:0 8px 20px rgba(31,45,61,.18);
+}
+
+.hero h2{
+  font-size:48px;
+  line-height:1.05;
+  margin:20px 0 17px;
+  color:#1f2d3d;
+}
+
+.hero h2 span{
+  color:#ff6600;
+}
+
+.hero p{
+  max-width:720px;
+  margin:auto;
+  color:#606870;
+  font-size:16px;
+  line-height:1.8;
+}
+
+.hero-actions{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+
+.hero-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 23px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.3s ease;
+}
+
+.hero-btn.primary{
+  background:#ff6600;
+  color:white;
+  box-shadow:0 10px 25px rgba(255,102,0,.28);
+}
+
+.hero-btn.primary:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 35px rgba(255,102,0,.38);
+}
+
+.hero-btn.secondary{
+  background:#1f2d3d;
+  color:white;
+}
+
+.hero-btn.secondary:hover{
+  transform:translateY(-4px);
+}
+
+
+/* =========================================================
+   FARMER TRUST CARDS
+========================================================= */
+
+.trust-strip{
+  max-width:1100px;
+  margin:-35px auto 45px;
+  position:relative;
+  z-index:10;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  padding:0 15px;
+}
+
+.trust-card{
+  background:white;
+  border-radius:17px;
+  padding:20px 14px;
+  text-align:center;
+  box-shadow:0 12px 35px rgba(0,0,0,.08);
+  border:1px solid rgba(0,0,0,.04);
+  transition:.3s ease;
+}
+
+.trust-card:hover{
+  transform:translateY(-6px);
+}
+
+.trust-icon{
+  font-size:28px;
+  margin-bottom:8px;
+}
+
+.trust-card strong{
+  display:block;
+  font-size:14px;
+}
+
+.trust-card span{
+  display:block;
+  color:#777;
+  font-size:11px;
+  margin-top:5px;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.section-heading{
+  max-width:1100px;
+  margin:55px auto 25px;
+  padding:0 15px;
+}
+
+.section-heading h2{
+  margin:0 0 7px;
+  font-size:29px;
+  color:#1f2d3d;
+}
+
+.section-heading p{
+  margin:0;
+  color:#777;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.heading-line{
+  width:60px;
+  height:4px;
+  background:#ff6600;
+  border-radius:10px;
+  margin-top:11px;
+}
+
+
+/* =========================================================
+   PROBLEM FINDER
+========================================================= */
+
+.finder-section{
+  padding:20px 15px 50px;
+}
+
+.finder-box{
+  max-width:1050px;
+  margin:auto;
+  background:#1f2d3d;
+  border-radius:25px;
+  padding:35px;
+  color:white;
+  box-shadow:0 20px 50px rgba(31,45,61,.18);
+  position:relative;
+  overflow:hidden;
+}
+
+.finder-box::after{
+  content:"";
+  position:absolute;
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  background:rgba(255,102,0,.1);
+  right:-80px;
+  top:-80px;
+}
+
+.finder-title{
+  position:relative;
+  z-index:2;
+}
+
+.finder-title h3{
+  margin:0 0 8px;
+  font-size:24px;
+}
+
+.finder-title p{
+  margin:0;
+  color:#d8dde2;
+  line-height:1.6;
+  font-size:13px;
+}
+
+.finder-select{
+  margin-top:22px;
+  position:relative;
+  z-index:3;
+}
+
+.finder-select select{
+  width:100%;
+  padding:15px;
+  border:none;
+  outline:none;
+  border-radius:12px;
+  font-size:14px;
+}
+
+.finder-result{
+  display:none;
+  margin-top:20px;
+  background:white;
+  color:#1f2d3d;
+  padding:22px;
+  border-radius:16px;
+  position:relative;
+  z-index:3;
+  animation:resultIn .35s ease;
+}
+
+@keyframes resultIn{
+
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+.finder-result h4{
+  margin:0 0 8px;
+  color:#ff6600;
+}
+
+.finder-result p{
+  color:#555;
+  line-height:1.7;
+  margin:0 0 12px;
+  font-size:14px;
+}
+
+.finder-result ul{
+  margin:0;
+  padding-left:20px;
+  color:#555;
+  line-height:1.8;
+  font-size:13px;
+}
+
+
+/* =========================================================
+   SOLUTION CARDS
+========================================================= */
+
+.solution-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  padding:10px 15px 40px;
+}
+
+.solution-card{
+  background:white;
+  padding:24px 20px;
+  border-radius:18px;
+  box-shadow:0 8px 28px rgba(0,0,0,.06);
+  border:1px solid rgba(0,0,0,.05);
+  position:relative;
+  overflow:hidden;
+  transition:.35s ease;
+}
+
+.solution-card:hover{
+  transform:translateY(-7px);
+  box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+
+.solution-card::before{
+  content:"";
+  position:absolute;
+  width:5px;
+  height:100%;
+  background:#ff6600;
+  left:0;
+  top:0;
+}
+
+.solution-icon{
+  font-size:35px;
+  margin-bottom:12px;
+}
+
+.solution-card h3{
+  margin:0 0 8px;
+  font-size:17px;
+}
+
+.solution-card p{
+  color:#666;
+  line-height:1.7;
+  font-size:13px;
+  margin:0 0 15px;
+}
+
+.solution-link{
+  display:inline-block;
+  color:#ff6600;
+  font-weight:bold;
+  font-size:12px;
+  text-decoration:none;
+}
+
+
+/* =========================================================
+   EMERGENCY SECTION
+========================================================= */
+
+.emergency{
+  background:#fff;
+  padding:55px 15px;
+  margin-top:20px;
+}
+
+.emergency-inner{
+  max-width:1100px;
+  margin:auto;
+}
+
+.emergency-header{
+  background:#1f2d3d;
+  color:white;
+  padding:28px;
+  border-radius:20px;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.emergency-header h2{
+  margin:0 0 8px;
+  font-size:25px;
+}
+
+.emergency-header p{
+  margin:0;
+  color:#d9dfe5;
+  font-size:13px;
+  line-height:1.6;
+}
+
+.emergency-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.emergency-card{
+  padding:20px;
+  border-radius:15px;
+  background:#f4f6f9;
+  border-left:4px solid #ff6600;
+}
+
+.emergency-card h3{
+  margin:0 0 8px;
+  font-size:15px;
+}
+
+.emergency-card p{
+  margin:0;
+  color:#666;
+  font-size:13px;
+  line-height:1.6;
+}
+
+
+/* =========================================================
+   CALCULATORS
+========================================================= */
+
+.calculator-section{
+  padding:55px 15px;
+  background:#f4f6f9;
+}
+
+.calculator-grid{
+  max-width:1050px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.calculator{
+  background:white;
+  border-radius:20px;
+  padding:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+.calculator h3{
+  margin:0 0 6px;
+  color:#1f2d3d;
+}
+
+.calculator p{
+  color:#777;
+  font-size:12px;
+  line-height:1.6;
+}
+
+.calc-group{
+  margin:12px 0;
+}
+
+.calc-group label{
+  display:block;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:5px;
+}
+
+.calc-group input,
+.calc-group select{
+  width:100%;
+  padding:11px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  outline:none;
+}
+
+.calc-btn{
+  background:#ff6600;
+  color:white;
+  padding:12px;
+  width:100%;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:bold;
+  margin-top:5px;
+}
+
+.calc-result{
+  margin-top:15px;
+  padding:15px;
+  background:#f4f6f9;
+  border-radius:12px;
+  color:#1f2d3d;
+  font-weight:bold;
+  display:none;
+}
+
+
+/* =========================================================
+   CONSULTANCY CTA
+========================================================= */
+
+.consultancy-cta{
+  margin:45px auto;
+  max-width:1100px;
+  padding:40px 25px;
+  border-radius:25px;
+  background:
+    radial-gradient(circle at 90% 20%,rgba(255,102,0,.2),transparent 30%),
+    #1f2d3d;
+  color:white;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.consultancy-cta h2{
+  margin:0 0 10px;
+  font-size:29px;
+}
+
+.consultancy-cta p{
+  max-width:700px;
+  margin:auto;
+  color:#dce2e7;
+  line-height:1.7;
+  font-size:14px;
+}
+
+.cta-buttons{
+  margin-top:22px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.cta-btn{
+  display:inline-block;
+  padding:13px 22px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.3s ease;
+}
+
+.cta-btn.orange{
+  background:#ff6600;
+  color:white;
+}
+
+.cta-btn.green{
+  background:#25D366;
+  color:white;
+}
+
+.cta-btn:hover{
+  transform:translateY(-3px);
+}
+
+
+/* =========================================================
+   BOOK CONSULTANCY MODAL
+========================================================= */
+
+#consultancy-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(8,12,17,.78);
+  backdrop-filter:blur(8px);
+  z-index:3000;
+  justify-content:center;
+  align-items:center;
+  padding:15px;
+}
+
+.consultancy-box{
+  background:white;
+  width:95%;
+  max-width:620px;
+  max-height:92%;
+  overflow-y:auto;
+  border-radius:24px;
+  box-shadow:0 30px 90px rgba(0,0,0,.35);
+  animation:modalIn .25s ease;
+}
+
+@keyframes modalIn{
+
+  from{
+    opacity:0;
+    transform:translateY(25px) scale(.97);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+
+}
+
+.consultancy-header{
+  background:#1f2d3d;
+  color:white;
+  padding:22px;
+  position:sticky;
+  top:0;
+  z-index:5;
+}
+
+.consultancy-header h2{
+  margin:0 0 6px;
+  font-size:21px;
+}
+
+.consultancy-header p{
+  margin:0;
+  color:#dce2e7;
+  font-size:12px;
+}
+
+.consultancy-body{
+  padding:22px;
+}
+
+.form-group{
+  margin-bottom:14px;
+}
+
+.form-group label{
+  display:block;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:6px;
+  color:#1f2d3d;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  outline:none;
+  font-size:13px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  border-color:#ff6600;
+  box-shadow:0 0 0 3px rgba(255,102,0,.1);
+}
+
+.form-group textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.consultancy-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:18px;
+}
+
+.submit-consultancy{
+  background:#25D366;
+  color:white;
+  border:none;
+  padding:13px;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.cancel-consultancy{
+  background:#dc3545;
+  color:white;
+  border:none;
+  padding:13px;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+  background:#101a24;
+  color:white;
+  text-align:center;
+  padding:27px 15px;
+  font-size:13px;
+}
+
+footer span{
+  color:#ff6600;
+  font-weight:bold;
+}
+
+
+/* =========================================================
+   FLOATING WHATSAPP
+========================================================= */
+
+#whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:58px;
+  height:58px;
+  background:#25D366;
+  color:white;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:27px;
+  z-index:2000;
+  cursor:pointer;
+  box-shadow:0 8px 25px rgba(37,211,102,.35);
+  transition:.3s ease;
+}
+
+#whatsapp:hover{
+  transform:scale(1.1);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:850px){
+
+  .hero h2{
+    font-size:38px;
+  }
+
+  .trust-strip{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .solution-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .calculator-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:600px){
+
+  header{
+    padding:10px;
+  }
+
+  .brand img{
+    height:40px;
+  }
+
+  .brand h1{
+    font-size:14px;
+  }
+
+  .brand-subtitle{
+    font-size:9px;
+  }
+
+  nav a{
+    font-size:11px;
+    padding:8px 11px;
+  }
+
+  .hero{
+    min-height:430px;
+    padding:55px 18px;
+  }
+
+  .hero h2{
+    font-size:29px;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  .hero-btn{
+    width:100%;
+  }
+
+  .trust-strip{
+    margin-top:-20px;
+    gap:8px;
+    padding:0 10px;
+  }
+
+  .trust-card{
+    padding:15px 8px;
+  }
+
+  .trust-icon{
+    font-size:23px;
+  }
+
+  .trust-card strong{
+    font-size:12px;
+  }
+
+  .trust-card span{
+    font-size:10px;
+  }
+
+  .section-heading h2{
+    font-size:24px;
+  }
+
+  .finder-box{
+    padding:23px 17px;
+    border-radius:18px;
+  }
+
+  .finder-title h3{
+    font-size:20px;
+  }
+
+  .solution-grid{
+    grid-template-columns:1fr;
+    padding-left:10px;
+    padding-right:10px;
+  }
+
+  .emergency-grid{
+    grid-template-columns:1fr;
+  }
+
+  .calculator-section{
+    padding-left:10px;
+    padding-right:10px;
+  }
+
+  .consultancy-cta{
+    margin:30px 10px;
+    padding:32px 18px;
+  }
+
+  .consultancy-cta h2{
+    font-size:23px;
+  }
+
+  .cta-btn{
+    width:100%;
+  }
+
+  .form-row,
+  .consultancy-actions{
+    grid-template-columns:1fr;
+  }
+
+  #whatsapp{
+    right:12px;
+    bottom:15px;
+    width:52px;
+    height:52px;
+    font-size:23px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+  <div class="header-inner">
+
+    <div class="header-top">
+
+      <div class="brand">
+
+        <img
+          src="images/LOGO.jpg"
+          alt="JT Essentials Limited"
+        >
+
+        <div>
+
+          <h1>JT ESSENTIALS LIMITED</h1>
+
+          <div class="brand-subtitle">
+            ...Quality You Can Rely On
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav>
+
+  <a href="index.html">
+    Home
+  </a>
+
+  <a href="consultancy.html">
+    Consultancy
+  </a>
+
+  <a href="farm-help.html" class="active">
+    Farm Help
+  </a>
+
+  <a href="index.html#raw">
+    Products
+  </a>
+
+  <a href="index.html#contact">
+    Contact
+  </a>
+
+</nav>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="hero-badge">
+      🌱 YOUR FARM. YOUR CHALLENGE. OUR SOLUTIONS.
+    </div>
+
+    <h2>
+
+      Don't Just Manage Your Farm.
+      <span>Understand It.</span>
+
+    </h2>
+
+    <p>
+
+      Get practical farming guidance, identify common livestock
+      problems, understand feeding challenges and connect with
+      professional support when you need it.
+
+    </p>
+
+    <div class="hero-actions">
+
+      <a
+        href="#problem-finder"
+        class="hero-btn primary"
+      >
+        🔍 Find a Solution
+      </a>
+
+      <a
+        href="#consultancy"
+        class="hero-btn secondary"
+      >
+        👨‍🌾 Talk to a Consultant
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     TRUST STRIP
+========================================================= -->
+
+<div class="trust-strip">
+
+  <div class="trust-card">
+
+    <div class="trust-icon">
+      🐔
+    </div>
+
+    <strong>
+      Poultry
+    </strong>
+
+    <span>
+      Feeding & management
+    </span>
+
+  </div>
+
+
+  <div class="trust-card">
+
+    <div class="trust-icon">
+      🐟
+    </div>
+
+    <strong>
+      Fish Farming
+    </strong>
+
+    <span>
+      Feeding & water management
+    </span>
+
+  </div>
+
+
+  <div class="trust-card">
+
+    <div class="trust-icon">
+      🐖
+    </div>
+
+    <strong>
+      Pig Farming
+    </strong>
+
+    <span>
+      Nutrition & management
+    </span>
+
+  </div>
+
+
+  <div class="trust-card">
+
+    <div class="trust-icon">
+      🌾
+    </div>
+
+    <strong>
+      Feed & Farm
+    </strong>
+
+    <span>
+      Practical guidance
+    </span>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     PROBLEM FINDER
+========================================================= -->
+
+<section
+  id="problem-finder"
+  class="finder-section"
+>
+
+  <div class="section-heading">
+
+    <h2>
+      🔍 What Problem Are You Facing?
+    </h2>
+
+    <p>
+      Select your farming challenge and get a quick starting point
+      before speaking with a professional.
+    </p>
+
+    <div class="heading-line"></div>
+
+  </div>
+
+
+  <div class="finder-box">
+
+    <div class="finder-title">
+
+      <h3>
+        Farm Problem Finder
+      </h3>
+
+      <p>
+        Tell us what is happening on your farm.
+        We will show you some practical areas to investigate.
+      </p>
+
+    </div>
+
+
+    <div class="finder-select">
+
+      <select
+        id="problemSelect"
+        onchange="showProblem()"
+      >
+
+        <option value="">
+          Select a problem...
+        </option>
+
+        <option value="poor-growth">
+          My animals are growing slowly
+        </option>
+
+        <option value="feed-cost">
+          My feed cost is too high
+        </option>
+
+        <option value="low-production">
+          Egg / production level is low
+        </option>
+
+        <option value="mortality">
+          I am experiencing animal deaths
+        </option>
+
+        <option value="poor-appetite">
+          Animals are not eating well
+        </option>
+
+        <option value="diarrhea">
+          Animals have diarrhea / loose stool
+        </option>
+
+        <option value="fish-water">
+          My fish pond water looks bad
+        </option>
+
+        <option value="farm-management">
+          I am struggling to manage my farm
+        </option>
+
+        <option value="new-farm">
+          I want to start a livestock farm
+        </option>
+
+        <option value="other">
+          I have another farming problem
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <div
+      class="finder-result"
+      id="finderResult"
+    >
+
+      <h4 id="resultTitle"></h4>
+
+      <p id="resultDescription"></p>
+
+      <strong>
+        Areas to check:
+      </strong>
+
+      <ul id="resultList"></ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SOLUTIONS
+========================================================= -->
+
+<section>
+
+  <div class="section-heading">
+
+    <h2>
+      Practical Farm Solutions
+    </h2>
+
+    <p>
+      Areas where better decisions can make a major difference
+      to your farm's performance.
+    </p>
+
+    <div class="heading-line"></div>
+
+  </div>
+
+
+  <div class="solution-grid">
+
+
+    <div class="solution-card">
+
+      <div class="solution-icon">
+        🌾
+      </div>
+
+      <h3>
+        Feed Planning
+      </h3>
+
+      <p>
+        Understand feed types, feeding stages, quantities and
+        how poor feeding decisions can affect performance.
+      </p>
+
+      <a
+        href="consultancy.html"
+        class="solution-link"
+      >
+        Get Feed Guidance →
+      </a>
+
+    </div>
+
+
+    <div class="solution-card">
+
+      <div class="solution-icon">
+        🐔
+      </div>
+
+      <h3>
+        Poultry Management
+      </h3>
+
+      <p>
+        Improve daily management, feeding routines, housing
+        practices and production monitoring.
+      </p>
+
+      <a
+        href="consultancy.html"
+        class="solution-link"
+      >
+        Poultry Consultancy →
+      </a>
+
+    </div>
+
+
+    <div class="solution-card">
+
+      <div class="solution-icon">
+        🐟
+      </div>
+
+      <h3>
+        Fish Farming
+      </h3>
+
+      <p>
+        Get guidance around feeding, water quality, stocking
+        and general pond management.
+      </p>
+
+      <a
+        href="consultancy.html"
+        class="solution-link"
+      >
+        Fish Consultancy →
+      </a>
+
+    </div>
+
+
+    <div class="solution-card">
+
+      <div class="solution-icon">
+        🐖
+      </div>
+
+      <h3>
+        Pig Farming
+      </h3>
+
+      <p>
+        Better understand pig nutrition, housing, growth
+        monitoring and farm management.
+      </p>
+
+      <a
+        href="consultancy.html"
+        class="solution-link"
+      >
+        Pig Consultancy →
+      </a>
+
+    </div>
+
+
+    <div class="solution-card">
+
+      <div class="solution-icon">
+        📊
+      </div>
+
+      <h3>
+        Farm Management
+      </h3>
+
+      <p>
+        Learn how to monitor expenses, feed usage, mortality,
+        sales and farm performance.
+      </p>
+
+      <a
+        href="consultancy.html"
+        class="solution-link"
+      >
+        Improve My Farm →
+      </a>
+
+    </div>
+
+
+    <div class="solution-card">
+
+      <div class="solution-icon">
+        🏡
+      </div>
+
+      <h3>
+        Starting a Farm
+      </h3>
+
+      <p>
+        Planning to start? Get professional guidance on farm
+        setup, livestock selection, feeding and management.
+      </p>
+
+      <a
+        href="consultancy.html"
+        class="solution-link"
+      >
+        Plan My Farm →
+      </a>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     EMERGENCY FARM PROBLEMS
+========================================================= -->
+
+<section class="emergency">
+
+  <div class="emergency-inner">
+
+    <div class="emergency-header">
+
+      <h2>
+        🚨 Important Farm Situations
+      </h2>
+
+      <p>
+        Some farm problems require immediate attention.
+        Do not rely only on online information when animals
+        are seriously sick or dying.
+      </p>
+
+    </div>
+
+
+    <div class="emergency-grid">
+
+
+      <div class="emergency-card">
+
+        <h3>
+          🐔 Sudden Poultry Deaths
+        </h3>
+
+        <p>
+          Separate affected birds where appropriate, check
+          mortality patterns, water and feed access, housing
+          conditions and contact a qualified veterinarian or
+          animal-health professional promptly.
+        </p>
+
+      </div>
+
+
+      <div class="emergency-card">
+
+        <h3>
+          🌡️ Severe Illness
+        </h3>
+
+        <p>
+          If animals show severe weakness, breathing difficulty,
+          neurological signs or rapid deterioration, seek
+          professional veterinary assistance immediately.
+        </p>
+
+      </div>
+
+
+      <div class="emergency-card">
+
+        <h3>
+          🐟 Fish Floating / Mass Mortality
+        </h3>
+
+        <p>
+          Check water quality, oxygen conditions, stocking
+          density and recent management changes. Seek expert
+          help quickly if deaths are increasing.
+        </p>
+
+      </div>
+
+
+      <div class="emergency-card">
+
+        <h3>
+          ☠️ Suspected Feed Problem
+        </h3>
+
+        <p>
+          Stop using a suspicious batch where appropriate,
+          preserve the sample and seek professional advice
+          before making major treatment decisions.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FARM CALCULATORS
+========================================================= -->
+
+<section class="calculator-section">
+
+  <div class="section-heading">
+
+    <h2>
+      📊 Quick Farm Calculators
+    </h2>
+
+    <p>
+      Simple planning tools to help farmers estimate basic
+      farm requirements.
+    </p>
+
+    <div class="heading-line"></div>
+
+  </div>
+
+
+  <div class="calculator-grid">
+
+
+    <!-- FEED CALCULATOR -->
+
+    <div class="calculator">
+
+      <h3>
+        🌾 Feed Requirement
+      </h3>
+
+      <p>
+        Estimate total feed needed based on animal population,
+        daily feed intake and number of days.
+      </p>
+
+
+      <div class="calc-group">
+
+        <label>
+          Number of Animals
+        </label>
+
+        <input
+          type="number"
+          id="animalCount"
+          placeholder="e.g. 100"
+          min="1"
+        >
+
+      </div>
+
+
+      <div class="calc-group">
+
+        <label>
+          Feed Per Animal / Day (kg)
+        </label>
+
+        <input
+          type="number"
+          id="feedPerAnimal"
+          placeholder="e.g. 0.12"
+          min="0"
+          step="0.01"
+        >
+
+      </div>
+
+
+      <div class="calc-group">
+
+        <label>
+          Number of Days
+        </label>
+
+        <input
+          type="number"
+          id="feedDays"
+          placeholder="e.g. 30"
+          min="1"
+        >
+
+      </div>
+
+
+      <button
+        class="calc-btn"
+        onclick="calculateFeed()"
+      >
+        Calculate Feed
+      </button>
+
+
+      <div
+        class="calc-result"
+        id="feedResult"
+      ></div>
+
+    </div>
+
+
+    <!-- MORTALITY CALCULATOR -->
+
+    <div class="calculator">
+
+      <h3>
+        📉 Mortality Rate
+      </h3>
+
+      <p>
+        Calculate the percentage of animals lost from a group.
+        This can help with farm record monitoring.
+      </p>
+
+
+      <div class="calc-group">
+
+        <label>
+          Starting Population
+        </label>
+
+        <input
+          type="number"
+          id="startingPopulation"
+          placeholder="e.g. 500"
+          min="1"
+        >
+
+      </div>
+
+
+      <div class="calc-group">
+
+        <label>
+          Number Lost
+        </label>
+
+        <input
+          type="number"
+          id="animalsLost"
+          placeholder="e.g. 10"
+          min="0"
+        >
+
+      </div>
+
+
+      <button
+        class="calc-btn"
+        onclick="calculateMortality()"
+      >
+        Calculate Mortality
+      </button>
+
+
+      <div
+        class="calc-result"
+        id="mortalityResult"
+      ></div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONSULTANCY CTA
+========================================================= -->
+
+<section
+  id="consultancy"
+  class="consultancy-cta"
+>
+
+  <h2>
+    Your Farm Problem May Have a Solution.
+  </h2>
+
+  <p>
+    If you need help beyond the information on this page,
+    speak directly with JT ESSENTIALS LIMITED about your
+    livestock, feeding programme, farm setup or management needs.
+  </p>
+
+
+  <div class="cta-buttons">
+
+    <button
+      class="cta-btn orange"
+      onclick="openConsultancy()"
+    >
+      📋 Book Consultancy
+    </button>
+
+
+    <a
+      href="consultancy.html"
+      class="cta-btn green"
+    >
+      👨‍🌾 View Consultancy Services
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONSULTANCY MODAL
+========================================================= -->
+
+<div id="consultancy-modal">
+
+  <div class="consultancy-box">
+
+    <div class="consultancy-header">
+
+      <h2>
+        📋 Book Farm Consultancy
+      </h2>
+
+      <p>
+        Tell us about your farm and the challenge you need help with.
+      </p>
+
+    </div>
+
+
+    <div class="consultancy-body">
+
+      <form id="consultancy-form">
+
+
+        <div class="form-row">
+
+
+          <div class="form-group">
+
+            <label>
+              Full Name *
+            </label>
+
+            <input
+              type="text"
+              id="consultName"
+              placeholder="Enter your full name"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>
+              Phone / WhatsApp *
+            </label>
+
+            <input
+              type="tel"
+              id="consultPhone"
+              placeholder="e.g. 08012345678"
+              required
+            >
+
+          </div>
+
+
+        </div>
+
+
+        <div class="form-row">
+
+
+          <div class="form-group">
+
+            <label>
+              Country *
+            </label>
+
+            <select
+              id="consultCountry"
+              required
+            >
+
+              <option value="">
+                Select country
+              </option>
+
+              <option>
+                Nigeria
+              </option>
+
+              <option>
+                Ghana
+              </option>
+
+              <option>
+                Benin Republic
+              </option>
+
+              <option>
+                Togo
+              </option>
+
+              <option>
+                Liberia
+              </option>
+
+              <option>
+                Other
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>
+              State / Region
+            </label>
+
+            <input
+              type="text"
+              id="consultState"
+              placeholder="e.g. Lagos"
+            >
+
+          </div>
+
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Type of Farm *
+          </label>
+
+          <select
+            id="farmType"
+            required
+          >
+
+            <option value="">
+              Select farm type
+            </option>
+
+            <option>
+              Poultry
+            </option>
+
+            <option>
+              Fish Farming
+            </option>
+
+            <option>
+              Pig Farming
+            </option>
+
+            <option>
+              Goat / Sheep
+            </option>
+
+            <option>
+              Rabbit Farming
+            </option>
+
+            <option>
+              Mixed Farm
+            </option>
+
+            <option>
+              Other
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Consultancy Service *
+          </label>
+
+          <select
+            id="consultService"
+            required
+          >
+
+            <option value="">
+              Select service
+            </option>
+
+            <option>
+              Chicken Feed
+            </option>
+
+            <option>
+              Turkey Ration
+            </option>
+
+            <option>
+              Fish Feed
+            </option>
+
+            <option>
+              Rabbit Feed
+            </option>
+
+            <option>
+              Pig Feed
+            </option>
+
+            <option>
+              Localized Feed Programme
+            </option>
+
+            <option>
+              Farm Plan and Set-up
+            </option>
+
+            <option>
+              Farm Management Service
+            </option>
+
+            <option>
+              Training and Capacity Building
+            </option>
+
+            <option>
+              General Farm Problem
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Tell Us About Your Problem *
+          </label>
+
+          <textarea
+            id="consultProblem"
+            placeholder="Describe what is happening on your farm..."
+            required
+          ></textarea>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Number of Animals / Farm Size
+          </label>
+
+          <input
+            type="text"
+            id="farmSize"
+            placeholder="e.g. 500 birds, 10 ponds, 50 pigs"
+          >
+
+        </div>
+
+
+        <div class="consultancy-actions">
+
+          <button
+            type="submit"
+            class="submit-consultancy"
+          >
+            💬 Submit & Continue to WhatsApp
+          </button>
+
+
+          <button
+            type="button"
+            class="cancel-consultancy"
+            onclick="closeConsultancy()"
+          >
+            Cancel
+          </button>
+
+        </div>
+
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     WHATSAPP
+========================================================= -->
+
+<div
+  id="whatsapp"
+  onclick="openWhatsApp()"
+  title="Chat with JT Essentials Limited"
+>
+  💬
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+  © <span id="year"></span>
+  JT ESSENTIALS LIMITED.
+
+  All Rights Reserved.
+
+  <br><br>
+
+  <span>
+    ...Quality You Can Rely On
+  </span>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   PROBLEM FINDER DATA
+========================================================= */
+
+const farmProblems = {
+
+  "poor-growth":{
+
+    title:"Slow Animal Growth",
+
+    description:
+      "Poor growth can come from several factors. Feed quality is important, but it is not the only thing to investigate.",
+
+    points:[
+      "Check whether animals are receiving the correct feed for their growth stage.",
+      "Review daily feed quantity and feeding frequency.",
+      "Check water availability and cleanliness.",
+      "Review stocking density and housing conditions.",
+      "Monitor illness, parasites and general health.",
+      "Compare actual weight gain with your farm records."
+    ]
+
+  },
+
+
+  "feed-cost":{
+
+    title:"High Feed Cost",
+
+    description:
+      "Feed is often one of the largest costs on a livestock farm. Good records can help identify where money is being lost.",
+
+    points:[
+      "Record how much feed is consumed every day.",
+      "Compare supplier prices before purchasing.",
+      "Check for feed wastage.",
+      "Review whether the ration matches the animal's stage.",
+      "Monitor feed conversion and growth performance.",
+      "Consider professional ration and feed-planning support."
+    ]
+
+  },
+
+
+  "low-production":{
+
+    title:"Low Egg / Production Level",
+
+    description:
+      "A drop in production can be associated with nutrition, management, environmental stress or health issues.",
+
+    points:[
+      "Review feed quality and feeding programme.",
+      "Check water availability.",
+      "Monitor lighting and environmental conditions where applicable.",
+      "Review stress factors and stocking density.",
+      "Check flock health.",
+      "Keep accurate daily production records."
+    ]
+
+  },
+
+
+  "mortality":{
+
+    title:"Animal Deaths",
+
+    description:
+      "Unexpected mortality should be taken seriously. Online information should not replace professional veterinary investigation.",
+
+    points:[
+      "Record exactly when deaths started.",
+      "Separate and monitor affected animals where appropriate.",
+      "Check feed and water access.",
+      "Review recent changes in feed or management.",
+      "Observe symptoms and mortality patterns.",
+      "Contact a qualified veterinarian or animal-health professional."
+    ]
+
+  },
+
+
+  "poor-appetite":{
+
+    title:"Poor Appetite",
+
+    description:
+      "Reduced appetite can result from feed issues, environmental stress, disease or poor water availability.",
+
+    points:[
+      "Check whether clean water is continuously available.",
+      "Inspect feed for unusual smell, moisture or contamination.",
+      "Check environmental temperature and ventilation.",
+      "Observe the animals for other symptoms.",
+      "Review recent changes in feed.",
+      "Seek professional advice if the problem persists."
+    ]
+
+  },
+
+
+  "diarrhea":{
+
+    title:"Diarrhea / Loose Stool",
+
+    description:
+      "Loose stool can have many causes, including nutrition, management and disease.",
+
+    points:[
+      "Check water quality.",
+      "Review recent feed changes.",
+      "Observe the animals for additional symptoms.",
+      "Check hygiene and housing conditions.",
+      "Monitor dehydration and worsening weakness.",
+      "Consult a veterinarian when illness is suspected."
+    ]
+
+  },
+
+
+  "fish-water":{
+
+    title:"Fish Pond Water Problems",
+
+    description:
+      "Poor water quality can seriously affect fish performance and survival.",
+
+    points:[
+      "Check dissolved oxygen where possible.",
+      "Observe unusual smell, colour or foam.",
+      "Review stocking density.",
+      "Check feeding levels and uneaten feed.",
+      "Monitor water temperature and other available parameters.",
+      "Seek professional pond-management advice when mortality occurs."
+    ]
+
+  },
+
+
+  "farm-management":{
+
+    title:"Farm Management Challenges",
+
+    description:
+      "Good records can turn a farm from guesswork into a measurable business.",
+
+    points:[
+      "Record animal population.",
+      "Record feed purchased and used.",
+      "Track mortality.",
+      "Record sales and expenses.",
+      "Monitor weight and production.",
+      "Review farm performance regularly."
+    ]
+
+  },
+
+
+  "new-farm":{
+
+    title:"Starting a New Farm",
+
+    description:
+      "Starting correctly can prevent expensive mistakes later.",
+
+    points:[
+      "Define your target livestock and production system.",
+      "Prepare a realistic startup budget.",
+      "Plan housing before purchasing animals.",
+      "Plan feed supply and water availability.",
+      "Understand your target market.",
+      "Consider professional farm planning support."
+    ]
+
+  },
+
+
+  "other":{
+
+    title:"Your Farm Problem",
+
+    description:
+      "Every farm is different. A detailed assessment can help identify the most appropriate solution.",
+
+    points:[
+      "Record what changed before the problem started.",
+      "Keep accurate farm records.",
+      "Take clear observations or photographs where appropriate.",
+      "Avoid making multiple major changes at once.",
+      "Speak with a qualified professional for complex problems."
+    ]
+
+  }
+
+};
+
+
+/* =========================================================
+   PROBLEM FINDER
+========================================================= */
+
+function showProblem(){
+
+  const selected =
+    document.getElementById("problemSelect").value;
+
+  const result =
+    document.getElementById("finderResult");
+
+  if(!selected){
+
+    result.style.display="none";
+
+    return;
+
+  }
+
+
+  const data =
+    farmProblems[selected];
+
+
+  document.getElementById("resultTitle").innerText =
+    data.title;
+
+
+  document.getElementById("resultDescription").innerText =
+    data.description;
+
+
+  const list =
+    document.getElementById("resultList");
+
+  list.innerHTML="";
+
+
+  data.points.forEach(point=>{
+
+    list.innerHTML +=
+      `<li>${point}</li>`;
+
+  });
+
+
+  result.style.display="block";
+
+}
+
+
+/* =========================================================
+   FEED CALCULATOR
+========================================================= */
+
+function calculateFeed(){
+
+  const animals =
+    parseFloat(
+      document.getElementById("animalCount").value
+    );
+
+  const feed =
+    parseFloat(
+      document.getElementById("feedPerAnimal").value
+    );
+
+  const days =
+    parseFloat(
+      document.getElementById("feedDays").value
+    );
+
+
+  const result =
+    document.getElementById("feedResult");
+
+
+  if(
+    !animals ||
+    !feed ||
+    !days ||
+    animals <= 0 ||
+    feed <= 0 ||
+    days <= 0
+  ){
+
+    result.style.display="block";
+
+    result.innerText =
+      "Please enter valid values.";
+
+    return;
+
+  }
+
+
+  const totalKg =
+    animals * feed * days;
+
+
+  const bags =
+    totalKg / 25;
+
+
+  result.style.display="block";
+
+  result.innerHTML =
+    `Estimated feed requirement: <strong>${totalKg.toFixed(2)} kg</strong><br>
+     Approximately <strong>${bags.toFixed(2)} bags of 25kg</strong>.`;
+
+}
+
+
+/* =========================================================
+   MORTALITY CALCULATOR
+========================================================= */
+
+function calculateMortality(){
+
+  const starting =
+    parseFloat(
+      document.getElementById("startingPopulation").value
+    );
+
+  const lost =
+    parseFloat(
+      document.getElementById("animalsLost").value
+    );
+
+
+  const result =
+    document.getElementById("mortalityResult");
+
+
+  if(
+    !starting ||
+    starting <= 0 ||
+    lost < 0 ||
+    isNaN(lost)
+  ){
+
+    result.style.display="block";
+
+    result.innerText =
+      "Please enter valid values.";
+
+    return;
+
+  }
+
+
+  const rate =
+    (lost / starting) * 100;
+
+
+  result.style.display="block";
+
+  result.innerHTML =
+    `Mortality rate: <strong>${rate.toFixed(2)}%</strong>`;
+
+}
+
+
+/* =========================================================
+   OPEN CONSULTANCY
+========================================================= */
+
+function openConsultancy(){
+
+  document.getElementById(
+    "consultancy-modal"
+  ).style.display="flex";
+
+}
+
+
+/* =========================================================
+   CLOSE CONSULTANCY
+========================================================= */
+
+function closeConsultancy(){
+
+  document.getElementById(
+    "consultancy-modal"
+  ).style.display="none";
+
+}
+
+
+/* =========================================================
+   CONSULTANCY FORM
+========================================================= */
+
+document
+  .getElementById("consultancy-form")
+  .addEventListener(
+    "submit",
+    function(e){
+
+      e.preventDefault();
+
+
+      const name =
+        document
+          .getElementById("consultName")
+          .value
+          .trim();
+
+
+      const phone =
+        document
+          .getElementById("consultPhone")
+          .value
+          .trim();
+
+
+      const country =
+        document
+          .getElementById("consultCountry")
+          .value;
+
+
+      const state =
+        document
+          .getElementById("consultState")
+          .value
+          .trim();
+
+
+      const farmType =
+        document
+          .getElementById("farmType")
+          .value;
+
+
+      const service =
+        document
+          .getElementById("consultService")
+          .value;
+
+
+      const problem =
+        document
+          .getElementById("consultProblem")
+          .value
+          .trim();
+
+
+      const farmSize =
+        document
+          .getElementById("farmSize")
+          .value
+          .trim();
+
+
+      const message =
+
+`Hello JT ESSENTIALS LIMITED,
+
+I would like to book a farm consultancy session.
+
+━━━━━━━━━━━━━━━━━━
+CUSTOMER DETAILS
+━━━━━━━━━━━━━━━━━━
+
+Full Name: ${name}
+Phone / WhatsApp: ${phone}
+Country: ${country}
+State / Region: ${state || "Not specified"}
+
+━━━━━━━━━━━━━━━━━━
+FARM DETAILS
+━━━━━━━━━━━━━━━━━━
+
+Farm Type: ${farmType}
+Farm Size / Number of Animals: ${farmSize || "Not specified"}
+
+Consultancy Service:
+${service}
+
+━━━━━━━━━━━━━━━━━━
+FARM PROBLEM
+━━━━━━━━━━━━━━━━━━
+
+${problem}
+
+━━━━━━━━━━━━━━━━━━
+
+Please let me know the next steps and consultancy arrangements.
+
+Thank you.`;
+
+
+      const whatsappURL =
+        "https://wa.me/2347065498338?text=" +
+        encodeURIComponent(message);
+
+
+      window.open(
+        whatsappURL,
+        "_blank"
+      );
+
+    }
+  );
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+function openWhatsApp(){
+
+  const message =
+    "Hello JT ESSENTIALS LIMITED, I need help with my farm and would like to speak with a consultant.";
+
+
+  window.open(
+    "https://wa.me/2347065498338?text=" +
+    encodeURIComponent(message),
+    "_blank"
+  );
+
+}
+
+
+/* =========================================================
+   CLOSE MODAL WHEN CLICKING BACKGROUND
+========================================================= */
+
+document
+  .getElementById("consultancy-modal")
+  .addEventListener(
+    "click",
+    function(e){
+
+      if(e.target === this){
+
+        closeConsultancy();
+
+      }
+
+    }
+  );
+
+
+/* =========================================================
+   ESC KEY
+========================================================= */
+
+document.addEventListener(
+  "keydown",
+  function(e){
+
+    if(e.key === "Escape"){
+
+      closeConsultancy();
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   YEAR
+========================================================= */
+
+document.getElementById("year").innerText =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
